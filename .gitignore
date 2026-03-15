@@ -1,0 +1,9 @@
+# WorkBuddy internal
+.workbuddy/
+
+# Original file (kept locally, index.html is the deployment version)
+index.html.html
+
+# OS files
+Thumbs.db
+.DS_Store

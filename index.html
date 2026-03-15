@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>基金行业资讯看板 | 腾安基金</title>
+<style>
+  :root {
+    --primary: #1a56db;
+    --primary-light: #e8eefb;
+    --danger: #dc2626;
+    --danger-light: #fef2f2;
+    --warning: #d97706;
+    --warning-light: #fffbeb;
+    --success: #059669;
+    --success-light: #ecfdf5;
+    --info: #6366f1;
+    --info-light: #eef2ff;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-400: #9ca3af;
+    --gray-500: #6b7280;
+    --gray-600: #4b5563;
+    --gray-700: #374151;
+    --gray-800: #1f2937;
+    --gray-900: #111827;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -2px rgba(0,0,0,0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.06);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    background: linear-gradient(135deg, #f0f4ff 0%, #f5f3ff 50%, #fdf2f8 100%);
+    color: var(--gray-800);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1a56db 40%, #6366f1 100%);
+    color: white;
+    padding: 32px 40px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -60%;
+    left: 20%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 14px;
+    opacity: 0.8;
+    font-weight: 400;
+  }
+  .header .date-badge {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  /* Stats Bar */
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    padding: 0 40px;
+    margin-top: -24px;
+    position: relative;
+    z-index: 2;
+  }
+  .stat-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  .stat-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  .stat-number {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1.2;
+  }
+  .stat-card:nth-child(2) .stat-number { color: var(--danger); }
+  .stat-card:nth-child(3) .stat-number { color: var(--success); }
+  .stat-card:nth-child(4) .stat-number { color: var(--warning); }
+  .stat-label {
+    font-size: 12px;
+    color: var(--gray-500);
+    margin-top: 4px;
+  }
+  .stat-change {
+    font-size: 11px;
+    margin-top: 2px;
+    font-weight: 500;
+  }
+  .stat-change.up { color: var(--danger); }
+  .stat-change.down { color: var(--success); }
+  .stat-change.neutral { color: var(--gray-400); }
+
+  /* Main Content */
+  .main { padding: 24px 40px 40px; }
+
+  /* Section */
+  .section {
+    margin-bottom: 28px;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .section-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--gray-900);
+  }
+  .section-badge {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+    margin-left: 4px;
+  }
+
+  /* Cards */
+  .card-grid {
+    display: grid;
+    gap: 12px;
+  }
+  .card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid transparent;
+    transition: all 0.2s;
+    position: relative;
+  }
+  .card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateX(2px);
+  }
+
+  /* Priority Levels */
+  .card.p0 { border-left-color: var(--danger); }
+  .card.p1 { border-left-color: var(--warning); }
+  .card.p2 { border-left-color: var(--primary); }
+  .card.p3 { border-left-color: var(--success); }
+
+  .card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--gray-900);
+    line-height: 1.5;
+    flex: 1;
+  }
+  .card-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .priority-tag {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+  }
+  .priority-tag.urgent { background: var(--danger-light); color: var(--danger); }
+  .priority-tag.important { background: var(--warning-light); color: var(--warning); }
+  .priority-tag.normal { background: var(--primary-light); color: var(--primary); }
+  .priority-tag.fyi { background: var(--success-light); color: var(--success); }
+
+  .date-tag {
+    font-size: 11px;
+    color: var(--gray-400);
+    white-space: nowrap;
+  }
+
+  .card-body {
+    font-size: 13px;
+    color: var(--gray-600);
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .card-footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .source-tag {
+    font-size: 11px;
+    padding: 2px 10px;
+    border-radius: 12px;
+    background: var(--gray-100);
+    color: var(--gray-600);
+    font-weight: 500;
+  }
+  .impact-tag {
+    font-size: 11px;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-weight: 600;
+  }
+  .impact-tag.high { background: #fef2f2; color: #b91c1c; }
+  .impact-tag.medium { background: #fffbeb; color: #92400e; }
+  .impact-tag.low { background: #ecfdf5; color: #065f46; }
+
+  .card-link {
+    font-size: 12px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    transition: opacity 0.2s;
+  }
+  .card-link:hover { opacity: 0.7; }
+
+  /* Action Items */
+  .action-box {
+    background: linear-gradient(135deg, #eff6ff, #eef2ff);
+    border: 1px solid #c7d2fe;
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    margin-top: 6px;
+  }
+  .action-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--info);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+  .action-text {
+    font-size: 13px;
+    color: var(--gray-700);
+    line-height: 1.6;
+  }
+
+  /* Two column layout */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  /* Timeline */
+  .timeline-item {
+    display: flex;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .timeline-item:last-child { border-bottom: none; }
+  .timeline-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+  .timeline-dot.red { background: var(--danger); }
+  .timeline-dot.yellow { background: var(--warning); }
+  .timeline-dot.blue { background: var(--primary); }
+  .timeline-dot.green { background: var(--success); }
+  .timeline-date {
+    font-size: 11px;
+    color: var(--gray-400);
+    margin-bottom: 2px;
+  }
+  .timeline-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gray-800);
+    margin-bottom: 2px;
+  }
+  .timeline-desc {
+    font-size: 12px;
+    color: var(--gray-500);
+    line-height: 1.5;
+  }
+
+  /* Competitor Table */
+  .comp-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: white;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .comp-table th {
+    background: var(--gray-50);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gray-600);
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .comp-table td {
+    font-size: 13px;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--gray-100);
+    color: var(--gray-700);
+    vertical-align: top;
+  }
+  .comp-table tr:last-child td { border-bottom: none; }
+  .comp-table tr:hover td { background: var(--gray-50); }
+  .comp-name {
+    font-weight: 600;
+    color: var(--gray-900);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .comp-emoji { font-size: 16px; }
+  .comp-links {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .comp-link {
+    font-size: 11px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 12px;
+    background: var(--primary-light);
+    border: 1px solid rgba(26,86,219,0.15);
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .comp-link:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+  }
+  .comp-link .link-icon { font-size: 10px; }
+  .alert-dot {
+    width: 7px;
+    height: 7px;
+    background: var(--danger);
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 24px 40px;
+    font-size: 12px;
+    color: var(--gray-400);
+    border-top: 1px solid var(--gray-200);
+    background: white;
+  }
+
+  /* Priority legend */
+  .legend {
+    display: flex;
+    gap: 16px;
+    padding: 16px 24px;
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+    align-items: center;
+  }
+  .legend-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gray-500);
+    margin-right: 4px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--gray-600);
+  }
+  .legend-dot {
+    width: 12px;
+    height: 4px;
+    border-radius: 2px;
+  }
+  .legend-dot.red { background: var(--danger); }
+  .legend-dot.orange { background: var(--warning); }
+  .legend-dot.blue { background: var(--primary); }
+  .legend-dot.green { background: var(--success); }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .stats-bar { grid-template-columns: repeat(2, 1fr); }
+    .two-col { grid-template-columns: 1fr; }
+    .header, .main, .stats-bar { padding-left: 20px; padding-right: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div class="header-top">
+    <div>
+      <h1>📊 基金行业资讯看板</h1>
+      <div class="subtitle">腾安基金 · 行业情报中心 · 近两周核心资讯聚合</div>
+    </div>
+    <div class="date-badge">📅 数据区间：2026.03.01 — 2026.03.15</div>
+  </div>
+</div>
+
+<!-- Stats Bar -->
+<div class="stats-bar">
+  <div class="stat-card">
+    <div class="stat-number">37.77万亿</div>
+    <div class="stat-label">公募基金总规模（2026年1月底）</div>
+    <div class="stat-change up">▲ 连续10个月创新高</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">6.02万亿</div>
+    <div class="stat-label">境内ETF市场规模</div>
+    <div class="stat-change up">▲ 同比增长61%，亚洲第一</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">13,490只</div>
+    <div class="stat-label">公募基金产品数量</div>
+    <div class="stat-change neutral">165家管理机构</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">315</div>
+    <div class="stat-label">消费者权益日专题</div>
+    <div class="stat-change down">40家基金公司上投诉榜</div>
+  </div>
+</div>
+
+<!-- Main Content -->
+<div class="main">
+
+  <!-- Priority Legend -->
+  <div class="legend">
+    <span class="legend-title">优先级：</span>
+    <span class="legend-item"><span class="legend-dot red"></span>紧急必看</span>
+    <span class="legend-item"><span class="legend-dot orange"></span>重要关注</span>
+    <span class="legend-item"><span class="legend-dot blue"></span>建议了解</span>
+    <span class="legend-item"><span class="legend-dot green"></span>知悉即可</span>
+  </div>
+
+  <!-- ============ Section 1: 监管政策 ============ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:#fef2f2;color:var(--danger);">🏛️</div>
+      <span class="section-title">监管政策动态</span>
+      <span class="section-badge" style="background:var(--danger-light);color:var(--danger);">最高优先级</span>
+    </div>
+
+    <div class="card-grid">
+      <!-- Card 1 -->
+      <div class="card p0">
+        <div class="card-top">
+          <div class="card-title">🔴 公募基金信息披露新规正式发布，5月1日起实施</div>
+          <div class="card-meta">
+            <span class="priority-tag urgent">紧急必看</span>
+            <span class="date-tag">03-13</span>
+          </div>
+        </div>
+        <div class="card-body">
+          证监会修订发布《公开募集证券投资基金信息披露内容与格式准则第2号—定期报告的内容与格式》，共3章36条。<br>
+          <b>核心变化：</b>①强制披露基民盈利比；②新增7年、10年中长期业绩展示，删除1个月短期业绩；③整合年报/半年报/季报，明确不同报告披露重点；④削减重复内容，减轻机构信披负担。同日基金业协会发布配套XBRL模板。
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">证监会</span>
+          <span class="source-tag">中基协</span>
+          <span class="impact-tag high">对代销业务影响：高</span>
+          <a class="card-link" href="https://finance.eastmoney.com/a/202603143672148072.html" target="_blank">详情 →</a>
+        </div>
+        <div class="action-box">
+          <div class="action-label">⚡ 腾安行动建议</div>
+          <div class="action-text">
+            ① 组织合规团队学习新准则，重点关注"基民盈利比"披露对代销平台页面展示的影响；<br>
+            ② 评估产品详情页是否需要配合调整业绩展示逻辑（删除1个月业绩、增加7年/10年维度）；<br>
+            ③ 5月1日前完成系统改造，与基金公司确认新格式数据对接方案。
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card p0">
+        <div class="card-top">
+          <div class="card-title">🔴 证监会党委部署落实两会精神，释放多重监管信号</div>
+          <div class="card-meta">
+            <span class="priority-tag urgent">紧急必看</span>
+            <span class="date-tag">03-13</span>
+          </div>
+        </div>
+        <div class="card-body">
+          证监会主席吴清主持会议落实全国两会精神，强调2026年是"十五五"开局之年。会议明确：将发布实施资本市场"十五五"规划，持续深化公募基金高质量发展行动方案，推动投顾试点转常规。政府工作报告释放8大金融政策信号。
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">证监会</span>
+          <span class="source-tag">两会</span>
+          <span class="impact-tag high">战略方向：高</span>
+          <a class="card-link" href="https://finance.eastmoney.com/a/202603133671795859.html" target="_blank">详情 →</a>
+        </div>
+        <div class="action-box">
+          <div class="action-label">⚡ 腾安行动建议</div>
+          <div class="action-text">
+            关注"十五五"资本市场规划全文发布，特别是基金销售渠道、投顾业务的政策方向。投顾试点转常规是重大机遇，建议评估腾安投顾业务布局。
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card p1">
+        <div class="card-top">
+          <div class="card-title">🟡 东方财富董事长两会建议：加快基金投顾试点转常规</div>
+          <div class="card-meta">
+            <span class="priority-tag important">重要关注</span>
+            <span class="date-tag">03-11</span>
+          </div>
+        </div>
+        <div class="card-body">
+          全国人大代表、东方财富董事长其实提出两大建议：①加快推动基金投顾业务试点转常规，分步扩大牌照覆盖面；②提升证券行业数字化水平。这是头部竞争对手在政策层面的主动发声，意味着天天基金正在积极争取投顾业务扩展。
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">两会</span>
+          <span class="source-tag">东方财富</span>
+          <span class="impact-tag medium">竞争态势：中</span>
+          <a class="card-link" href="https://finance.sina.com.cn/roll/2026-03-11/doc-inhqqups2687591.shtml" target="_blank">详情 →</a>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="card p1">
+        <div class="card-top">
+          <div class="card-title">🟡 公募业绩比较基准指引已落地，行业进入执行期</div>
+          <div class="card-meta">
+            <span class="priority-tag important">重要关注</span>
+            <span class="date-tag">01-23发布</span>
+          </div>
+        </div>
+        <div class="card-body">
+          1月23日落地的《公开募集证券投资基金业绩比较基准指引》正式约束基金"风格漂移"和"基金盲盒"现象。叠加3月13日的信披新规，"1+5配套新规"正在构建完整的公募高质量发展制度框架。代销平台需关注产品标签和风险提示的合规更新。
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">证监会</span>
+          <span class="source-tag">中基协</span>
+          <span class="impact-tag high">对代销业务影响：高</span>
+          <a class="card-link" href="https://news.qq.com/rain/a/20260125A04W9W00" target="_blank">详情 →</a>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="card p2">
+        <div class="card-top">
+          <div class="card-title">🔵 费率改革持续深化：买方投顾合作模式加速洗牌</div>
+          <div class="card-meta">
+            <span class="priority-tag normal">建议了解</span>
+            <span class="date-tag">03-08</span>
+          </div>
+        </div>
+        <div class="card-body">
+          业内分析指出，基金费率改革全面推进下，"为增收而合作"的投顾机构将逐步退出，真正凭资产配置能力和客户服务质量获取回报的机构将胜出。盈利重心将从交易佣金向投顾费转移，买方投顾价值空间凸显。
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">行业趋势</span>
+          <span class="impact-tag medium">长期影响：中</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ Section 2: 竞争对手动态 ============ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:#fffbeb;color:var(--warning);">🏁</div>
+      <span class="section-title">竞争对手动态</span>
+      <span class="section-badge" style="background:var(--warning-light);color:var(--warning);">重点跟踪</span>
+    </div>
+
+    <div class="comp-table">
+      <table style="width:100%;border-collapse:collapse;">
+        <thead>
+          <tr>
+            <th style="width:15%">机构</th>
+            <th style="width:15%">时间</th>
+            <th style="width:45%">动态详情</th>
+            <th style="width:12%">威胁等级</th>
+            <th style="width:13%">对腾安启示</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="comp-name"><span class="comp-emoji">🐜</span>蚂蚁基金</span></td>
+            <td>03-11</td>
+            <td>
+              <b>315投诉数据公布：收到27起有效投诉</b>，完成率仅34%，投诉多为"莫名扣款"。这是蚂蚁在用户体验端的短板，但整体规模仍遥遥领先。蚂蚁财富开放平台3.0已全面升级，向机构开放三大AI助手。
+              <div class="comp-links">
+                <a class="comp-link" href="https://finance.sina.com.cn/stock/observe/2026-03-11/doc-inhqrmmk2485757.shtml" target="_blank"><span class="link-icon">📄</span>315投诉详情</a>
+                <a class="comp-link" href="https://finance.sina.com.cn/stock/t/2025-09-12/doc-infqfhcm7652022.shtml" target="_blank"><span class="link-icon">🤖</span>开放平台3.0 AI助手</a>
+                <a class="comp-link" href="https://finance.sina.com.cn/stock/observe/2026-03-13/doc-inhqvams1199846.shtml" target="_blank"><span class="link-icon">📊</span>基金投诉榜全景</a>
+              </div>
+            </td>
+            <td><span class="impact-tag high">⚠️ 持续领先</span></td>
+            <td style="font-size:12px;color:var(--gray-600);">关注其投诉率，以此作为差异化竞争优势切入点</td>
+          </tr>
+          <tr>
+            <td><span class="comp-name"><span class="comp-emoji">🌿</span>盈米基金/且慢</span></td>
+            <td>03-12</td>
+            <td>
+              <b>且慢「AI小顾」升级至2.0——正式进入"AI原生"模式</b>。新版配备"总指挥"Agent，可动态规划和调度多个领域专家Agent，从"单次问答"升级为"多轮智能规划"。此前2月已公布AUM超510亿、签约客户超48万。
+              <br><span style="color:var(--danger);font-weight:600;">⚡ 这是行业AI投顾领域的标志性事件</span>
+              <div class="comp-links">
+                <a class="comp-link" href="https://finance.sina.com.cn/wm/2026-02-11/doc-inhmkupv5023331.shtml" target="_blank"><span class="link-icon">🤖</span>AI小顾2.0升级详情</a>
+                <a class="comp-link" href="https://www.sohu.com/a/986679366_121624056" target="_blank"><span class="link-icon">🔍</span>Agent重构财富管理解读</a>
+                <a class="comp-link" href="http://www.zqrb.cn/money/licai/2026-02-10/A1770726905979.html" target="_blank"><span class="link-icon">📰</span>证券日报报道</a>
+              </div>
+            </td>
+            <td><span class="impact-tag high">🔴 高度关注</span></td>
+            <td style="font-size:12px;color:var(--gray-600);">腾安需加快AI投顾布局，重点参考其Agent架构</td>
+          </tr>
+          <tr>
+            <td><span class="comp-name"><span class="comp-emoji">💰</span>天天基金</span></td>
+            <td>03-11</td>
+            <td>
+              <b>东方财富董事长两会发声</b>，为天天基金的投顾牌照争取政策支持。同时持续强化内容生态和直播体系。作为排名前三的代销平台，天天基金的政策游说能力不容忽视。
+              <div class="comp-links">
+                <a class="comp-link" href="https://finance.sina.com.cn/roll/2026-03-11/doc-inhqqups2687591.shtml" target="_blank"><span class="link-icon">🏛️</span>两会建议原文</a>
+                <a class="comp-link" href="https://finance.eastmoney.com/a/202603113668588631.html" target="_blank"><span class="link-icon">📄</span>华夏时报详细报道</a>
+                <a class="comp-link" href="https://paper.cnstock.com/html/2026-03/11/content_2187563.htm" target="_blank"><span class="link-icon">📰</span>上海证券报</a>
+              </div>
+            </td>
+            <td><span class="impact-tag medium">🟡 保持关注</span></td>
+            <td style="font-size:12px;color:var(--gray-600);">关注其投顾牌照获取进展</td>
+          </tr>
+          <tr>
+            <td><span class="comp-name"><span class="comp-emoji">📈</span>易方达财富</span></td>
+            <td>02-07</td>
+            <td>
+              <b>展业首月新增代销规模44.36亿元</b>，其中权益基金30亿、非货35亿。App"e钱包"主打"全市场产品货架"策略，覆盖全市场基金产品。作为"公募一哥"的代销子公司，增长潜力巨大。
+              <br><span style="color:var(--warning);font-weight:600;">⚡ 新型竞争者入场信号</span>
+              <div class="comp-links">
+                <a class="comp-link" href="https://finance.sina.com.cn/jjxw/2026-02-07/doc-inhkyetm4295125.shtml" target="_blank"><span class="link-icon">📊</span>财联社深度报道</a>
+                <a class="comp-link" href="https://money.eastmoney.com/a/202602043641499556.html" target="_blank"><span class="link-icon">📄</span>首月运营数据</a>
+                <a class="comp-link" href="https://www.efunds.com.cn/c/791/791481.shtml" target="_blank"><span class="link-icon">🏢</span>易方达官方</a>
+              </div>
+            </td>
+            <td><span class="impact-tag high">🔴 新威胁</span></td>
+            <td style="font-size:12px;color:var(--gray-600);">基金公司直接下场代销，评估对第三方代销格局的冲击</td>
+          </tr>
+          <tr>
+            <td><span class="comp-name"><span class="comp-emoji">🏦</span>券商渠道</span></td>
+            <td>03-13</td>
+            <td>
+              最新代销百强榜：57家券商进入百强，较前一期再增1家。国泰海通合并后权益基金保有规模升至券商第3。券商渠道整体定位为"被动指数+ETF+券结基金+私募"差异化打法。
+              <div class="comp-links">
+                <a class="comp-link" href="https://k.sina.com.cn/article_7879922977_1d5ae152101901c724.html" target="_blank"><span class="link-icon">📊</span>券商代销最新排名</a>
+                <a class="comp-link" href="https://news.qq.com/rain/a/20250915A08OXE00" target="_blank"><span class="link-icon">📄</span>57家券商跻身百强</a>
+                <a class="comp-link" href="https://finance.eastmoney.com/a/202509153514071935.html" target="_blank"><span class="link-icon">📈</span>头部格局变化解读</a>
+              </div>
+            </td>
+            <td><span class="impact-tag medium">🟡 趋势性威胁</span></td>
+            <td style="font-size:12px;color:var(--gray-600);">ETF代销是券商强项，关注对权益基金份额的分流</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ============ Section 3: 315 Special ============ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:#fef2f2;color:var(--danger);">🛡️</div>
+      <span class="section-title">315消费者权益专题</span>
+      <span class="section-badge" style="background:var(--danger-light);color:var(--danger);">时效：今日</span>
+    </div>
+
+    <div class="card-grid">
+      <div class="card p0">
+        <div class="card-top">
+          <div class="card-title">🔴 315基金行业投诉榜：40家基金公司上榜，七大乱象被起底</div>
+          <div class="card-meta">
+            <span class="priority-tag urgent">紧急必看</span>
+            <span class="date-tag">03-13 ~ 03-15</span>
+          </div>
+        </div>
+        <div class="card-body">
+          新浪黑猫投诉统计显示40家基金公司上榜；北京青年报历时一个月深度调查，起底基金行业七大乱象：误导销售、信息陷阱等。<br>
+          <b>代销机构投诉焦点：</b>蚂蚁基金27起投诉（完成率34%）、天弘基金34起投诉（主因"未经同意无故扣款"）。
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">315专题</span>
+          <span class="source-tag">黑猫投诉</span>
+          <span class="impact-tag high">合规风险：高</span>
+          <a class="card-link" href="https://finance.sina.com.cn/stock/observe/2026-03-13/doc-inhqvamv4231509.shtml" target="_blank">详情 →</a>
+        </div>
+        <div class="action-box">
+          <div class="action-label">⚡ 腾安行动建议</div>
+          <div class="action-text">
+            ① 立即自查腾安基金平台投诉处理率，确保完成率高于行业平均水平；<br>
+            ② 重点排查"自动扣款"、"未经同意购买"等高频投诉风险点；<br>
+            ③ 借此时机做正面合规宣传，打出"用户权益保障"差异化品牌形象。
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ Section 4: 行业趋势 ============ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--primary-light);color:var(--primary);">📈</div>
+      <span class="section-title">行业趋势与市场数据</span>
+      <span class="section-badge" style="background:var(--primary-light);color:var(--primary);">趋势洞察</span>
+    </div>
+
+    <div class="two-col">
+      <div class="card p2">
+        <div class="card-top">
+          <div class="card-title">🔵 公募基金规模37.77万亿元，冲击40万亿</div>
+          <div class="card-meta">
+            <span class="priority-tag normal">建议了解</span>
+            <span class="date-tag">02-28</span>
+          </div>
+        </div>
+        <div class="card-body">
+          中基协数据显示，截至2026年1月底，公募基金资产总规模37.77万亿元，自2025年4月起连续10个月创新高。行业展望2026年有望冲击40万亿元大关。165家管理机构，13,490只基金产品。
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">中基协</span>
+          <span class="impact-tag low">蛋糕在变大</span>
+        </div>
+      </div>
+
+      <div class="card p2">
+        <div class="card-top">
+          <div class="card-title">🔵 境内ETF规模突破6万亿，同比增长61%</div>
+          <div class="card-meta">
+            <span class="priority-tag normal">建议了解</span>
+            <span class="date-tag">02-07</span>
+          </div>
+        </div>
+        <div class="card-body">
+          上交所ETF行业发展报告显示，2025年境内ETF市场规模突破6.02万亿元，同比增长61%，成为亚洲第一大ETF市场。挂牌数量1,381只。ETF/指数基金已成为各渠道争夺的核心品类。
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">上交所</span>
+          <span class="impact-tag medium">代销机会：中</span>
+        </div>
+      </div>
+
+      <div class="card p2">
+        <div class="card-top">
+          <div class="card-title">🔵 代销三足鼎立格局：银行主力、三方领跑、券商崛起</div>
+          <div class="card-meta">
+            <span class="priority-tag normal">建议了解</span>
+            <span class="date-tag">持续中</span>
+          </div>
+        </div>
+        <div class="card-body">
+          最新格局：银行渠道保有规模最大但增速放缓（"且战且退"）；蚂蚁基金非货排名第一遥遥领先；券商57家进入百强，借ETF快速崛起。互联网三方定位：指数基金+投顾服务+内容运营。
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">行业格局</span>
+          <span class="impact-tag medium">定位参考</span>
+        </div>
+      </div>
+
+      <div class="card p2">
+        <div class="card-top">
+          <div class="card-title">🔵 AI投顾成行业"军备竞赛"：理财经理面临冲击</div>
+          <div class="card-meta">
+            <span class="priority-tag normal">建议了解</span>
+            <span class="date-tag">03-12</span>
+          </div>
+        </div>
+        <div class="card-body">
+          "养虾潮"来袭——业内讨论AI是否正在"抢理财经理饭碗"。盈米且慢、蚂蚁财富均已全面推出AI投顾服务，从工具应用迈向AI原生服务。2026年AI赋能已成理财APP核心趋势。
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">行业趋势</span>
+          <span class="impact-tag high">战略方向：高</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ Section 5: 市场行情速览 ============ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--success-light);color:var(--success);">💹</div>
+      <span class="section-title">市场行情速览</span>
+      <span class="section-badge" style="background:var(--success-light);color:var(--success);">辅助决策</span>
+    </div>
+
+    <div class="card p3">
+      <div class="card-top">
+        <div class="card-title">本周市场要点（3.10 — 3.14）</div>
+        <div class="card-meta">
+          <span class="priority-tag fyi">知悉即可</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div>
+            <b>📊 A股：</b>本周市场震荡分化，科技板块连续调整后企稳。资金布局出现切换——电网设备获超67亿元净流入，油气板块遭抛售。两会行情从"预期博弈"转向"业绩兑现"阶段。
+          </div>
+          <div>
+            <b>📊 基金资金流向：</b>年内超500亿元资金净流入港股ETF；中证红利ETF连续获资金流入；AI芯片仍是机构加仓核心主线。基金经理看好生物医药、新能源、AI三大"十五五"主线。
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ Section 6: 关键时间线 ============ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:#eef2ff;color:var(--info);">📅</div>
+      <span class="section-title">近两周关键事件时间线</span>
+    </div>
+
+    <div class="card" style="border-left-color: var(--info);">
+      <div class="timeline-item">
+        <div class="timeline-dot red"></div>
+        <div>
+          <div class="timeline-date">2026-03-15（今日）</div>
+          <div class="timeline-title">315国际消费者权益日</div>
+          <div class="timeline-desc">40家基金公司上投诉榜，蚂蚁基金27起/天弘34起投诉引发关注。腾安需重视自身投诉处理。</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot red"></div>
+        <div>
+          <div class="timeline-date">2026-03-13</div>
+          <div class="timeline-title">公募基金信披新规正式发布（5月1日起实施）</div>
+          <div class="timeline-desc">证监会发布定期报告信披准则+中基协发布配套XBRL模板。强制披露基民盈利比、新增长期业绩展示。</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot red"></div>
+        <div>
+          <div class="timeline-date">2026-03-13</div>
+          <div class="timeline-title">证监会党委部署落实两会精神</div>
+          <div class="timeline-desc">将发布资本市场"十五五"规划，持续深化公募高质量发展行动，推动投顾试点转常规。</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot yellow"></div>
+        <div>
+          <div class="timeline-date">2026-03-12</div>
+          <div class="timeline-title">盈米且慢AI小顾升级至2.0"AI原生"模式</div>
+          <div class="timeline-desc">从单次问答工具升级为多轮智能规划的Agent架构，行业AI投顾标志性事件。</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot yellow"></div>
+        <div>
+          <div class="timeline-date">2026-03-11</div>
+          <div class="timeline-title">东方财富董事长两会提案</div>
+          <div class="timeline-desc">建议加快基金投顾试点转常规、提升证券行业数字化水平。</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot blue"></div>
+        <div>
+          <div class="timeline-date">2026-03-08</div>
+          <div class="timeline-title">基金费率改革加速投顾模式洗牌</div>
+          <div class="timeline-desc">费率改革倒逼行业从"卖方代销"向"买方投顾"全面转型，合作模式面临重构。</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot blue"></div>
+        <div>
+          <div class="timeline-date">2026-03-05</div>
+          <div class="timeline-title">2026年全国两会开幕</div>
+          <div class="timeline-desc">政府工作报告释放8大金融政策信号；"十五五"规划纲要草案提交审议。</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot green"></div>
+        <div>
+          <div class="timeline-date">2026-02-28</div>
+          <div class="timeline-title">公募基金规模数据发布：37.77万亿元</div>
+          <div class="timeline-desc">连续10个月创新高，2026年有望冲击40万亿。</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot green"></div>
+        <div>
+          <div class="timeline-date">2026-02-07</div>
+          <div class="timeline-title">易方达财富首月战报 / ETF规模破6万亿</div>
+          <div class="timeline-desc">易方达财富首月新增代销44.36亿元；境内ETF市场6.02万亿成亚洲第一。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ Section 7: 待办事项 ============ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:#fff7ed;color:#ea580c;">✅</div>
+      <span class="section-title">本周待办建议清单</span>
+    </div>
+
+    <div class="card" style="border-left-color: #ea580c;">
+      <table style="width:100%;border-collapse:collapse;font-size:13px;">
+        <thead>
+          <tr style="border-bottom:2px solid var(--gray-200);">
+            <th style="text-align:left;padding:10px 12px;color:var(--gray-500);font-size:12px;width:8%">优先级</th>
+            <th style="text-align:left;padding:10px 12px;color:var(--gray-500);font-size:12px;width:52%">待办事项</th>
+            <th style="text-align:left;padding:10px 12px;color:var(--gray-500);font-size:12px;width:20%">关联事件</th>
+            <th style="text-align:left;padding:10px 12px;color:var(--gray-500);font-size:12px;width:20%">建议完成时间</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--gray-100);">
+            <td style="padding:10px 12px;"><span class="priority-tag urgent">P0</span></td>
+            <td style="padding:10px 12px;font-weight:600;">组织团队学习公募基金信披新规，评估系统改造工作量</td>
+            <td style="padding:10px 12px;color:var(--gray-500);">信披新规（5月1日实施）</td>
+            <td style="padding:10px 12px;color:var(--danger);font-weight:600;">本周内</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-100);">
+            <td style="padding:10px 12px;"><span class="priority-tag urgent">P0</span></td>
+            <td style="padding:10px 12px;font-weight:600;">自查315期间腾安平台投诉处理情况，确保投诉完成率达标</td>
+            <td style="padding:10px 12px;color:var(--gray-500);">315消费者权益日</td>
+            <td style="padding:10px 12px;color:var(--danger);font-weight:600;">今日</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-100);">
+            <td style="padding:10px 12px;"><span class="priority-tag important">P1</span></td>
+            <td style="padding:10px 12px;font-weight:600;">调研盈米且慢AI小顾2.0的产品体验，输出竞品分析报告</td>
+            <td style="padding:10px 12px;color:var(--gray-500);">AI投顾升级</td>
+            <td style="padding:10px 12px;color:var(--warning);font-weight:600;">本周内</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-100);">
+            <td style="padding:10px 12px;"><span class="priority-tag important">P1</span></td>
+            <td style="padding:10px 12px;font-weight:600;">评估易方达财富"全市场产品货架"模式对腾安的竞争冲击</td>
+            <td style="padding:10px 12px;color:var(--gray-500);">新竞争者入场</td>
+            <td style="padding:10px 12px;color:var(--warning);font-weight:600;">下周</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-100);">
+            <td style="padding:10px 12px;"><span class="priority-tag normal">P2</span></td>
+            <td style="padding:10px 12px;font-weight:600;">跟踪"十五五"资本市场规划全文发布，提炼与代销业务相关的政策信号</td>
+            <td style="padding:10px 12px;color:var(--gray-500);">两会+十五五规划</td>
+            <td style="padding:10px 12px;color:var(--primary);font-weight:600;">持续关注</td>
+          </tr>
+          <tr>
+            <td style="padding:10px 12px;"><span class="priority-tag normal">P2</span></td>
+            <td style="padding:10px 12px;font-weight:600;">关注投顾试点转常规进展，评估腾安申请投顾牌照的可行性</td>
+            <td style="padding:10px 12px;color:var(--gray-500);">投顾业务扩展</td>
+            <td style="padding:10px 12px;color:var(--primary);font-weight:600;">Q2规划</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  腾安基金 · 行业情报看板 · 数据采集时间 2026年3月15日 · 信息来源：证监会、中基协、财联社、中国基金报、东方财富等公开渠道<br>
+  本看板仅供内部参考，不构成任何投资建议
+</div>
+
+</body>
+</html>
