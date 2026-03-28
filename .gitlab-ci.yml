@@ -1,0 +1,13 @@
+# 工蜂 Pages 部署配置
+# 将静态文件部署到 Pages
+
+pages:
+  stage: deploy
+  script:
+    - mkdir -p public
+    - cp index.html public/
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
