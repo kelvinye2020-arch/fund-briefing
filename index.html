@@ -268,11 +268,21 @@
     cursor: pointer;
     transition: all 0.2s;
   }
+  a .source-tag::after,
+  a.source-link .source-tag::after {
+    content: ' ↗';
+    font-size: 10px;
+    opacity: 0.7;
+  }
   a:hover .source-tag,
   a.source-link:hover .source-tag {
     background: #1890ff;
     color: white;
     border-color: #1890ff;
+  }
+  a:hover .source-tag::after,
+  a.source-link:hover .source-tag::after {
+    opacity: 1;
   }
   .impact-tag {
     font-size: 11px;
@@ -986,9 +996,8 @@
         </div>
         <div class="card-footer">
           <span class="source-tag">中基协</span>
-          <span class="source-tag">央视网</span>
+          <a href="https://jingji.cctv.cn/2026/03/25/ARTI4lZR0csVv24z5nLNsK95260325.shtml" target="_blank" style="text-decoration:none;"><span class="source-tag">央视网</span></a>
           <span class="impact-tag high">行业规模：高</span>
-          <a class="card-link" href="https://jingji.cctv.cn/2026/03/25/ARTI4lZR0csVv24z5nLNsK95260325.shtml" target="_blank">详情 →</a>
         </div>
         <div class="action-box">
           <div class="action-label">⚡ 腾安行动建议</div>
@@ -1015,9 +1024,8 @@
         </div>
         <div class="card-footer">
           <span class="source-tag">每日经济新闻</span>
-          <span class="source-tag">中国基金报</span>
+          <a href="https://www.nbd.com.cn/articles/2026-04-01/4320375.html" target="_blank" style="text-decoration:none;"><span class="source-tag">中国基金报</span></a>
           <span class="impact-tag high">产品动态：高</span>
-          <a class="card-link" href="https://www.nbd.com.cn/articles/2026-04-01/4320375.html" target="_blank">详情 →</a>
         </div>
       </div>
 
@@ -1074,9 +1082,8 @@
         </div>
         <div class="card-footer">
           <span class="source-tag">金融界</span>
-          <span class="source-tag">华尔街见闻</span>
+          <a href="https://www.sohu.com/a/998767807_114984" target="_blank" style="text-decoration:none;"><span class="source-tag">华尔街见闻</span></a>
           <span class="impact-tag medium">代销机会：中</span>
-          <a class="card-link" href="https://www.sohu.com/a/998767807_114984" target="_blank">详情 →</a>
         </div>
       </div>
 
@@ -1123,9 +1130,8 @@
         </div>
         <div class="card-footer">
           <span class="source-tag">每日经济新闻</span>
-          <span class="source-tag">中国基金报</span>
+          <a href="https://www.nbd.com.cn/articles/2026-04-01/4320375.html" target="_blank" style="text-decoration:none;"><span class="source-tag">中国基金报</span></a>
           <span class="impact-tag high">人才竞争：高</span>
-          <a class="card-link" href="https://www.nbd.com.cn/articles/2026-04-01/4320375.html" target="_blank">详情 →</a>
         </div>
         <div class="action-box">
           <div class="action-label">⚡ 腾安行动建议</div>
@@ -1155,9 +1161,8 @@
         </div>
         <div class="card-footer">
           <span class="source-tag">安联投资</span>
-          <span class="source-tag">澎湃新闻</span>
+          <a href="https://www.allianzgi.com.cn/contents/2026/4/2-738588777bf84bac9319455474633e62.html" target="_blank" style="text-decoration:none;"><span class="source-tag">澎湃新闻</span></a>
           <span class="impact-tag high">投资方向：高</span>
-          <a class="card-link" href="https://www.allianzgi.com.cn/contents/2026/4/2-738588777bf84bac9319455474633e62.html" target="_blank">详情 →</a>
         </div>
       </div>
 
@@ -1176,9 +1181,8 @@
         </div>
         <div class="card-footer">
           <span class="source-tag">新浪财经</span>
-          <span class="source-tag">华尔街见闻</span>
+          <a href="https://finance.sina.com.cn/wm/2026-03-19/doc-inhrnktx6992363.shtml" target="_blank" style="text-decoration:none;"><span class="source-tag">华尔街见闻</span></a>
           <span class="impact-tag medium">主题基金：中</span>
-          <a class="card-link" href="https://finance.sina.com.cn/wm/2026-03-19/doc-inhrnktx6992363.shtml" target="_blank">详情 →</a>
         </div>
       </div>
 
