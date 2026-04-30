@@ -1,0 +1,89 @@
+2: <!-- daily-update: 2026-04-18 -->
+7: <meta name="content-fingerprint" content="创业板|+1.43%|续创新高||中基协|绩效考核指引||ETF|5万亿|大回血||基金代销|蚂蚁狂飙|险资崛起||信披新规|倒计时13天">
+512:     <div class="date-badge">📅 数据区间：2026.04.05 — 2026.04.18（今日自动更新）</div>
+556:       <span class="section-title">今日焦点（4月18日·A股分化创业板+1.43%续创新高·中基协发布基金管理公司绩效考核指引·ETF市场"大回血"重返5万亿元关口·基金代销江湖变局蚂蚁狂飙）</span>
+563:           <div class="card-title">🔴 4月17日A股分化：创业板指+1.43%续创新高，沪指小幅调整，深成指+0.60%</div>
+566:             <span class="date-tag">04-18</span>
+575:           <a href="https://stock.jrj.com.cn/2026/04/17150556791050.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">金融界</span></a>
+591:           <div class="card-title">🔴 中基协发布《基金管理公司绩效考核管理指引》！规范基金公司治理，加强长期业绩考核</div>
+594:             <span class="date-tag">04-18</span>
+618:           <div class="card-title">🔴 基金代销江湖变局：蚂蚁狂飙居首，险资首次进入前十</div>
+621:             <span class="date-tag">04-18</span>
+630:           <a href="https://finance.sina.com.cn/wm/2026-04-09/doc-inhtxcuy0897325.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">新浪财经</span></a>
+645:           <div class="card-title">🟡 一季报密集披露进入高峰期！绩优基金持续加仓AI+光通信，机构调研加速</div>
+648:             <span class="date-tag">04-18</span>
+670:       <span class="section-title">重磅信息</span>
+677:           <div class="card-title">🔴 首批公募一季报出炉！绩优基金加仓AI算力+光通信，主动权益基金仓位提升至88.6%</div>
+680:             <span class="date-tag">04-16~18</span>
+705:           <div class="card-title">🔴 中基协公布3月公募基金市场数据：总规模39.18万亿逼近40万亿关口，股票型基金单月增超2000亿</div>
+708:             <span class="date-tag">04-16~18</span>
+718:           <a href="https://finance.sina.com.cn/jjxw/2026-04-16/doc-inhtfyhx1914372.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">新浪财经</span></a>
+733:           <div class="card-title">🔴 万家基金官宣核心管理层调整+多家银行上调代销基金风险等级</div>
+736:             <span class="date-tag">04-17~18</span>
+745:           <a href="https://www.mrjjxw.com/articles/2026-04-17/4344085.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">每日经济新闻</span></a>
+761:           <div class="card-title">🔴 中基协发布重大改革！全面建立以基金投资收益为核心的考核体系</div>
+764:             <span class="date-tag">04-17</span>
+792:       <span class="section-title">监管政策动态</span>
+799:           <div class="card-title">🔴 证监会严打违规减持！4月17日发布《违规转让证券案件行政处罚实施规则》征求意见稿</div>
+802:             <span class="date-tag">04-17发布</span>
+811:           <a href="https://finance.sina.com.cn/wm/2026-04-17/doc-inhuvera3213161.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">新浪财经</span></a>
+812:           <a href="https://finance.sina.com.cn/jjxw/2026-04-17/doc-inhuvere0963525.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">新浪证券</span></a>
+827:           <div class="card-title">🔴 中基协发布基金管理公司绩效考核管理新规！强化与基金份额持有人利益绑定</div>
+830:             <span class="date-tag">04-16发布</span>
+855:           <div class="card-title">🔴 证监会4月10日发布深化创业板改革意见，增设第四套上市标准</div>
+858:             <span class="date-tag">04-10发布</span>
+868:           <a href="https://news.cctv.com/2026/04/10/ARTIEhDlEwdwLYYbYYZq4R8H260410.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">央视网</span></a>
+881:       <span class="section-title">竞争对手动态</span>
+899:             <td>04-09</td>
+904:                 <a class="comp-link" href="https://finance.sina.com.cn/wm/2026-04-09/doc-inhtxcuy0897325.shtml" target="_blank"><span class="link-icon">📰</span>代销变局分析</a>
+912:             <td>04-17</td>
+925:             <td>04-09</td>
+930:                 <a class="comp-link" href="https://finance.sina.com.cn/wm/2026-04-09/doc-inhtxcuy0897325.shtml" target="_blank"><span class="link-icon">📈</span>回暖趋势分析</a>
+938:             <td>04-16</td>
+948:             <td>04-18</td>
+961:             <td>04-16</td>
+966:                 <a class="comp-link" href="http://www.investorscn.com/2026/04/16/129124/" target="_blank"><span class="link-icon">📱</span>平台评测</a>
+974:             <td>04-16</td>
+991:       <span class="section-title">行业趋势与市场数据</span>
+998:           <div class="card-title">🔴 金融界财经早餐：一季度GDP数据今日揭晓+2026观点数字科技未来大会正式启幕</div>
+1001:             <span class="date-tag">04-16~18</span>
+1026:           <div class="card-title">🔴 创业板指创近11年新高！4月16日+3.17%报3626.27，宁德时代市值跃居A股第二</div>
+1029:             <span class="date-tag">04-16</span>
+1039:           <a href="https://www.nbd.com.cn/articles/2026-04-16/4341894.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">每日经济新闻</span></a>
+1054:           <div class="card-title">🔴 诺安基金发布2026科技投资报告！三大主线：半导体自主可控+AI算力+AI应用落地</div>
+1057:             <span class="date-tag">04-08</span>
+1069:           <a href="https://finance.people.com.cn/n1/2026/0410/c1004-40699117.html" target="_blank" style="text-decoration:none;"><span class="source-tag">人民网</span></a>
+1076:           <div class="card-title">🔴 公募基金发行持续升温，4月87只新基金扎堆发行+中央汇金持有ETF市值突破1.5万亿元</div>
+1079:             <span class="date-tag">04-17~18</span>
+1088:           <a href="https://finance.sina.com.cn/roll/2026-04-08/doc-inhtvmmu1314824.shtml" target="_blank" style="text-decoration:none;"><span class="source-tag">新浪财经</span></a>
+1104:           <div class="card-title">🟡 公募南下提速！年内47只港股基金成立翻倍+REITs纳入"固收+"投资范围带来18亿增量</div>
+1107:             <span class="date-tag">04-17</span>
+1132:           <div class="card-title">🟡 4月87只新基金扎堆发行+Q1首募破3200亿！一季报密集披露期开启</div>
+1135:             <span class="date-tag">04-07~10</span>
+1144:           <a href="https://www.nbd.com.cn/articles/2026-04-08/4329502.html" target="_blank" style="text-decoration:none;"><span class="source-tag">每日经济新闻</span></a>
+1145:           <a href="http://www.zqrb.cn/fund/jijindongtai/2026-04-10/A1775822132462.html" target="_blank" style="text-decoration:none;"><span class="source-tag">证券日报</span></a>
+1156:       <span class="section-title">金融科技与AI投顾</span>
+1163:           <div class="card-title">🔴 第八届金融科技创新大会成功举办，AI投顾进入"总指挥+专家Agent"协同架构时代</div>
+1166:             <span class="date-tag">04-09~16</span>
+1191:           <div class="card-title">🔴 斯坦福AI指数报告发布，阿里AI贡献全球第三，AI技术加速赋能金融行业</div>
+1194:             <span class="date-tag">04-16~18</span>
+1203:           <a href="https://client.sina.com.cn/news/2026-04-16/doc-inhuszrw2783363.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">新浪科技</span></a>
+1219:           <div class="card-title">🔴 人工智能赋能金融行业趋势：AI从"试水"走向"深耕"，大语言模型重塑基金投研服务</div>
+1222:             <span class="date-tag">04-16~18</span>
+1247:           <div class="card-title">🟡 华创证券发布2026公募基金洞察：人与工具的重定位，AI投顾进入"总指挥"时代</div>
+1250:             <span class="date-tag">04-16</span>
+1273:       <span class="section-title">市场行情速览</span>
+1279:         <div class="card-title">4月18日·A股分化创业板+1.43%续创新高·中基协发布基金管理公司绩效考核指引·ETF市场"大回血"重返5万亿元关口·基金代销格局洗牌</div>
+1313:       <span class="section-title">近两周关键事件时间线</span>
+1320:           <div class="timeline-date">2026-04-18（今日·周六·A股分化创业板+1.43%续创新高·中基协发布基金管理公司绩效考核指引·ETF市场"大回血"重返5万亿元关口·基金代销格局洗牌）</div>
+1328:           <div class="timeline-date">2026-04-17（周五·一季度GDP 5.0%·创业板近11年新高·宁德市值跃A股第二·公募南下47只港股基金）</div>
+1336:           <div class="timeline-date">2026-04-16（周四·一季报密集披露·医药政策东风·宁德时代Q1创新高·私募扫货ETF）</div>
+1344:           <div class="timeline-date">2026-04-15（周三·沪强深弱分化·创业板盘中创十年新高·医药领涨）</div>
+1352:           <div class="timeline-date">2026-04-14（周二·沪指重返4000点·创业板+2.36%·科技半导体爆发）</div>
+1360:           <div class="timeline-date">2026-04-13（周一·美伊谈判破裂·霍尔木兹封锁·创业板续创新高）</div>
+1368:           <div class="timeline-date">2026-04-11（周六·创业板四年半新高·ETF增千亿·北向Q1持仓曝光）</div>
+1376:           <div class="timeline-date">2026-04-10（同花顺基金被罚·深化创业板改革·立法计划20件）</div>
+1384:           <div class="timeline-date">2026-04-09（百点长阳后回调·新华基金被约谈）</div>
+1392:           <div class="timeline-date">2026-04-08（百点长阳·港股复市·中东停火）</div>
+1400:           <div class="timeline-date">2026-04-07（节后首日·量化新规落地）</div>
+1413:       <span class="section-title">本周待办建议清单</span>
