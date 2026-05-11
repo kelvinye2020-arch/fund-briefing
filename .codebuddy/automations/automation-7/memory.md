@@ -42,3 +42,11 @@
 - **Section 6更新**: 市场行情速览更新为4月23日，反映公募一季报披露完毕
 - **Git**: commit 0b02876, push成功
 - **线上地址**: https://kelvinye2020-arch.github.io/fund-briefing/
+
+## 2026-05-11 10:35 (第五次执行)
+- **巡检范围**: Section 1-5，两周窗口 4月28日–5月11日
+- **过期条目**: 0条（所有条目均在两周范围内，无需替换）
+- **检查结果**: 确认所有Section 1-5的条目日期标签均在两周内（4月28日之后）
+- **Header**: 数据区间已正确更新为 2026.04.28–2026.05.11（周度巡检更新）
+- **Git**: commit dabedb2, push成功
+- **线上地址**: https://kelvinye2020-arch.github.io/fund-briefing/
