@@ -114,30 +114,46 @@
   .stat-card {
     background: white;
     border-radius: var(--radius);
-    padding: 20px;
+    padding: 24px 28px;
     box-shadow: var(--shadow-md);
-    text-align: center;
     transition: transform 0.2s;
+    position: relative;
+    overflow: hidden;
   }
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    border-radius: 4px 0 0 4px;
+  }
+  .stat-card:nth-child(1)::before { background: var(--primary); }
+  .stat-card:nth-child(2)::before { background: var(--danger); }
+  .stat-card:nth-child(3)::before { background: var(--success); }
+  .stat-card:nth-child(4)::before { background: var(--warning); }
   .stat-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
   .stat-number {
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--primary);
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--gray-900);
     line-height: 1.2;
+    margin-bottom: 4px;
   }
   .stat-card:nth-child(2) .stat-number { color: var(--danger); }
   .stat-card:nth-child(3) .stat-number { color: var(--success); }
   .stat-card:nth-child(4) .stat-number { color: var(--warning); }
   .stat-label {
-    font-size: 12px;
-    color: var(--gray-500);
-    margin-top: 4px;
+    font-size: 13px;
+    color: var(--gray-600);
+    margin-bottom: 6px;
+    line-height: 1.4;
   }
   .stat-change {
-    font-size: 11px;
-    margin-top: 2px;
+    font-size: 12px;
     font-weight: 500;
+    color: var(--gray-500);
   }
   .stat-change.up { color: var(--danger); }
   .stat-change.down { color: var(--success); }
@@ -515,40 +531,26 @@
 </div>
 
 <!-- Stats Bar -->
-  <div class="stats-bar">
-    <div class="stat-item primary">
-      <div class="stat-value">38.93万亿</div>
-      <div class="stat-label">公募总规模（2026Q1·最新）</div>
-    </div>
-    <div class="stat-item success">
-      <div class="stat-value">4027.26</div>
-      <div class="stat-label">沪指最近收盘（06-26·-2.26%）</div>
-    </div>
-    <div class="stat-item warning">
-      <div class="stat-value">175%</div>
-      <div class="stat-label">基金中考最高收益（倒计时2天）</div>
-    </div>
-    <div class="stat-item danger">
-      <div class="stat-value">2天</div>
-      <div class="stat-label">公募基金中考收官倒计时</div>
-    </div>
-  </div>
-    <div class="stat-change up">▲ 权益+固收++FOF三主线·机构看多后市</div>
+<div class="stats-bar">
+  <div class="stat-card">
+    <div class="stat-number">38.93万亿</div>
+    <div class="stat-label">公募总规模（2026Q1·最新）</div>
+    <div class="stat-change up">▲ 权益+固收+FOF三主线 · 机构看多后市</div>
   </div>
   <div class="stat-card">
-    <div class="stat-number">第二批基准调整全面铺开</div>
-    <div class="stat-label">超90家管理人·千余只产品·从试点探路走向系统推进</div>
-    <div class="stat-change neutral">■ 基准校准·产品回归本源·投资回归专业</div>
+    <div class="stat-number">4027.26</div>
+    <div class="stat-label">上证综指 · 最近收盘（06-26 · -2.26%）</div>
+    <div class="stat-change down">▼ 日跌幅 2.26%</div>
   </div>
   <div class="stat-card">
-    <div class="stat-number">89家公募自购44亿</div>
-    <div class="stat-label">年内合计·被动指数+债券型受青睐·权益占比待提升</div>
-    <div class="stat-change neutral">■ 自购热情不减·真金白银表达信心</div>
+    <div class="stat-number">175%</div>
+    <div class="stat-label">基金中考最高收益（倒计时2天）</div>
+    <div class="stat-change up">▲ 冲刺阶段 · 翻倍基集中限购</div>
   </div>
   <div class="stat-card">
-    <div class="stat-number">证监会罚款近6000万</div>
-    <div class="stat-label">玖瀛资产·腾创投资·利益输送+虚假信息·私募严监管</div>
-    <div class="stat-change up">▲ 私募基金监管零容忍·罚单创史上最重</div>
+    <div class="stat-number">2天</div>
+    <div class="stat-label">公募基金中考收官倒计时</div>
+    <div class="stat-change neutral">■ 6月30日截止 · 权益+固收+FOF齐冲刺</div>
   </div>
 </div>
 <div class="main">
