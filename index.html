@@ -357,16 +357,17 @@
   /* Timeline */
   .timeline-item {
     display: flex;
-    gap: 14px;
-    padding: 14px 0;
+    align-items: baseline;
+    gap: 12px;
+    padding: 7px 0;
     border-bottom: 1px solid var(--gray-100);
   }
   .timeline-item:last-child { border-bottom: none; }
   .timeline-dot {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    margin-top: 6px;
+    align-self: center;
     flex-shrink: 0;
   }
   .timeline-dot.red { background: var(--danger); }
@@ -374,15 +375,18 @@
   .timeline-dot.blue { background: var(--primary); }
   .timeline-dot.green { background: var(--success); }
   .timeline-date {
-    font-size: 11px;
+    font-size: 12px;
     color: var(--gray-400);
-    margin-bottom: 2px;
+    flex-shrink: 0;
+    width: 84px;
+    font-variant-numeric: tabular-nums;
   }
   .timeline-title {
     font-size: 13px;
     font-weight: 600;
     color: var(--gray-800);
-    margin-bottom: 2px;
+    flex: 1;
+    line-height: 1.45;
   }
   .timeline-desc {
     font-size: 12px;
@@ -1255,109 +1259,85 @@
     <!-- 07-15 时间线条目 (NEW) -->
       <div class="timeline-item">
         <div class="timeline-dot red"></div>
-        <div>
-          <div class="timeline-date">2026-07-15</div>
-          <div class="timeline-title">上半年公募基金清盘271只创近7年新高</div>
-        </div>
+        <div class="timeline-date">2026-07-15</div>
+        <div class="timeline-title">上半年公募基金清盘271只创近7年新高</div>
       </div>
 
       <!-- 07-13 时间线条目 (NEW) -->
       <div class="timeline-item">
         <div class="timeline-dot red"></div>
-        <div>
-          <div class="timeline-date">2026-07-13</div>
-          <div class="timeline-title">首批公募二季报亮相（同泰4只聚焦AI算力）·年内244只基金提前结募</div>
-        </div>
+        <div class="timeline-date">2026-07-13</div>
+        <div class="timeline-title">首批公募二季报亮相（同泰4只聚焦AI算力）·年内244只基金提前结募</div>
       </div>
 
       <!-- 07-11 时间线条目 (NEW) -->
       <div class="timeline-item">
         <div class="timeline-dot red"></div>
-        <div>
-          <div class="timeline-date">2026-07-11</div>
-          <div class="timeline-title">公募二季报披露拉开帷幕·10只主动权益8只Q2净值增长超70%</div>
-        </div>
+        <div class="timeline-date">2026-07-11</div>
+        <div class="timeline-title">公募二季报披露拉开帷幕·10只主动权益8只Q2净值增长超70%</div>
       </div>
 
       <!-- 07-10 时间线条目 (NEW) -->
       <div class="timeline-item">
         <div class="timeline-dot red"></div>
-        <div>
-          <div class="timeline-date">2026-07-10</div>
-          <div class="timeline-title">科创50ETF 7月吸金96亿逆转净流出·半导体设备ETF破500亿</div>
-        </div>
+        <div class="timeline-date">2026-07-10</div>
+        <div class="timeline-title">科创50ETF 7月吸金96亿逆转净流出·半导体设备ETF破500亿</div>
       </div>
 
       <!-- 07-09 时间线条目 (NEW) -->
       <div class="timeline-item">
         <div class="timeline-dot red"></div>
-        <div>
-          <div class="timeline-date">2026-07-09</div>
-          <div class="timeline-title">第二批14只科创债ETF纳入回购质押库·全市场24只全部入库</div>
-        </div>
+        <div class="timeline-date">2026-07-09</div>
+        <div class="timeline-title">第二批14只科创债ETF纳入回购质押库·全市场24只全部入库</div>
       </div>
 
       <!-- 07-08 时间线条目 (NEW) -->
       <div class="timeline-item">
         <div class="timeline-dot red"></div>
-        <div>
-          <div class="timeline-date">2026-07-08</div>
-          <div class="timeline-title">自由现金流产品年内规模+42.79%至571.77亿(107只)</div>
-        </div>
+        <div class="timeline-date">2026-07-08</div>
+        <div class="timeline-title">自由现金流产品年内规模+42.79%至571.77亿(107只)</div>
       </div>
 
       <!-- 07-07 时间线条目 (NEW) -->
       <div class="timeline-item">
         <div class="timeline-dot red"></div>
-        <div>
-          <div class="timeline-date">2026-07-07</div>
-          <div class="timeline-title">A股三大指数集体低开·半导体芯片领跌</div>
-        </div>
+        <div class="timeline-date">2026-07-07</div>
+        <div class="timeline-title">A股三大指数集体低开·半导体芯片领跌</div>
       </div>
 
       <!-- 07-06 时间线条目 (NEW) -->
       <div class="timeline-item">
         <div class="timeline-dot red"></div>
-        <div>
-          <div class="timeline-date">2026-07-06</div>
-          <div class="timeline-title">A股交易新规7月6日正式实施</div>
-        </div>
+        <div class="timeline-date">2026-07-06</div>
+        <div class="timeline-title">A股交易新规7月6日正式实施</div>
       </div>
 
       <!-- 07-05 时间线条目 (NEW) -->
       <div class="timeline-item">
         <div class="timeline-dot red"></div>
-        <div>
-          <div class="timeline-date">2026-07-05</div>
-          <div class="timeline-title">美股股票基金周流出172亿美元·大空头做空美光预警半导体30%回调</div>
-        </div>
+        <div class="timeline-date">2026-07-05</div>
+        <div class="timeline-title">美股股票基金周流出172亿美元·大空头做空美光预警半导体30%回调</div>
       </div>
 
       <!-- 07-03 时间线条目 (NEW) -->
       <div class="timeline-item">
         <div class="timeline-dot red"></div>
-        <div>
-          <div class="timeline-date">2026-07-03</div>
-          <div class="timeline-title">上半年新基金发行883只</div>
-        </div>
+        <div class="timeline-date">2026-07-03</div>
+        <div class="timeline-title">上半年新基金发行883只</div>
       </div>
 
       <!-- 07-02 时间线条目 (NEW) -->
       <div class="timeline-item">
         <div class="timeline-dot red"></div>
-        <div>
-          <div class="timeline-date">2026-07-02</div>
-          <div class="timeline-title">A股三大股指大幅低开</div>
-        </div>
+        <div class="timeline-date">2026-07-02</div>
+        <div class="timeline-title">A股三大股指大幅低开</div>
       </div>
 
       <!-- 07-01 时间线条目 (NEW) -->
       <div class="timeline-item">
         <div class="timeline-dot red"></div>
-        <div>
-          <div class="timeline-date">2026-07-01</div>
-          <div class="timeline-title">上半年公募业绩收官</div>
-        </div>
+        <div class="timeline-date">2026-07-01</div>
+        <div class="timeline-title">上半年公募业绩收官</div>
       </div>
 
 
@@ -1443,189 +1423,8 @@
         </div>
       </div>
 
-      <!-- S8 Card NEW: AI赛道ETF吸金·科技主题基金过热 (07-10) -->
-      <div class="card p1">
-        <div class="card-top">
-          <div class="card-title">🟠 AI赛道ETF大举吸金·科创50ETF逆转净流出·腾安顺势强化科技货架并提示拥挤风险</div>
-          <div class="card-meta">
-            <span class="priority-tag important">重要关注</span>
-            <span class="date-tag">07-10</span>
-          </div>
-        </div>
-        <div class="card-body">
-          <b>核心事件：</b>7月9日科创50ETF净流入22.14亿成净流入最多宽基、本月累计吸金96.38亿逆转二季度净流出，半导体设备ETF国泰破500亿创新高；科技主题主动权益基金达178只、规模超5668亿。
-        </div>
-        <div class="action-box">
-          <div class="action-label">⚡ 行动清单</div>
-          <div class="action-text">
-            ① 强化科技主题ETF货架→产品部<br>
-            ② 提示拥挤交易风险→投顾部<br>
-            ③ 引导哑铃均衡配置→营销部
-          </div>
-        </div>
-      </div>
-
-      <!-- S8 Card NEW: 科创债ETF全面入库 (07-09) -->
-      <div class="card p1">
-        <div class="card-top">
-          <div class="card-title">🟠 科创债ETF全面"入库"·24只纳入质押库·腾安加大债券ETF货架与质押工具推荐</div>
-          <div class="card-meta">
-            <span class="priority-tag important">重要关注</span>
-            <span class="date-tag">07-09</span>
-          </div>
-        </div>
-        <div class="card-body">
-          <b>核心事件：</b>7月9日起，经中国结算与沪深交易所批复，第二批14只科创债ETF纳入通用质押式回购，全市场24只科创债ETF全部"入库"。债券ETF总规模达8760.5亿元、科创债ETF达3121亿元，成为债券ETF家族增长最迅猛细分品种。
-        </div>
-        <div class="action-box">
-          <div class="action-label">⚡ 行动清单</div>
-          <div class="action-text">
-            ① 加大债券ETF货架→产品部<br>
-            ② 研究质押工具增值方案→投顾部<br>
-            ③ 跟踪中长期资金配置→投资顾问
-          </div>
-        </div>
-      </div>
-
-      <!-- S8 Card NEW: 上半年公募业绩出炉 (07-01) -->
-      <div class="card p0">
-        <div class="card-top">
-          <div class="card-title">🔴 上半年公募业绩出炉·243只翻倍基·最高183.67%刷新纪录</div>
-          <div class="card-meta">
-            <span class="priority-tag urgent">紧急必看</span>
-            <span class="date-tag">07-01</span>
-          </div>
-        </div>
-        <div class="card-body">
-          <b>核心事件：</b>2026年上半年公募业绩收官，243只基金净值翻倍，方正富邦核心优势A以183.67%收益领跑，刷新公募基金半年度业绩最高纪录。
-        </div>
-        <div class="card-footer">
-          <span class="impact-tag high">半年业绩：极高</span>
-        </div>
-        <div class="action-box">
-          <div class="action-label">⚡ 行动清单</div>
-          <div class="action-text">
-            ① 梳理绩优基金经理名单→营销部<br>
-            ② 准备替代产品清单→产品部<br>
-            ③ 加强投资者教育→投顾部
-          </div>
-        </div>
-      </div>
-
-      <!-- S8 Card NEW: 机构调仓再平衡·风格切换窗口 (07-07) -->
-      <div class="card p1">
-        <div class="card-top">
-          <div class="card-title">🟠 机构抱团松动·公募开启调仓"再平衡"·腾安需引导客户均衡配置</div>
-          <div class="card-meta">
-            <span class="priority-tag important">重要关注</span>
-            <span class="date-tag">07-07</span>
-          </div>
-        </div>
-        <div class="card-body">
-          <b>核心事件：</b>7月前三个交易日科创50累计重挫10.5%、微盘股涨近6%，公募减仓高位AI、转向传统白马/消费医药/港股洼地/红利，市场进入"再平衡"阶段，风格切换待半年报验证。
-        </div>
-        <div class="action-box">
-          <div class="action-label">⚡ 行动清单</div>
-          <div class="action-text">
-            ① 准备高低切换话术→投顾部<br>
-            ② 推荐洼地资产→产品部<br>
-            ③ 强化哑铃配置理念→营销部
-          </div>
-        </div>
-      </div>
-
-      <!-- S8 Card NEW: 基金新开户183万户创新高 (07-06) -->
-      <div class="card p1">
-        <div class="card-top">
-          <div class="card-title">🟠 上半年基金新开户183万户·6年同期新高·借新客红利强化获客与陪伴</div>
-          <div class="card-meta">
-            <span class="priority-tag important">重要关注</span>
-            <span class="date-tag">07-06</span>
-          </div>
-        </div>
-        <div class="card-body">
-          <b>核心事件：</b>2026年上半年全市场基金新开户183.15万户创6年同期新高（同比+21.73%）；6月新成立208只、发行1205亿双创年内月度新高，多只基金比例配售。
-        </div>
-        <div class="action-box">
-          <div class="action-label">⚡ 行动清单</div>
-          <div class="action-text">
-            ① 优化开户引导与首购转化→运营部<br>
-            ② 强化投前陪伴与投教→投顾部<br>
-            ③ 丰富权益/主题ETF货架→产品部
-          </div>
-        </div>
-      </div>
-
-      <!-- S8 Card NEW: 美股半导体回调风险 (07-04) -->
-      <div class="card p1">
-        <div class="card-top">
-          <div class="card-title">🟠 美股资金大转向·大空头做空美光·半导体回调预警·关注QDII/半导体基金波动</div>
-          <div class="card-meta">
-            <span class="priority-tag important">重要关注</span>
-            <span class="date-tag">07-04</span>
-          </div>
-        </div>
-        <div class="card-body">
-          <b>核心事件：</b>截至7月1日当周美国股票基金净流出172亿美元创3月来最大；"大空头"Michael Burry做空美光，警告美股半导体板块或面临约30%回调，AI基础设施估值偏高。
-        </div>
-        <div class="action-box">
-          <div class="action-label">⚡ 行动清单</div>
-          <div class="action-text">
-            ① 监控QDII/半导体基金波动→投资顾问<br>
-            ② 准备客户沟通话术→营销部<br>
-            ③ 提示拥挤交易风险→投顾部
-          </div>
-        </div>
-      </div>
-
-      <!-- S8 Card NEW: 上半年发行创新高+主题ETF吸金 (07-03) -->
-      <div class="card p1">
-        <div class="card-top">
-          <div class="card-title">🟠 上半年发行883只/6598亿创新高·行业主题ETF吸金·加大新发+主题ETF推荐</div>
-          <div class="card-meta">
-            <span class="priority-tag important">重要关注</span>
-            <span class="date-tag">07-03</span>
-          </div>
-        </div>
-        <div class="card-body">
-          <b>核心事件：</b>2026年上半年新成立基金883只、募资6598.30亿元创近五年同期新高；行业主题ETF半导体吸金近750亿、创新药ETF持续净流入。
-        </div>
-        <div class="action-box">
-          <div class="action-label">⚡ 行动清单</div>
-          <div class="action-text">
-            ① 加大新发+主题ETF推荐→产品部<br>
-            ② 完善科技/医药产品货架→投顾部<br>
-            ③ 借分红潮做"获得感"营销→营销部
-          </div>
-        </div>
-      </div>
-
-
-
-
-
-
-
-      </div>
-
-
-
-
-
-
-
-
-
-
-
     </div>
   </div>
 
 </body>
 </html>
-
-
-
-
-      
-
