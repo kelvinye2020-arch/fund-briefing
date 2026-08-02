@@ -182,10 +182,23 @@
     font-size: 18px;
     flex-shrink: 0;
   }
+  .section-title-group {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    min-width: 0;
+    flex: 1;
+  }
   .section-title {
     font-size: 18px;
     font-weight: 700;
     color: var(--gray-900);
+    white-space: nowrap;
+  }
+  .section-context {
+    font-size: 12px;
+    color: var(--gray-500);
+    white-space: nowrap;
   }
   .section-badge {
     font-size: 11px;
@@ -193,6 +206,8 @@
     border-radius: 10px;
     font-weight: 600;
     margin-left: 4px;
+    flex-shrink: 0;
+    white-space: nowrap;
   }
 
   /* Cards */
@@ -514,6 +529,12 @@
     .two-col { grid-template-columns: 1fr; }
     .header, .main, .stats-bar { padding-left: 20px; padding-right: 20px; }
   }
+  @media (max-width: 640px) {
+    .section-header { align-items: flex-start; gap: 8px; }
+    .section-title-group { flex-wrap: wrap; gap: 2px 8px; }
+    .section-title { font-size: 17px; }
+    .section-context { width: 100%; font-size: 11px; }
+  }
 </style>
 </head>
 <body>
@@ -567,7 +588,10 @@
   <div class="section">
     <div class="section-header">
       <div class="section-icon" style="background:#fef2f2;color:var(--danger);">🔥</div>
-      <span class="section-title">今日焦点（8月2日·公募备战主动ETF落地倒计时18家管理人系统测试收尾·7月股票ETF净流入4778亿创单月历史新高·重仓TMT主动基金7月平均跌超20%十二只跌超40%·券商8月金股告别电子扎堆转向均衡配置）</span>
+      <div class="section-title-group">
+        <span class="section-title">今日焦点</span>
+        <span class="section-context">8月2日 · 4条今日要闻</span>
+      </div>
       <span class="section-badge" style="background:var(--danger-light);color:var(--danger);">今日更新</span>
     </div>
 
