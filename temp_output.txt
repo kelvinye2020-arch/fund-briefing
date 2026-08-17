@@ -1,0 +1,16 @@
+﻿python : Traceback (most recent call last):
+所在位置 行:1 字符: 351
++ ... ing]::UTF8; python query.py --query "2026年5月8日公募基金行业最新新闻" 2>&1 | Out- ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\kelvinyye\.workbuddy\plugins\marketplaces\cb_teams_marketplace\plugins\finance-data\skills\neodata-fin
+ancial-search\scripts\query.py", line 112, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\kelvinyye\.workbuddy\plugins\marketplaces\cb_teams_marketplace\plugins\finance-data\skills\neodata-fin
+ancial-search\scripts\query.py", line 108, in main
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'gbk' codec can't encode character '\u2022' in position 9473: illegal multibyte sequence

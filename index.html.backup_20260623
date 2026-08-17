@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<!-- daily-update: 2026-06-23 -->
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="公募自购78亿|半导体设备中报预增|主动ETF指引|A股低开">
+<meta name="content-fingerprint" content="纳指ETF临停|LOF高溢价20%+|FOF新发1137亿破峰值|公募39.48万亿再新高">
+
+<title>基金行业资讯看板 | 腾安基金</title>
+<style>
+  :root {
+    --primary: #1a56db;
+    --primary-light: #e8eefb;
+    --danger: #dc2626;
+    --danger-light: #fef2f2;
+    --warning: #d97706;
+    --warning-light: #fffbeb;
+    --success: #059669;
+    --success-light: #ecfdf5;
+    --info: #6366f1;
+    --info-light: #eef2ff;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-400: #9ca3af;
+    --gray-500: #6b7280;
+    --gray-600: #4b5563;
+    --gray-700: #374151;
+    --gray-800: #1f2937;
+    --gray-900: #111827;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -2px rgba(0,0,0,0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.06);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    background: linear-gradient(135deg, #f0f4ff 0%, #f5f3ff 50%, #fdf2f8 100%);
+    color: var(--gray-800);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1a56db 40%, #6366f1 100%);
+    color: white;
+    padding: 32px 40px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -60%;
+    left: 20%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 14px;
+    opacity: 0.8;
+    font-weight: 400;
+  }
+  .header .date-badge {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  /* Stats Bar */
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    padding: 0 40px;
+    margin-top: -24px;
+    position: relative;
+    z-index: 2;
+  }
+  .stat-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  .stat-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  .stat-number {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1.2;
+  }
+  .stat-card:nth-child(2) .stat-number { color: var(--danger); }
+  .stat-card:nth-child(3) .stat-number { color: var(--success); }
+  .stat-card:nth-child(4) .stat-number { color: var(--warning); }
+  .stat-label {
+    font-size: 12px;
+    color: var(--gray-500);
+    margin-top: 4px;
+  }
+  .stat-change {
+    font-size: 11px;
+    margin-top: 2px;
+    font-weight: 500;
+  }
+  .stat-change.up { color: var(--danger); }
+  .stat-change.down { color: var(--success); }
+  .stat-change.neutral { color: var(--gray-400); }
+
+  /* Main Content */
+  .main { padding: 24px 40px 40px; }
+
+  /* Section */
+  .section {
+    margin-bottom: 28px;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .section-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--gray-900);
+  }
+  .section-badge {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+    margin-left: 4px;
+  }
+
+  /* Cards */
+  .card-grid {
+    display: grid;
+    gap: 12px;
+  }
+  .card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid transparent;
+    transition: all 0.2s;
+    position: relative;
+  }
+  .card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateX(2px);
+  }
+
+  /* Priority Levels */
+  .card.p0 { border-left-color: var(--danger); }
+  .card.p1 { border-left-color: var(--warning); }
+  .card.p2 { border-left-color: var(--primary); }
+  .card.p3 { border-left-color: var(--success); }
+
+  .card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--gray-900);
+    line-height: 1.5;
+    flex: 1;
+  }
+  .card-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .priority-tag {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+  }
+  .priority-tag.urgent { background: var(--danger-light); color: var(--danger); }
+  .priority-tag.important { background: var(--warning-light); color: var(--warning); }
+  .priority-tag.normal { background: var(--primary-light); color: var(--primary); }
+  .priority-tag.fyi { background: var(--success-light); color: var(--success); }
+
+  .date-tag {
+    font-size: 11px;
+    color: var(--gray-400);
+    white-space: nowrap;
+  }
+
+  .card-body {
+    font-size: 13px;
+    color: var(--gray-600);
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .card-footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .source-tag {
+    font-size: 11px;
+    padding: 2px 10px;
+    border-radius: 12px;
+    background: var(--gray-100);
+    color: var(--gray-600);
+    font-weight: 500;
+  }
+  a .source-tag,
+  a.source-link .source-tag {
+    background: #e8f4fd;
+    color: #1890ff;
+    border: 1px solid rgba(24,144,255,0.25);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  a .source-tag::after,
+  a.source-link .source-tag::after {
+    content: ' ↗';
+    font-size: 10px;
+    opacity: 0.7;
+  }
+  a:hover .source-tag,
+  a.source-link:hover .source-tag {
+    background: #1890ff;
+    color: white;
+    border-color: #1890ff;
+  }
+  a:hover .source-tag::after,
+  a.source-link:hover .source-tag::after {
+    opacity: 1;
+  }
+  .impact-tag {
+    font-size: 11px;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-weight: 600;
+  }
+  .impact-tag.high { background: #fef2f2; color: #b91c1c; }
+  .impact-tag.medium { background: #fffbeb; color: #92400e; }
+  .impact-tag.low { background: #ecfdf5; color: #065f46; }
+
+  .card-link {
+    font-size: 12px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    transition: opacity 0.2s;
+  }
+  .card-link:hover { opacity: 0.7; }
+
+  /* Action Items */
+  .action-box {
+    background: linear-gradient(135deg, #eff6ff, #eef2ff);
+    border: 1px solid #c7d2fe;
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    margin-top: 6px;
+  }
+  .action-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--info);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+  .action-text {
+    font-size: 13px;
+    color: var(--gray-700);
+    line-height: 1.6;
+  }
+
+  /* Two column layout */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  /* Timeline */
+  .timeline-item {
+    display: flex;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .timeline-item:last-child { border-bottom: none; }
+  .timeline-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+  .timeline-dot.red { background: var(--danger); }
+  .timeline-dot.yellow { background: var(--warning); }
+  .timeline-dot.blue { background: var(--primary); }
+  .timeline-dot.green { background: var(--success); }
+  .timeline-date {
+    font-size: 11px;
+    color: var(--gray-400);
+    margin-bottom: 2px;
+  }
+  .timeline-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gray-800);
+    margin-bottom: 2px;
+  }
+  .timeline-desc {
+    font-size: 12px;
+    color: var(--gray-500);
+    line-height: 1.5;
+  }
+
+  /* Competitor Table */
+  .comp-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: white;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .comp-table th {
+    background: var(--gray-50);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gray-600);
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .comp-table td {
+    font-size: 13px;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--gray-100);
+    color: var(--gray-700);
+    vertical-align: top;
+  }
+  .comp-table tr:last-child td { border-bottom: none; }
+  .comp-table tr:hover td { background: var(--gray-50); }
+  .comp-name {
+    font-weight: 600;
+    color: var(--gray-900);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .comp-emoji { font-size: 16px; }
+  .comp-links {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .comp-link {
+    font-size: 11px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 12px;
+    background: var(--primary-light);
+    border: 1px solid rgba(26,86,219,0.15);
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .comp-link:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+  }
+  .comp-link .link-icon { font-size: 10px; }
+  .alert-dot {
+    width: 7px;
+    height: 7px;
+    background: var(--danger);
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 24px 40px;
+    font-size: 12px;
+    color: var(--gray-400);
+    border-top: 1px solid var(--gray-200);
+    background: white;
+  }
+
+  /* Priority legend */
+  .legend {
+    display: flex;
+    gap: 16px;
+    padding: 16px 24px;
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+    align-items: center;
+  }
+  .legend-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gray-500);
+    margin-right: 4px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--gray-600);
+  }
+  .legend-dot {
+    width: 12px;
+    height: 4px;
+    border-radius: 2px;
+  }
+  .legend-dot.red { background: var(--danger); }
+  .legend-dot.orange { background: var(--warning); }
+  .legend-dot.blue { background: var(--primary); }
+  .legend-dot.green { background: var(--success); }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .stats-bar { grid-template-columns: repeat(2, 1fr); }
+    .two-col { grid-template-columns: 1fr; }
+    .header, .main, .stats-bar { padding-left: 20px; padding-right: 20px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+<div class="header">
+  <div class="header-top">
+    <div>
+      <h1>📊 基金行业资讯看板</h1>
+      <div class="subtitle">腾安基金 · 行业情报中心 · 近两周核心资讯聚合</div>
+    </div>
+    <div class="date-badge">📅 数据区间：2026.06.08 — 2026.06.22（今日自动更新）</div>
+  </div>
+</div>
+
+<!-- Stats Bar -->
+<div class="stats-bar">
+  <div class="stat-card">
+    <div class="stat-number">纳指ETF集体临停</div>
+    <div class="stat-label">6/22多只纳指ETF开市起停牌·10:30复牌·溢价率最高超22%·投资者警示</div>
+    <div class="stat-change up">▲ QDII溢价风险爆发·节后美股产品净值波动·客户咨询高峰预警</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">LOF高溢价20%+</div>
+    <div class="stat-label">财通多只LOF连续涨停·溢价率飙升至20%+·极小流通盘催生虚假繁荣·限购停牌</div>
+    <div class="stat-change up">▲ 脱离基本面高溢价风险·情绪退潮将面临价格回归+溢价破裂双重风险</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">FOF新发1137亿破峰值</div>
+    <div class="stat-label">上半年新成立FOF 88只·合计发行1137.69亿·超越2021年1083亿历史峰值·半年刷新纪录</div>
+    <div class="stat-change up">▲ 低利率催化+银行渠道发力·FOF从配角走向舞台中央·抗风险能力凸显</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">公募39.48万亿再新高</div>
+    <div class="stat-label">5月底规模39.48万亿·较4月+1228亿·再创历史新高·距40万亿仅一步之遥</div>
+    <div class="stat-change neutral">■ 股票基金-3174亿·混合基金+1207亿·债券+2741亿·货币+396亿·结构分化</div>
+  </div>
+</div>
+
+<!-- Main Content -->
+<div class="main">
+
+  <!-- Priority Legend -->
+  <div class="legend">
+    <span class="legend-title">优先级：</span>
+    <span class="legend-item"><span class="legend-dot red"></span>紧急必看</span>
+    <span class="legend-item"><span class="legend-dot orange"></span>重要关注</span>
+    <span class="legend-item"><span class="legend-dot blue"></span>建议了解</span>
+    <span class="legend-item"><span class="legend-dot green"></span>知悉即可</span>
+  </div>
+
+  <!-- ============ Section 0: 今日焦点 ============ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:#fef2f2;color:var(--danger);">🔥</div>
+      <span class="section-title">今日焦点（6月23日·周二·公募自购78亿·A股低开·半导体设备中报预增）</span>
+      <span class="section-badge" style="background:var(--danger-light);color:var(--danger);">今日更新</span>
+    </div>
+
+    <div class="card-grid">
+      <div class="card p0">
+        <div class="card-top">
+          <div class="card-title">🔴 多只纳指ETF 6/22集体临停1小时！溢价率最高超22%·投资者警示</div>
+          <div class="card-meta">
+            <span class="priority-tag urgent">紧急必看</span>
+            <span class="date-tag">06-22</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <b>集体临停：</b>6月22日，汇添富纳指ETF、纳指ETF广发、纳指ETF嘉实、纳指ETF易方达、纳斯达克100ETF大成相继公告，基金于今日开市起停牌，<b>10:30起复牌</b>。停牌原因：二级市场交易价格明显高于IOPV，出现较大幅度溢价。以汇添富纳指ETF为例，6/18收盘价为2.430元，IOPV为2.2027元，溢价率超10%。<br>
+          <b>风险提示：</b>基金公司郑重提醒，若6/22二级市场交易价格溢价幅度未有效回落，基金有权申请盘中临时停牌、延长停牌时间及连续停牌等措施。南方基金旗下亚太精选ETF南方也因高溢价于6/22停牌。<br>
+          <b>对基金行业影响：</b>①QDII溢价风险集中爆发→节后美股产品客户可能集中咨询；②高溢价不可持续→投资者教育需求上升；③监管对QDII溢价监控趋严→基金公司需加强风险提示。
+        </div>
+        <div class="card-footer">
+          <a href="https://finance.sina.cn/2026-06-22/detail-iniefqsa0460126.d.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">新浪财经·21世纪</span></a>
+          <span class="impact-tag high">QDII溢价：极高</span>
+        </div>
+        <div class="action-box">
+          <div class="action-label">⚡ 腾安行动建议</div>
+          <div class="action-text">
+            ① 纳指ETF集体临停→节后美股产品客户可能集中咨询溢价风险，提前准备解释话术；<br>
+            ② 高溢价不可持续→在App/公众号发布QDII溢价风险投教内容，引导理性投资；<br>
+            ③ 监控其他QDII产品溢价情况，提前预警类似风险。
+          </div>
+        </div>
+      </div>
+
+      <div class="card p0">
+        <div class="card-top">
+          <div class="card-title">🔴 多只LOF连续涨停·高溢价20%+·极小流通盘催生虚假繁荣·业内人士警示</div>
+          <div class="card-meta">
+            <span class="priority-tag urgent">紧急必看</span>
+            <span class="date-tag">06-22</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <b>LOF异动：</b>近期，财通基金旗下多只LOF产品场内份额连续涨停，溢价率飙升至<b>20%以上</b>，引发市场广泛关注。表面看，这与基金经理金梓才押注AI算力赛道、近一年回报近<b>530%</b>的亮眼业绩密切相关。<br>
+          <b>高溢价真相：</b>深入分析，高溢价的背后实则是<b>极小流通盘下的资金博弈</b>——部分产品仅需数十万元即可拉涨停。基金公司虽已紧急限购、频频停牌，但在社交媒体放大效应下，"堵住场外"反而可能加剧投机情绪。<br>
+          <b>风险警示：</b>业内人士提醒，此类脱离基本面的高溢价犹如"流沙上的博弈"，一旦情绪退潮，投资者将面临<b>价格回归与溢价破裂的双重风险</b>。<br>
+          <b>对基金行业影响：</b>LOF高溢价事件再次警示：公募基金场内交易风险需加强投资者教育，防止散户盲目追高。
+        </div>
+        <div class="card-footer">
+          <a href="https://admin@stcn.com/article/detail/3970809.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">证券时报</span></a>
+          <span class="impact-tag high">LOF溢价：极高</span>
+        </div>
+        <div class="action-box">
+          <div class="action-label">⚡ 腾安行动建议</div>
+          <div class="action-text">
+            ① LOF高溢价风险→排查腾安代销的LOF产品是否存在类似溢价，及时风险提示；<br>
+            ② 投资者教育→制作"LOF溢价风险识别"投教内容，引导客户理性投资；<br>
+            ③ 社交媒体放大效应→关注舆情，防止投机情绪蔓延至腾安平台。
+          </div>
+        </div>
+      </div>
+
+      <div class="card p1">
+        <div class="card-top">
+          <div class="card-title">🟡 FOF上半年新发规模1137亿·超越2021年峰值·低利率催化+银行渠道发力</div>
+          <div class="card-meta">
+            <span class="priority-tag important">重要关注</span>
+            <span class="date-tag">06-22</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <b>爆发式增长：</b>Wind数据显示，截至6月20日，2026年以来新成立FOF基金已达<b>88只</b>，合计发行规模高达<b>1137.69亿元</b>，不仅超越2025年全年水平，还超过了2021年创下的<b>1083.62亿元</b>历史峰值，以半年时间大幅刷新历年同期纪录。<br>
+          <b>业绩支撑：</b>全市场FOF基金平均收益率达<b>5.28%</b>，在权益市场波动背景下展现出稳健的抗风险能力。易方达优势回报A以<b>52.20%</b>收益率位居榜首，易方达旗下多只FOF产品均进入前十。<br>
+          <b>发行热度：</b>博时盈泰臻选6个月持有A以<b>58.44亿元</b>发行规模拔得头筹，且仅用1天即完成募集。头部公募旗下产品占发行规模前十中的多席，行业集中度依然较高。<br>
+          <b>对基金行业影响：</b>FOF从"配角"走向舞台中央→资产配置需求上升→腾安可加大FOF产品推荐权重，特别是稳健型客户。
+        </div>
+        <div class="card-footer">
+          <a href="https://www.stcn.com/article/detail/3970656.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">证券时报</span></a>
+          <span class="impact-tag medium">FOF爆发：高</span>
+        </div>
+      </div>
+
+      <div class="card p1">
+        <div class="card-top">
+          <div class="card-title">🟡 公募规模39.48万亿再创新高·距40万亿仅一步之遥·产品结构分化加剧</div>
+          <div class="card-meta">
+            <span class="priority-tag important">重要关注</span>
+            <span class="date-tag">06-22</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <b>历史新高：</b>中基协最新数据显示，截至2026年5月底，我国境内公募基金管理机构共165家，管理公募基金资产净值合计<b>39.48万亿元</b>，较4月底的39.36万亿元增加约<b>1228亿元</b>，再创历史新高，距离<b>40万亿元</b>仅一步之遥。<br>
+          <b>结构分化：</b>股票基金规模为4.96万亿元，较4月底<b>减少3174.5亿元</b>（份额下降→客户赎回/解套）；混合基金规模为4.28万亿元，较4月底<b>增加1207.6亿元</b>；固收类产品规模大幅增长，债券基金规模为11.67万亿元（+2741亿元），货币基金规模为16.27万亿元（+397亿元）。<br>
+          <b>产品创新：</b>首批<b>4只跟踪中证REITs全收益指数的公募基金产品获批</b>（6/17），REITs指数基金正式落地。国家外汇局将发放<b>新一批QDII投资额度</b>，QDII产品供给将增加。<br>
+          <b>对基金行业影响：</b>规模再创新高但结构分化→权益基金份额下降需关注客户留存→固收+产品需求持续上升。
+        </div>
+        <div class="card-footer">
+          <a href="https://new.qq.com/rain/a/20260622A04KGF00" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">腾讯新闻</span></a>
+          <a href="https://www.163.com/dy/article/L00UQAPP0512B07B.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">网易·每日经济新闻</span></a>
+          <span class="impact-tag medium">规模新高：高</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+    <!-- ============ Section 1: 重磅信息 ============ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:#fef2f2;color:var(--danger);">🏆</div>
+      <span class="section-title">重磅信息</span>
+      <span class="section-badge" style="background:var(--danger-light);color:var(--danger);">近两周核心</span>
+    </div>
+
+    <div class="card-grid">
+
+      <div class="card p0">
+        <div class="card-top">
+          <div class="card-title">🔴 多只纳指ETF 6/22集体临停！溢价率最高超22%·QDII溢价风险集中爆发</div>
+          <div class="card-meta">
+            <span class="priority-tag urgent">紧急必看</span>
+            <span class="date-tag">06-22</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <b>集体临停：</b>6月22日，汇添富纳指ETF、纳指ETF广发、纳指ETF嘉实、纳指ETF易方达、纳斯达克100ETF大成相继公告，基金于今日开市起停牌，<b>10:30起复牌</b>。停牌原因：二级市场交易价格明显高于IOPV，出现较大幅度溢价。<br>
+          <b>风险提示：</b>基金公司郑重提醒，若6/22二级市场交易价格溢价幅度未有效回落，基金有权申请盘中临时停牌、延长停牌时间及连续停牌等措施。<br>
+          <b>对基金行业影响：</b>①QDII溢价风险集中爆发→节后美股产品客户可能集中咨询；②高溢价不可持续→投资者教育需求上升；③监管对QDII溢价监控趋严。
+        </div>
+        <div class="card-footer">
+          <a href="https://finance.sina.cn/2026-06-22/detail-iniefqsa0460126.d.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">新浪财经·21世纪</span></a>
+          <span class="impact-tag high">QDII溢价：极高</span>
+        </div>
+        <div class="action-box">
+          <div class="action-label">⚡ 腾安行动建议</div>
+          <div class="action-text">
+            ① 纳指ETF集体临停→提前准备QDII溢价风险解释话术；<br>
+            ② 在App/公众号发布QDII溢价风险投教内容；<br>
+            ③ 监控其他QDII产品溢价情况，提前预警。
+          </div>
+        </div>
+      </div>
+
+      <div class="card p0">
+        <div class="card-top">
+          <div class="card-title">🔴 多只LOF连续涨停·高溢价20%+·极小流通盘催生虚假繁荣</div>
+          <div class="card-meta">
+            <span class="priority-tag urgent">紧急必看</span>
+            <span class="date-tag">06-22</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <b>LOF异动：</b>近期，财通基金旗下多只LOF产品场内份额连续涨停，溢价率飙升至<b>20%以上</b>。表面看与基金经理金梓才押注AI算力赛道、近一年回报近<b>530%</b>相关。<br>
+          <b>高溢价真相：</b>实则是<b>极小流通盘下的资金博弈</b>——部分产品仅需数十万元即可拉涨停。基金公司虽已紧急限购、频频停牌，但社交媒体放大效应下，"堵住场外"反而可能加剧投机情绪。<br>
+          <b>风险警示：</b>此类脱离基本面的高溢价犹如"流沙上的博弈"，一旦情绪退潮，投资者将面临<b>价格回归与溢价破裂的双重风险</b>。
+        </div>
+        <div class="card-footer">
+          <a href="https://admin@stcn.com/article/detail/3970809.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">证券时报</span></a>
+          <span class="impact-tag high">LOF溢价：极高</span>
+        </div>
+        <div class="action-box">
+          <div class="action-label">⚡ 腾安行动建议</div>
+          <div class="action-text">
+            ① 排查腾安代销的LOF产品是否存在类似溢价；<br>
+            ② 制作"LOF溢价风险识别"投教内容；<br>
+            ③ 关注舆情，防止投机情绪蔓延。
+          </div>
+        </div>
+      </div>
+
+      <div class="card p1">
+        <div class="card-top">
+          <div class="card-title">🟡 FOF上半年新发规模1137亿·超越2021年峰值·低利率催化+银行渠道发力</div>
+          <div class="card-meta">
+            <span class="priority-tag important">重要关注</span>
+            <span class="date-tag">06-22</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <b>爆发式增长：</b>Wind数据显示，截至6月20日，2026年以来新成立FOF基金已达<b>88只</b>，合计发行规模高达<b>1137.69亿元</b>，超越2021年创下的<b>1083.62亿元</b>历史峰值。<br>
+          <b>业绩支撑：</b>全市场FOF基金平均收益率达<b>5.28%</b>，易方达优势回报A以<b>52.20%</b>收益率位居榜首。<br>
+          <b>对基金行业影响：</b>FOF从"配角"走向舞台中央→资产配置需求上升→腾安可加大FOF产品推荐权重。
+        </div>
+        <div class="card-footer">
+          <a href="https://www.stcn.com/article/detail/3970656.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">证券时报</span></a>
+          <span class="impact-tag medium">FOF爆发：高</span>
+        </div>
+      </div>
+
+      <div class="card p1">
+        <div class="card-top">
+          <div class="card-title">🟡 首批REITs指数基金获批！证监会6/17批准4只跟踪中证REITs全收益指数产品</div>
+          <div class="card-meta">
+            <span class="priority-tag important">重要关注</span>
+            <span class="date-tag">06-17</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <b>产品获批：</b>6月17日，中国证监会官网显示，<b>首批4只跟踪中证REITs全收益指数的公募基金产品获批</b>。这是REITs指数基金这一创新产品的首次落地。<br>
+          <b>政策背景：</b>2025年12月，证监会发布通知，指出丰富覆盖REITs的指数体系，支持基金管理人开发挂钩相关指数的基金产品。<br>
+          <b>对基金行业影响：</b>①REITs指数基金获批→丰富资产配置选择；②未来REITs ETF可期；③腾安可提前布局REITs指数基金代销。
+        </div>
+        <div class="card-footer">
+          <a href="https://www.163.com/dy/article/L00UQAPP0512B07B.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">网易·每日经济新闻</span></a>
+          <span class="impact-tag medium">产品创新：中高</span>
+        </div>
+      </div>
+
+      <div class="card p1">
+        <div class="card-top">
+          <div class="card-title">🟡 国家外汇局将发放新一批QDII投资额度·QDII产品供给将增加</div>
+          <div class="card-meta">
+            <span class="priority-tag important">重要关注</span>
+            <span class="date-tag">06-18~22</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <b>额度发放：</b>近日，中国人民银行副行长、国家外汇管理局局长朱鹤新在2026陆家嘴论坛上表示，将围绕"四个深化"，持续提升资本项目开放水平，<b>将发放新一批QDII投资额度</b>。<br>
+          <b>市场影响：</b>新一批QDII额度发放→QDII产品供给将增加→投资者海外资产配置选择进一步扩大。<br>
+          <b>对基金行业影响：</b>①腾安可丰富QDII产品货架；②此前因额度不足暂停申购的QDII产品可能重新开放；③竞争加剧→QDII产品费率可能进一步下行。
+        </div>
+        <div class="card-footer">
+          <a href="https://www.163.com/dy/article/L00UQAPP0512B07B.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">网易·每日经济新闻</span></a>
+          <span class="impact-tag medium">QDII扩容：中</span>
+        </div>
+      </div>
+
+      <div class="card p2">
+        <div class="card-top">
+          <div class="card-title">🔵 多元策略基金业绩承压·多元与赛道策略走向融合·投研框架升级</div>
+          <div class="card-meta">
+            <span class="priority-tag normal">建议了解</span>
+            <span class="date-tag">06-22</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <b>策略失效：</b>近两年来，随着A股市场结构性行情极致演绎，基金的多元配置策略越来越难。公募、游资等机构高度聚焦AI、算力等少数赛道，导致固守分散持仓策略的基金收益持续低迷。<br>
+          <b>融合趋势：</b>业内普遍认为，公募投研正在打破赛道和均衡二选一的固有认知，两种投资框架逐步融合发展。<br>
+          <b>对基金行业影响：</b>多元与赛道策略融合→基金经理投资框架升级→腾安在基金筛选和推荐时，需关注基金经理的框架进化能力。
+        </div>
+        <div class="card-footer">
+          <a href="https://egs.stcn.com/news/detail/2304821.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">人民财讯</span></a>
+          <span class="impact-tag low">策略演变：低</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+    <!-- ============ Section 2: 监管政策 ============ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:#fef2f2;color:var(--danger);">🏛️</div>
+      <span class="section-title">监管政策动态</span>
+      <span class="section-badge" style="background:var(--danger-light);color:var(--danger);">最高优先级</span>
+    </div>
+
+    <div class="card-grid">
+      <div class="card p0">
+        <div class="card-top">
+          <div class="card-title">🔴 证监会6/13发布《公募基金高质量发展三年行动计划（2026-2028）》+销售费用管理规定同步实施</div>
+          <div class="card-meta">
+            <span class="priority-tag urgent">紧急必看</span>
+            <span class="date-tag">06-13</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <b>三年行动计划：</b>6月13日，证监会正式发布《公开募集证券投资基金行业高质量发展三年行动计划（2026-2028）》，明确2026-2028年行业改革路线图，是继2025年5月《推动公募基金高质量发展行动方案》后首份<b>三年期系统性纲领文件</b>。重点方向：完善业绩比较基准约束、深化费率改革、强化长期评价导向、提升合规风控、支持中长期资金入市。<br>
+          <b>销售费用新规：</b>同步实施《公募基金销售与服务费用管理规定》，进一步压降认申购费及销售服务费。这是费率改革"三步走"的<b>第三阶段</b>。各基金公司需在3个月内提交落实方案。
+        </div>
+        <div class="card-footer">
+          <span class="impact-tag high">行业纲领：极高</span>
+        </div>
+        <div class="action-box">
+          <div class="action-label">⚡ 腾安行动建议</div>
+          <div class="action-text">
+            ① 研究三年行动计划对腾安代销业务模式的影响，提前规划收费模式转型；<br>
+            ② 销售费用新规实施→评估腾安代销佣金结构是否需要调整。
+          </div>
+        </div>
+      </div>
+
+      <div class="card p0">
+        <div class="card-top">
+          <div class="card-title">🔴 中基协6/12连发两文：适当性管理细则（6个月改造期）+可持续投资策略指引（即日实施）</div>
+          <div class="card-meta">
+            <span class="priority-tag urgent">紧急必看</span>
+            <span class="date-tag">06-12</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <b>适当性管理细则（中基协发〔2026〕13号）：</b>6月12日发布，要求销售机构在<b>6个月内</b>（2026年12月12日前）完成基金风险等级划分体系完善和系统改造。<br>
+          <b>可持续投资策略指引（中基协发〔2026〕15号）：</b>同日发布并即日实施。不符合指引的基金需在<b>一年内</b>完成调整。<br>
+          <b>合规成本双升：</b>适当性改造+可持续投资调整→IT和合规成本上升→中小代销机构压力加大→行业集中度进一步提升。
+        </div>
+        <div class="card-footer">
+          <a href="https://www.amac.org.cn/xwfb/xhyw/202606/t20260612_27826.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">中基协·适当性细则</span></a>
+          <a href="https://www.amac.org.cn/xwfb/xhyw/202606/t20260612_27825.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">中基协·可持续指引</span></a>
+          <span class="impact-tag high">合规升级：极高</span>
+        </div>
+        <div class="action-box">
+          <div class="action-label">⚡ 腾安行动建议</div>
+          <div class="action-text">
+            ① 立即启动适当性系统改造项目，确保12月12日前完成；<br>
+            ② 评估腾安ESG/可持续主题基金产品线布局机会。
+          </div>
+        </div>
+      </div>
+
+      <div class="card p1">
+        <div class="card-top">
+          <div class="card-title">🟡 37万亿公募基金行业迎信披新规：新增披露7年、10年长期业绩</div>
+          <div class="card-meta">
+            <span class="priority-tag important">重要关注</span>
+            <span class="date-tag">06-22报道</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <b>信披新规：</b>3月13日，证监会发布修订后的《公开募集证券投资基金信息披露内容与格式准则第2号—定期报告的内容与格式》，自2026年5月1日起实施。新规核心变化：不再披露过去1个月的业绩，但需披露产品在过去<b>7年、10年</b>的中长期业绩。<br>
+          <b>行业影响：</b>①引导行业重视长期投资理念→缓解追逐短期排名的浮躁心态；②新增股票换手率数据披露→强化投资行为稳定性信息揭示；③删除大量重复信披内容→减轻行业机构负担。<br>
+          <b>对基金行业影响：</b>信披新规引导长期投资→腾安在基金评价和推荐时，应更关注中长期业绩，减少短期排名导向。
+        </div>
+        <div class="card-footer">
+          <a href="https://www.yicai.com/news/103086023.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">第一财经</span></a>
+          <span class="impact-tag medium">信披改革：中</span>
+        </div>
+      </div>
+
+      <div class="card p2">
+        <div class="card-top">
+          <div class="card-title">🔵 首批REITs指数基金获批·证监会6/17批准4只产品</div>
+          <div class="card-meta">
+            <span class="priority-tag normal">建议了解</span>
+            <span class="date-tag">06-17</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <b>产品获批：</b>6月17日，中国证监会官网显示，<b>首批4只跟踪中证REITs全收益指数的公募基金产品获批</b>。这是REITs指数基金这一创新产品的首次落地。<br>
+          <b>政策意义：</b>丰富REITs投资工具→降低投资门槛→扩大投资者群体→提升REITs市场流动性。<br>
+          <b>对基金行业影响：</b>REITs指数基金获批→丰富资产配置选择→腾安可提前布局代销。
+        </div>
+        <div class="card-footer">
+          <a href="https://www.163.com/dy/article/L00UQAPP0512B07B.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">网易·每日经济新闻</span></a>
+          <span class="impact-tag low">产品创新：低</span>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+  <!-- ============ Section 3: 竞争对手动态 ============ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:#fffbeb;color:var(--warning);">🏁</div>
+      <span class="section-title">竞争对手动态</span>
+      <span class="section-badge" style="background:var(--warning-light);color:var(--warning);">重点跟踪</span>
+    </div>
+
+    <div class="comp-table">
+      <table style="width:100%;border-collapse:collapse;">
+        <thead>
+          <tr>
+            <th style="width:15%">机构</th>
+            <th style="width:15%">时间</th>
+            <th style="width:45%">动态详情</th>
+            <th style="width:12%">威胁等级</th>
+            <th style="width:13%">对腾安启示</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="comp-name"><span class="comp-emoji">🏦</span>招商银行</span></td>
+            <td>06-05</td>
+            <td>
+              <b>招行管理层坦言公募降费将压制非息收入，"一折起"策略效果正面临政策稀释</b>。6月5日，招行管理层在投资者沟通中表示，2026年将有进一步降费政策出台，特别是公募基金代销方面，对非息收入增长构成压力。Q1代理基金收入虽同比+50%以上，但财富管理手续费增速或面临天花板。<br>
+              <span style="color:var(--danger);font-weight:600;">⚡ 降费承压：招行主动预警代销降费影响，"零售之王"增长逻辑生变</span>
+              <div class="comp-links">
+                <a class="comp-link" href="https://xueqiu.com/1175919929/392662123" target="_blank"><span class="link-icon">📊</span>招行Q1数据</a>
+              </div>
+            </td>
+            <td><span class="impact-tag high">🔴 降费共振</span></td>
+            <td style="font-size:12px;color:var(--gray-600);">招行主动预警降费影响→全行业代销费率继续下行已成共识</td>
+          </tr>
+          <tr>
+            <td><span class="comp-name"><span class="comp-emoji">🐜</span>蚂蚁基金</span></td>
+            <td>06-06</td>
+            <td>
+              <b>公募直销App关停潮加速，蚂蚁/天天等第三方平台成最大受益者</b>。6月4-6日，中科沃土基金宣布关闭直销平台开户/申购等业务，诺安/申万菱信/金鹰等已在2025下半年关停App。兴业证券研报指出，2018-2023年直销保有量份额从61.3%降至36.7%，独立基金销售机构从7.8%升至25.8%。蚂蚁/天天作为行业唯二万亿级平台，成为最大的流量和规模承接方。<br>
+              <span style="color:var(--danger);font-weight:600;">⚡ 直销退潮：公募App关停→流量向蚂蚁/天天/腾安等头部代销平台集中</span>
+              <div class="comp-links">
+                <a class="comp-link" href="https://baijiahao.baidu.com/s?id=1867220161031501992" target="_blank"><span class="link-icon">📱</span>公募直销败局</a>
+              </div>
+            </td>
+            <td><span class="impact-tag high">🔴 格局利好</span></td>
+            <td style="font-size:12px;color:var(--gray-600);">直销退潮利好头部代销，腾安应主动承接迁移用户</td>
+          </tr>
+          <tr>
+            <td><span class="comp-name"><span class="comp-emoji">💰</span>天天基金</span></td>
+            <td>06-09</td>
+            <td>
+              <b>天天基金网：6月新发135只创近三年同期新高，指数+主动权益"双轮驱动"格局确立</b>。6月9日，天天基金网转载中国证券报报道：截至6月9日，6月全月待发基金达135只（去年同期119只）；2026年上半年合计新发828只，较2025年同期+34.41%，创近三年同期最高纪录。被动指数型45只（占比超三成）继续领跑，主动权益型32只明显回暖（去年同期24只）。科技赛道（AI/半导体/芯片）上半年新发超60只，发起式基金占比超三成（利益绑定、长期导向）。<br>
+              <span style="color:var(--danger);font-weight:600;">⚡ 发行数据标杆：天天基金网作为行业数据窗口，6月发行热度数据成为全行业引用基准</span>
+              <div class="comp-links">
+                <a class="comp-link" href="https://fund.eastmoney.com/a/202606093765177780.html" target="_blank"><span class="link-icon">📊</span>天天基金·发行数据</a>
+              </div>
+            </td>
+            <td><span class="impact-tag high">🔴 数据标杆</span></td>
+            <td style="font-size:12px;color:var(--gray-600);">天天基金网数据权威性→关注其月度发行报告对行业情绪的引导作用</td>
+          </tr>
+          <tr>
+            <td><span class="comp-name"><span class="comp-emoji">📈</span>投顾行业</span></td>
+            <td>06-06</td>
+            <td>
+              <b>基金投顾试点转常规进入倒计时！券商加速"ETF+投顾"买方转型</b>。6月6日，中国证券报/新华财经报道：券商正加速从"卖方销售"向"买方服务"转型。多家券商通过服务模式搭建、产品创新等路径布局基金投顾业务，"ETF+投顾"正成为确定性最高的增量突破口。业内预计随着基金投顾试点转常规落地，行业竞争将加剧，制度红利释放。<br>
+              <span style="color:var(--danger);font-weight:600;">⚡ 买方转型：投顾转常规倒计时+ETF+投顾模式成确定性方向</span>
+              <div class="comp-links">
+                <a class="comp-link" href="https://www.cnfin.com/gs-lb/detail/20260606/4422919_1.html" target="_blank"><span class="link-icon">💰</span>投顾转常规</a>
+              </div>
+            </td>
+            <td><span class="impact-tag high">🔴 行业变革</span></td>
+            <td style="font-size:12px;color:var(--gray-600);">投顾转常规→腾安需加速买方投顾能力建设，抢占ETF+投顾先机</td>
+          </tr>
+          <tr>
+            <td><span class="comp-name"><span class="comp-emoji">🏛️</span>券商渠道</span></td>
+            <td>06-04</td>
+            <td>
+              <b>易方达ETF规模6185亿超越华夏登顶全市场第一！两者差距仅19亿元</b>。Wind数据显示，截至6月4日，易方达基金旗下ETF管理规模达6185.19亿元，超越华夏基金（6166.13亿元），成为全市场ETF规模最大的管理人。5月以来易方达公司债ETF、红利ETF均获大规模资金净流入。<br>
+              <span style="color:var(--danger);font-weight:600;">⚡ ETF格局突变：易方达反超华夏登顶，差距仅19亿→竞争白热化</span>
+              <div class="comp-links">
+                <a class="comp-link" href="http://k.sina.com.cn/article_7857201856_1d45362c001906dcd4.html" target="_blank"><span class="link-icon">📊</span>新浪ETF快讯</a>
+              </div>
+            </td>
+            <td><span class="impact-tag high">🔴 格局突变</span></td>
+            <td style="font-size:12px;color:var(--gray-600);">ETF规模第一宝座易主→关注头部公募ETF产品竞争对代销格局的影响</td>
+          </tr>
+          <tr>
+            <td><span class="comp-name"><span class="comp-emoji">🏦</span>中证金牛</span></td>
+            <td>06-05</td>
+            <td>
+              <b>中证金牛被集体"解约"！招商/嘉实/兴证全球/汇添富等多家公募终止代销合作</b>。6月5日，招商基金、嘉实基金、创金合信、金鹰基金、兴证全球、汇添富等先后公告终止与中证金牛（北京）基金销售有限公司全部销售业务。此前前海开源/平安/国金/新华等已于6月1日终止合作，持有份额将转至直销平台。<br>
+              <span style="color:var(--danger);font-weight:600;">⚡ 中小代销出清：中证金牛被集体解约→第三方代销马太效应加速</span>
+              <div class="comp-links">
+                <a class="comp-link" href="https://baijiahao.baidu.com/s?id=1867092513404059242" target="_blank"><span class="link-icon">📊</span>建信终止公告</a>
+              </div>
+            </td>
+            <td><span class="impact-tag high">🔴 格局利好</span></td>
+            <td style="font-size:12px;color:var(--gray-600);">中小代销出清→头部平台受益，腾安可接洽转移客户资源</td>
+          </tr>
+          <tr>
+            <td><span class="comp-name"><span class="comp-emoji">🤖</span>九方智投</span></td>
+            <td>06-03</td>
+            <td>
+              <b>九方智投受邀出席中金2026年中期策略会，发布"多智能体生态重塑投顾范式"</b>。6月3-4日，九方智投控股(9636.HK)参加中金公司中期投资策略会，AI中心负责人王冰发表主题演讲。九方2025年归母净利润同比+239%至9.2亿元，市场交投放量推动业绩高增。西部证券给予"AI科技重塑投顾范式"核心评价。<br>
+              <span style="color:var(--warning);font-weight:600;">⚡ AI投顾标杆：九方智投利润+239%，多智能体投顾范式引发行业关注</span>
+              <div class="comp-links">
+                <a class="comp-link" href="https://static.zhoudaosh.com/files/cnews/2026/20260606/39474761A78B34266CDC5BB990565E6FCABB057D2EED43B75FEC9B643F977A7E/1.html" target="_blank"><span class="link-icon">🤖</span>中金策略会</a>
+              </div>
+            </td>
+            <td><span class="impact-tag medium">🟡 技术竞争</span></td>
+            <td style="font-size:12px;color:var(--gray-600);">关注AI投顾商业化路径，九方模式对互联网代销的潜在冲击</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ============ Section 4: 行业趋势 ============ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--primary-light);color:var(--primary);">📈</div>
+      <span class="section-title">行业趋势与市场数据</span>
+      <span class="section-badge" style="background:var(--primary-light);color:var(--primary);">趋势洞察</span>
+    </div>
+
+    <div class="two-col">
+      <div class="card p0">
+        <div class="card-top">
+          <div class="card-title">🔴 6月新基发行"权益回暖+主题扎堆+发起式放量"，上半年主动权益翻倍增长</div>
+          <div class="card-meta">
+            <span class="priority-tag urgent">紧急必看</span>
+            <span class="date-tag">06-07</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <b>6月首周发行升温：</b>据Choice数据统计，6月首周全市场新基金发行持续扩容，呈现"权益回暖、主题扎堆、发起式放量"三大特征，指数基金仍是发行主力。<br>
+          <b>上半年主动权益翻倍：</b>放眼2026上半年，公募新基发行整体扩容，较去年同期主动权益基金发行数量<b>翻倍</b>增长，增长势头强劲。科技赛道（AI、半导体、光通信）成为机构核心布局方向。<br>
+          <b>吴清定调：</b>6月6日中基协第四届会员大会上，证监会主席吴清明确表示"公募业要注重权益投资"，新基金发行节奏正体现这一政策方向。<br>
+          <b>市场影响：</b>发行端权益回暖+政策端明确支持→公募增量资金有望为A股提供持续支撑，科技主线确定性进一步增强。
+        </div>
+        <div class="card-footer">
+          <a href="https://baijiahao.baidu.com/s?id=1867329480793817683" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">百家号</span></a>
+          <a href="https://stock.10jqka.com.cn/20260603/c677170938.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">同花顺</span></a>
+          <span class="impact-tag high">发行节奏：极高</span>
+        </div>
+        <div class="action-box">
+          <div class="action-label">⚡ 腾安行动建议</div>
+          <div class="action-text">
+            ① 上半年主动权益翻倍→评估腾安权益基金推荐覆盖是否充分；<br>
+            ② 吴清"注重权益"定调→配合监管方向，加大权益类产品曝光权重；<br>
+            ③ 科技主题扎堆→优化AI/半导体/光通信等科技基金推荐策略。
+          </div>
+        </div>
+      </div>
+
+      <div class="card p0">
+        <div class="card-top">
+          <div class="card-title">🔴 公募总规模39.48万亿再创新高·距40万亿仅一步之遥·产品结构分化加剧</div>
+          <div class="card-meta">
+            <span class="priority-tag urgent">紧急必看</span>
+            <span class="date-tag">06-17</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <b>历史新高：</b>中基协6月17日最新数据显示，截至2026年5月底，我国境内公募基金管理机构共165家，管理公募基金资产净值合计<b>39.48万亿元</b>，较4月底的39.36万亿元增加约<b>1228亿元</b>，再创历史新高，距离<b>40万亿元</b>仅一步之遥。<br>
+          <b>结构分化：</b>股票基金规模为4.96万亿元，较4月底<b>减少3174.5亿元</b>（份额下降→客户赎回/解套）；混合基金规模为4.28万亿元，较4月底<b>增加1207.6亿元</b>；固收类产品规模大幅增长，债券基金规模为11.67万亿元（+2741亿元），货币基金规模为16.27万亿元（+397亿元）。<br>
+          <b>产品创新：</b>首批<b>4只跟踪中证REITs全收益指数的公募基金产品获批</b>（6/17），REITs指数基金正式落地。国家外汇局将发放<b>新一批QDII投资额度</b>，QDII产品供给将增加。<br>
+          <b>对基金行业影响：</b>规模再创新高但结构分化→权益基金份额下降需关注客户留存→固收+产品需求持续上升。
+        </div>
+        <div class="card-footer">
+          <a href="https://new.qq.com/rain/a/20260622A04KGF00" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">腾讯新闻</span></a>
+          <a href="https://www.163.com/dy/article/L00UQAPP0512B07B.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">网易·每日经济新闻</span></a>
+          <span class="impact-tag high">规模新高：极高</span>
+        </div>
+        <div class="action-box">
+          <div class="action-label">⚡ 腾安行动建议</div>
+          <div class="action-text">
+            ① 39.48万亿新高→关注腾安在增量规模中的份额变化，评估保有量增速是否跑赢大盘；<br>
+            ② 份额下降+规模增长→客户解套赎回趋势明显，加强持仓陪伴和投教服务；<br>
+            ③ 固收+产品需求上升→优化债券基金和货币基金推荐策略。
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="card p1">
+        <div class="card-top">
+          <div class="card-title">🟡 6月A股进入盈利驱动第三阶段，K型分化加剧：科技强、消费弱、地产磨底</div>
+          <div class="card-meta">
+            <span class="priority-tag important">重要关注</span>
+            <span class="date-tag">06-03~06</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <b>盈利驱动第三阶段：</b>招商证券6月策略指出，当前A股已进入盈利驱动的第三阶段。一季报验证非金融盈利增速触底回升，但呈现鲜明K型分化：景气弹性集中在上游资源品、TMT半导体及部分出口中高端制造，消费与地产链仍在磨底。<br>
+          <b>中金定调"稳进致远"：</b>6月3-4日中金公司中期策略会以"向新致远"为主题，近4000位机构投资者参会。核心判断：以AI为代表的新动能加快成长，全球产业链重构是主线，但短期科技股估值处历史高位需警惕回调。<br>
+          <b>市场风格研判：</b>嘉实基金李涛认为"科技AI仍是未来3-5年行情主线"，国产算力、半导体设备、光通信等方向具备中长期产业趋势。但6月超级周（CPI+议息+指数调样+宇树上市）波动加大，哑铃策略应对分化成为共识。<br>
+          <b>基金配置启示：</b>机构普遍建议"科技成长+红利价值"哑铃配置，公募发行端权益类产品加速上架呼应。
+        </div>
+        <div class="card-footer">
+          <a href="https://baijiahao.baidu.com/s?id=1866969391224173515" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">百家号</span></a>
+          <a href="https://www.cs.com.cn/ssgs/07/2026/06/04/detail_2026060410016026.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">中国证券报</span></a>
+          <span class="impact-tag medium">市场风格：中高</span>
+        </div>
+        <div class="action-box">
+          <div class="action-label">⚡ 腾安行动建议</div>
+          <div class="action-text">
+            ① K型分化加剧→优化基金推荐策略，区分科技成长和稳健红利两类客户需求；<br>
+            ② 哑铃配置共识→推荐"科技ETF+红利基金"组合，匹配机构研判；<br>
+            ③ 超级周波动→提前准备客户沟通话术，关注议息会议对QDII产品影响。
+          </div>
+        </div>
+      </div>
+
+
+      <div class="card p1">
+        <div class="card-top">
+          <div class="card-title">🟡 债券ETF规模首超8500亿元·科创债ETF+基准做市信用债ETF双引擎驱动</div>
+          <div class="card-meta">
+            <span class="priority-tag important">重要关注</span>
+            <span class="date-tag">06-17</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <b>规模突破：</b>Choice数据显示，截至2026年6月17日，全市场债券型ETF总规模首次突破<b>8500亿元</b>，同比增长超<b>180%</b>，在全部ETF市场中的规模占比从7%大幅跃升至18%。在2025年5月末，这一数字仅为约3000亿元，仅一年间，超5500亿元资金涌入这个曾经鲜有人问津的"小众赛道"。<br>
+          <b>双引擎驱动：</b>科创债ETF和基准做市信用债ETF是本轮增长的双引擎。截至6月17日，全市场24只科创债ETF总规模达<b>2941亿元</b>，9只基准做市信用债ETF总规模达<b>1413亿元</b>，两者合计占债券ETF总规模超50%。<br>
+          <b>行业集中度：</b>前十家基金公司在债券ETF市场的合计份额已超<b>70%</b>，头部效应显著。其中海富通基金以6只产品、1725亿元的规模稳居榜首；博时基金以5只产品、1055亿元的规模位列第二。<br>
+          <b>对基金行业影响：</b>债券ETF从"配置工具"升级为"交易+配置"双功能载体→腾安可加大债券ETF产品推荐权重，特别是科创债ETF。
+        </div>
+        <div class="card-footer">
+          <a href="https://admin@stcn.com/article/detail/3970746.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">证券时报</span></a>
+          <span class="impact-tag medium">债券ETF：高</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============ Section 5: 金融科技与AI ============ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:#eef2ff;color:var(--info);">🤖</div>
+      <span class="section-title">金融科技与AI投顾</span>
+      <span class="section-badge" style="background:var(--info-light);color:var(--info);">前瞻洞察</span>
+    </div>
+
+    <div class="card-grid">
+      <div class="card p0">
+        <div class="card-top">
+          <div class="card-title">🔴 九方智投"多智能体"重塑投顾范式！中金策略会力推AI金融科技落地加速</div>
+          <div class="card-meta">
+            <span class="priority-tag urgent">紧急必看</span>
+            <span class="date-tag">06-03~06</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <b>中金策略会：</b>6月3-4日，中金公司2026年中期投资策略会在沪举办，近4000位机构投资者参会。九方智投控股(9636.HK)作为金融科技代表受邀，AI中心负责人王冰发表"多智能体生态重塑投顾范式"主题演讲。<br>
+          <b>多智能体架构：</b>九方智投展示的方案采用多Agent协作模式，覆盖智能投研、策略生成、风险预警、客户交互四大模块。其2025年归母净利润同比+239%至9.2亿元，验证AI投顾商业化路径可行。<br>
+          <b>行业共识：</b>中研普华6月报告指出，2026年智能投顾行业供给端呈"持牌机构主导+科技能力赋能"格局。AI大模型、金融智能体解决方案持续落地，行业技术底座全面升级，产品实现策略自主迭代、风险智能识别、客户需求精准匹配。<br>
+          <b>竞争格局：</b>从WAIC→阿里云峰会→中金策略会，金融AI从概念进入"产品化+规模化"阶段。持牌机构的合规优势+科技公司的算法优势正在融合。
+        </div>
+        <div class="card-footer">
+          <a href="https://static.zhoudaosh.com/files/cnews/2026/20260606/39474761A78B34266CDC5BB990565E6FCABB057D2EED43B75FEC9B643F977A7E/1.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">周到上海</span></a>
+          <a href="https://www.chinairn.com/hyzx/20260603/111659720.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">中研普华</span></a>
+          <span class="impact-tag high">技术趋势：极高</span>
+        </div>
+        <div class="action-box">
+          <div class="action-label">⚡ 腾安行动建议</div>
+          <div class="action-text">
+            ① 多智能体投顾范式→研究九方方案对腾安AI投顾服务的启发，评估多Agent架构可行性；<br>
+            ② AI投顾商业化验证→九方利润+239%证明路径可行，腾安可参考其产品化经验；<br>
+            ③ 持牌+科技融合趋势→腾安作为持牌机构，加速与AI技术服务商合作。
+          </div>
+        </div>
+      </div>
+
+      <div class="card p1">
+        <div class="card-top">
+          <div class="card-title">🟡 基金投顾试点转常规倒计时！"ETF+投顾"成券商确定性增量方向</div>
+          <div class="card-meta">
+            <span class="priority-tag important">重要关注</span>
+            <span class="date-tag">06-06</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <b>转常规加速：</b>6月6日，中国证券报/新华财经报道，基金投顾试点转常规进入最后倒计时阶段。目前全行业已有60+家机构获得试点资格，覆盖公募、券商、银行等多类型机构。<br>
+          <b>ETF+投顾模式：</b>多家头部券商正通过"ETF+投顾"路径加速布局，将被动产品工具化与主动配置服务结合。中信建投、华泰证券等已在App端推出基于ETF组合的智能投顾产品，服务效率较传统投顾提升3-5倍。<br>
+          <b>买方转型深化：</b>券商从"卖方销售"向"买方服务"转型不可逆。制度红利释放后，行业竞争将加剧，但长期看投顾费模式将替代传统销售佣金，推动行业收入结构重塑。<br>
+          <b>对代销冲击：</b>券商凭借"研究+交易+投顾"全链条优势，在高净值客户群体中对第三方代销平台形成差异化竞争。
+        </div>
+        <div class="card-footer">
+          <a href="https://www.cnfin.com/gs-lb/detail/20260606/4422919_1.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">新华财经</span></a>
+          <a href="http://k.sina.com.cn/article_7857201856_1d45362c001906dhqk.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">新浪券商</span></a>
+          <span class="impact-tag high">行业变革：极高</span>
+        </div>
+        <div class="action-box">
+          <div class="action-label">⚡ 腾安行动建议</div>
+          <div class="action-text">
+            ① 投顾转常规→加速腾安基金投顾能力建设，争取正式牌照后首批上线；<br>
+            ② ETF+投顾模式→研究基于ETF组合的智能配置方案，差异化应对券商竞争；<br>
+            ③ 买方收费重塑→提前规划投顾服务费定价策略，评估对现有收入模式影响。
+          </div>
+        </div>
+      </div>
+
+      <div class="card p1">
+        <div class="card-top">
+          <div class="card-title">🟡 公募直销App退潮加速！中科沃土关闭平台，公募"做减法"利好代销+AI服务</div>
+          <div class="card-meta">
+            <span class="priority-tag important">重要关注</span>
+            <span class="date-tag">06-04~06</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <b>最新动态：</b>6月4日，中科沃土基金公告自6月27日起关闭直销网上交易平台和微信服务号的开户、认购、申购等业务。此前诺安、申万菱信、金鹰、平安、国寿安保等多家公募已先后关停App。<br>
+          <b>十年败局：</b>兴业证券研报显示，2018-2023年公募直销保有量份额从61.3%大幅降至36.7%，独立基金销售机构从7.8%飙升至25.8%。直销渠道获客成本高、用户留存差，单一基金App无法与蚂蚁/天天/腾安等综合平台竞争。<br>
+          <b>AI赋能转型：</b>退出直销不意味着放弃触达用户，头部基金公司转向通过AI客服、微信生态、第三方平台嵌入式服务等低成本渠道维系客户关系。基金公司"做减法"后腾出的科技预算可转投AI投研和智能风控。<br>
+          <b>代销受益逻辑：</b>公募直销退潮→用户向代销平台集中→腾安作为头部代销机构直接受益于用户迁移红利。
+        </div>
+        <div class="card-footer">
+          <a href="https://jrj.wuhan.gov.cn/ztzl_57/xyrd/dcczbsc/202606/t20260605_2773688.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">武汉金融办</span></a>
+          <a href="https://baijiahao.baidu.com/s?id=1867220161031501992" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">百家号</span></a>
+          <span class="impact-tag high">渠道变革：极高</span>
+        </div>
+        <div class="action-box">
+          <div class="action-label">⚡ 腾安行动建议</div>
+          <div class="action-text">
+            ① 直销退潮→主动对接关停平台的存量用户迁移，制定承接方案和营销话术；<br>
+            ② AI服务替代→评估腾安AI客服能力是否可承接迁移用户的服务诉求；<br>
+            ③ 渠道集中度提升→关注头部代销平台竞争格局变化，巩固腾安市场地位。
+          </div>
+        </div>
+      </div>
+
+      <div class="card p2">
+        <div class="card-top">
+          <div class="card-title">🔵 2026年基金公司AI人才招聘激增·推动全链条业务变革与智能化转型</div>
+          <div class="card-meta">
+            <span class="priority-tag normal">建议了解</span>
+            <span class="date-tag">06-22</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <b>招聘激增：</b>证券时报记者了解到，2026年开年以来，多家基金公司设立了"AI人才专项"招聘，AI与量化相关岗位数量激增，覆盖投研、交易、运营、风控全链条。金融科技不再是基金公司的后台支持部门，而是逐渐成为驱动业务变革的核心引擎。<br>
+          <b>全链条赋能：</b>基金公司的AI应用已不再局限于单点工具，而是向投研、交易、投顾、客服、运营、风控等全链条延伸。广发基金持续挖掘"投研交"、智能投顾、基金运营、风控及研发等多个业务领域的AI赋能需求。<br>
+          <b>南方基金AI版App：</b>近期，南方基金官方App正式升级至"AI"版，全新AI助手"AI梦"全面上线，通过AI技术重构基金投资全流程，打造全场景、个性化的基金投资体验。<br>
+          <b>竞争格局演变：</b>AI人才争夺战升温→头部基金公司加速智能化转型→腾安作为代销平台，需关注基金公司的AI能力升级对产品供给和服务模式的影响。
+        </div>
+        <div class="card-footer">
+          <a href="https://gu.qq.com/resources/shy/news/detail-v2/index.html?t=1#/index?_tentrees_trans=0&id=SN20260622020605b63c5eb4" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">腾讯新闻·证券时报</span></a>
+          <span class="impact-tag low">AI人才：中</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- ============ Section 6: 市场行情速览 ============ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--success-light);color:var(--success);">📊</div>
+      <span class="section-title">市场行情速览</span>
+      <span class="section-badge" style="background:var(--success-light);color:var(--success);">辅助决策</span>
+    </div>
+
+    <div class="card p3">
+      <div class="card-top">
+        <div class="card-title">周日A股休市（6/22）·明日6/23开市·端午假期结束</div>
+        <div class="card-meta">
+          <span class="priority-tag fyi">知悉即可</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div>
+            <b>📊 周日（6/22）：</b>A股/港股通休市，美股正常交易。端午假期最后一日，海外市场相对平静。<br><br>
+            <b>📊 明日开市（6/23·周一）：</b>A股/港股通恢复交易。假期期间积累的资讯和情绪将在明日集中释放。<br><br>
+            <b>📊 节前最后交易日（6/18）回顾：</b>A股分化，沪指<b>4090点(-0.43%)</b>，深证成指<b>16030点(+0.94%)</b>，创业板指<b>4252点(+2.05%)</b>，科创50指数<b>涨3.84%</b>。
+          </div>
+          <div>
+            <b>📊 假期期间海外动态：</b><br>
+            ▪ 纳指ETF溢价风险爆发→多只产品6/22临停<br>
+            ▪ LOF高溢价20%+→财通多只产品连续涨停<br>
+            ▪ 黄金价格回落→高盛下调12月金价预期至4900美元<br><br>
+            <b>📊 对基金行业影响（明日开市）：</b><br>
+            ▪ 纳指ETF临停→Client可能集中咨询溢价风险<br>
+            ▪ 假期情绪积累→明日可能放量，关注方向选择<br>
+            ▪ 科技风格延续性→关注科创50能否延续强势
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="source-tag">NeoData·周日休市</span>
+        <span class="source-tag">明日6/23开市</span>
+        <span class="impact-tag low">行情速览</span>
+      </div>
+    </div>
+  </div>
+    <!-- ============ Section 7: 关键时间线 ============ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:#eef2ff;color:var(--info);">&#128197;</div>
+      <span class="section-title">近两周关键事件时间线</span>
+    </div>
+
+    <div class="card" style="border-left-color: var(--info);">
+      
+
+
+
+      <div class="timeline-item">
+        <div class="timeline-dot red"></div>
+        <div>
+          <div class="timeline-date">2026-06-22（周日·A股休市·纳指ETF临停+LOF高溢价+FOF破峰值）</div>
+          <div class="timeline-title">多只纳指ETF集体临停（10:30复牌）/ 多只LOF连续涨停高溢价20%+ / FOF上半年新发1137亿破历史峰值</div>
+          <div class="timeline-desc">6月22日，汇添富纳指ETF等5只QDII产品因高溢价集体临停（10:30复牌），溢价风险集中爆发。财通多只LOF连续涨停，溢价率飙升至20%+，极小流通盘催生虚假繁荣。FOF上半年新成立88只，合计发行规模1137.69亿，超越2021年峰值。端午假期最后日，市场情绪积累，明日6/23开市关注放量方向。</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot red"></div>
+        <div>
+          <div class="timeline-date">2026-06-19（端午三市同休·A股/港股通/美股均休市·美联储鹰派持续发酵）</div>
+          <div class="timeline-title">端午三市同休（A股/港股通/美股6/19均休市）/ 美联储鹰派信号持续发酵·年内或加息一次 / 五部门启动新能源车下乡</div>
+          <div class="timeline-desc">2026年端午节，A股/港股通/美股罕见三市同休（6/19-6/21），6/22开市。美联储6/18议息结果持续发酵，沃什首秀点阵图转鹰，年内加息预期升温，全球债市遭抛售。五部门（工信部/商务部等）启动2026新能源车下乡活动，但新能源车板块短期仍震荡。</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot red"></div>
+        <div>
+          <div class="timeline-date">2026-06-18（美联储议息落地·沃什首秀·A股端午前最后交易）</div>
+          <div class="timeline-title">美联储维持利率3.50%-3.75%不变但点阵图中值升至3.75%-4.0% / 沃什首秀转鹰暗示可能加息 / A股端午前最后交易日</div>
+          <div class="timeline-desc">美联储6月议息结果北京时间今日02:00落地：维持利率不变符合预期，但点阵图中值大幅转鹰（年底利率预期3.75%-4.0%），新任主席沃什举行首秀新闻发布会。A股今日为端午前最后交易日，科创50昨日+4%，但4只沪深300ETF净流出137亿元。</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot red"></div>
+        <div>
+          <div class="timeline-date">2026-06-17（陆家嘴论坛开幕·央行/证监会/金融监管总局一把手集体发声）</div>
+          <div class="timeline-title">2026陆家嘴论坛今日开幕 / 证监会宣布抓紧推出主动ETF / 沪深交易所同步发布业务指引</div>
+          <div class="timeline-desc">2026陆家嘴论坛6月17日上午在上海正式开幕，央行行长潘功胜、证监会主席吴清、金融监管总局局长丁向群集体发声。吴清宣布抓紧推出主动管理ETF，沪深交易所同步发布《主动管理交易型开放式证券投资基金业务指引》。</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot red"></div>
+        <div>
+          <div class="timeline-date">2026-06-16（多只QDII科技ETF停牌·6月新基发行创同期新高）</div>
+          <div class="timeline-title">纳指ETF易方达/国泰/景顺+创业板ETF富国因高溢价6/16停牌 / 6月前11天114只新基发行创历史同期新高</div>
+          <div class="timeline-desc">多只QDII科技ETF因二级市场交易价格明显高于IOPV（溢价率最高超22%）于6/16开市起停牌，10:30起复牌。6月前11天114只新基发行创历史同期新高，上半年主动权益基金发行数量同比翻倍。</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot red"></div>
+        <div>
+          <div class="timeline-date">2026-06-15（多项公募新规落地·A股普涨科技收敛）</div>
+          <div class="timeline-title">主题投资风格管理指引+适当性细则修订+公私兼任禁令三文同落 / A股沪指4096(+1.61%)普涨</div>
+          <div class="timeline-desc">多项公募基金新规同日公布：主题投资风格管理指引（12/1施行）将风格漂移软约束转为硬约束；适当性细则修订加强65周岁以上高风险基金销售管理；公私兼任禁令防范利益冲突。</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot red"></div>
+        <div>
+          <div class="timeline-date">2026-06-13（证监会三年行动计划发布·央行双工具加码）</div>
+          <div class="timeline-title">证监会发布三年行动计划（2026-2028）+销售费用新规同步实施 / 央行互换便利扩至3000亿</div>
+          <div class="timeline-desc">证监会6月13日正式发布《公募基金高质量发展三年行动计划（2026-2028）》，同步实施销售费用管理规定，费率改革第三阶段落地。央行同日宣布将互换便利扩至3000亿、股票回购增持再贷款延期扩容。</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot red"></div>
+        <div>
+          <div class="timeline-date">2026-06-12（SpaceX正式挂牌·指数调样生效·跨境券商禁令执行）</div>
+          <div class="timeline-title">SpaceX今日正式纳斯达克挂牌（代码SPCX）/ 指数调样今日收盘后生效·千亿被动调仓 / 跨境券商禁令正式执行</div>
+          <div class="timeline-desc">SpaceX以代码SPCX正式在纳斯达克挂牌，发行价135美元/股，估值1.77万亿美元。沪深300等10余只宽基指数样本调整今日收盘后正式生效，近9000亿指数基金被动调仓。跨境券商禁令今日正式执行。</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot red"></div>
+        <div>
+          <div class="timeline-date">2026-06-11（欧央行重启加息·SpaceX定价确认）</div>
+          <div class="timeline-title">欧央行宣布重启加息25bp（全球主要经济体首家）/ SpaceX IPO定价135美元/股确认</div>
+          <div class="timeline-desc">欧洲央行成为2026年首家重启加息的全球主要经济体央行，存款机制利率+25bp。SpaceX IPO发行价确认为135美元/股，估值1.77万亿美元，明日正式挂牌。</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot red"></div>
+        <div>
+          <div class="timeline-date">2026-06-10（CPI=4.2%符合预期·美股重挫·A股缩量震荡）</div>
+          <div class="timeline-title">美国5月CPI=4.2%符合预期 / 美股三大指数集体收跌（道指-1.88%·纳指-1.98%）/ A股沪指3993(+0.47%)缩量</div>
+          <div class="timeline-desc">美国5月CPI数据昨晚20:30公布，同比4.2%符合预期，但未超预期→美联储加息预期进一步升温。受此影响，隔夜美股三大指数集体收跌。A股今日缩量震荡，沪指收3993.23(+0.47%)。</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot red"></div>
+        <div>
+          <div class="timeline-date">2026-06-09（A股暴力反弹收复4000点·美股分化·港股止跌）</div>
+          <div class="timeline-title">A股沪指4010.03(+1.28%)收复4000点 / 创业板+3.93%暴力反弹 / 美股纳指+0.86%</div>
+          <div class="timeline-desc">A股全线反弹，沪指4010.03点（+1.28%）收复4000点，创业板指+3.93%，科创50+4.17%，科技股集体爆发。美股纳指+0.86%，英特尔+11.10%。港股恒生科技+0.29%止跌回升。</div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+  <!-- Footer -->
+  <div class="footer">
+    数据更新时间：2026年06年23日 10:30 · 近两周核心资讯（06-08 — 06-22）· <a href="https://kelvinye2020-arch.github.io/fund-briefing/" target="_blank" style="color:var(--primary);text-decoration:none;">基金行业资讯看板</a> 由 小A 自动更新
+  </div>
+
+</body>
+</html>
+
+
+
+
+      
+
