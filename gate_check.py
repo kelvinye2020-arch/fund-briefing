@@ -48,7 +48,8 @@ TAG_DOMAIN_MAP = {
     '中国证券报': ['cs.com.cn', 'gu.qq.com', 'so.html5.qq.com', 'finance.sina'],
     '上海证券报': ['cnstock.com', 'sac.net.cn', 'finance.sina'],
     '中国基金报': ['chnfund.com', 'so.html5.qq.com', 'finance.sina'],
-    '每日经济新闻': ['nbd.com.cn', 'so.html5.qq.com'],
+    # mrjjxw.com = 每经"券商基金早参"自有域（2026-09-08 WebFetch 实锤：每经记者彭水萍署名）
+    '每日经济新闻': ['nbd.com.cn', 'mrjjxw.com', 'so.html5.qq.com'],
     '财联社':     ['cls.cn', 'so.html5.qq.com', '163.com'],
     '证监会':     ['csrc.gov.cn'],
     '中国基金业协会': ['amac.org.cn'],
