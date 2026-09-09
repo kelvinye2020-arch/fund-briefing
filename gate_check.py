@@ -42,6 +42,13 @@ DOMAIN_BLACKLIST = {
 # 自媒体汇总页特征（URL 路径或页面类型）
 SELF_MEDIA_PATTERNS = ['投资日报', '基金日报', '财经早报', '日报']
 
+# 闸4 豁免表：已 WebFetch 实锤「域名确为该媒体官方账号/授权发布」的链接，非自媒体转载。
+# 新增条目必须先在浏览器/WebFetch 打开确认页面标注了原创署名，再登记，并注明验证日期。
+VERIFIED_TAG_DOMAIN_OK = {
+    'https://news.qq.com/rain/a/20260906A09NCJ00':
+        '2026-09-09 实锤：腾讯新闻内《财联社》官方账号（上海报业集团旗下，记者吴雨其）',
+}
+
 # source-tag 媒体名 -> 允许的域名（防错标）
 TAG_DOMAIN_MAP = {
     '证券时报':   ['stcn.com'],          # 但 stcn 本身在黑名单——出现即双重违规
@@ -114,6 +121,9 @@ def main():
         u, tag = m.groups()
         dom = re.search(r'https?://([^/"]+)', u).group(1)
         tag_name = re.sub(r'[·\s].*$', '', tag)  # "中国基金报·08-23" -> "中国基金报"
+        # 已 WebFetch 实锤：域名确为 tag 所指媒体的官方账号/授权发布，非自媒体转载 → 豁免
+        if any(u.startswith(ok) for ok in VERIFIED_TAG_DOMAIN_OK):
+            continue
         if tag_name in TAG_DOMAIN_MAP:
             allowed = TAG_DOMAIN_MAP[tag_name]
             if not any(a in dom for a in allowed):
