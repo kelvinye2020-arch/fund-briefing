@@ -49,6 +49,16 @@ VERIFIED_TAG_DOMAIN_OK = {
         '2026-09-09 实锤：腾讯新闻内《财联社》官方账号（上海报业集团旗下，记者吴雨其）',
 }
 
+# 闸5 豁免：已 WebFetch 实锤「页面真实日期+标题」的官方站链接，不再重复告警
+VERIFIED_OFFICIAL_URLS = {
+    'https://www.amac.org.cn/xwfb/xhyw/202608/t20260828_28052.html':
+        '2026-09-10 实锤：发布日期 2026-08-28，《以建设一流投资机构的使命担当 奋力推动基金行业高质量发展》'
+        '（华东研讨交流会，8/26 上海，含销售业务专委会成立）',
+    'https://www.amac.org.cn/zlgl/sljg/sljgclgg/202609/t20260907_28070.html':
+        '2026-09-10 实锤：发布日期 2026-09-07，《关于请江西福乐投资管理有限公司等9家私募基金管理人'
+        '主动联系协会的公告》（中基协字〔2026〕296号，落款 2026-09-04）',
+}
+
 # source-tag 媒体名 -> 允许的域名（防错标）
 TAG_DOMAIN_MAP = {
     '证券时报':   ['stcn.com'],          # 但 stcn 本身在黑名单——出现即双重违规
@@ -131,10 +141,14 @@ def main():
 
     # ============ 闸5（提醒）：官方站点幻觉防御 ============
     official_hits = [u for u in urls if any(od in u for od in OFFICIAL_DOMAINS)]
-    if official_hits:
+    unverified = [u for u in official_hits if u not in VERIFIED_OFFICIAL_URLS]
+    if unverified:
         warns.append('[闸5] 以下官方站链接必须已 WebFetch 验证过页面真实日期（防 csrc 幻觉缝合）：')
-        for u in official_hits:
+        for u in unverified:
             warns.append(f'       - {u[:80]}')
+    verified_n = len(official_hits) - len(unverified)
+    if verified_n:
+        print(f'ℹ️  [闸5] {verified_n} 条官方站链接已在 VERIFIED_OFFICIAL_URLS 实锤，跳过告警')
 
     # ============ 输出 ============
     print(f'===== gate_check @ {TODAY} =====')
