@@ -62,6 +62,8 @@ VERIFIED_TAG_DOMAIN_OK = {
     'https://finance.eastmoney.com/a/202609113872214751.html':
         '2026-09-12 实锤：东方财富转载《财联社》原创署名（记者周晓雅，09-11；第二批摊余成本法债基13家、'
         '63个月封闭期），并经中国基金报（记者方丽/陆慧婧）与上海证券报双源交叉验证',
+    'https://finance.sina.com.cn/jjxw/2026-09-14/doc-inirtwin4912080.shtml':
+        '2026-09-14 实锤：新浪财经 2026-09-14 07:43 转载《证券时报》e公司原稿（跳转引流迎来强监管 基金网络营销整改进入最后窗口期）；正文四维度评估/管理层签字/上海公募电商总监表态等细节另经上海证券报 09-09（cnstock 787642）交叉验证',
 }
 
 # 闸5 豁免：已 WebFetch 实锤「页面真实日期+标题」的官方站链接，不再重复告警
@@ -109,6 +111,23 @@ OFFICIAL_DOMAINS = ['csrc.gov.cn', 'gov.cn', 'amac.org.cn', 'sac.net.cn', 'pbc.g
 def main():
     src = open(HTML, encoding='utf-8').read()
     errors, warns = [], []
+
+    # ============ 闸0：daily-update marker 必须等于今天 ============
+    # 背景：marker 停更已复发 5 次（09-03/09-08/09-09/09-11/09-14），
+    # 原因都是主任务把 marker 放在最后一步、中途崩溃。此闸把「marker 未更新」
+    # 从「静默故障」变成「提交前硬失败」，迫使写卡流程第一步就改 marker。
+    m = re.search(r'<!-- daily-update: (\d{4}-\d{2}-\d{2}) -->', src)
+    if not m:
+        errors.append('[闸0] 未找到 <!-- daily-update: YYYY-MM-DD --> 标记')
+    else:
+        mk = date.fromisoformat(m.group(1))
+        if mk < TODAY:
+            errors.append(
+                f'[闸0] daily-update marker 停在 {mk}，未更新到今天 {TODAY}\n'
+                f'       → 把 marker 更新放在写卡流程第一步，不要留到最后'
+            )
+        elif mk > TODAY:
+            errors.append(f'[闸0] daily-update marker {mk} 晚于今天 {TODAY}（日期写错）')
 
     # ============ 闸1：header 数据区间 ============
     m = re.search(r'数据区间：(\d{4})\.(\d{2})\.(\d{2})\s*—\s*(\d{4})\.(\d{2})\.(\d{2})', src)
