@@ -199,6 +199,31 @@ def main():
     if verified_n:
         print(f'ℹ️  [闸5] {verified_n} 条官方站链接已在 VERIFIED_OFFICIAL_URLS 实锤，跳过告警')
 
+    # ============ 闸6：content-fingerprint 必须对应当日 S0 卡标题 ============
+    # 背景：fingerprint 停在前一天已复发 3 次（09-11/09-14/09-15），主任务重写了卡片
+    # 却忘了同步 meta。此闸把「指纹过期」从静默故障变成提交前硬失败。
+    # 判据：指纹按 | 分段，每段前 4 字必须能在当日 S0 某张卡标题里找到。
+    m = re.search(r'<meta name="content-fingerprint" content="([^"]*)">', src)
+    if not m:
+        errors.append('[闸6] 未找到 <meta name="content-fingerprint">')
+    else:
+        fps = [x for x in m.group(1).split('|') if x.strip()]
+        s0 = src[src.find('Section 0'):src.find('Section 1')]
+        titles = re.findall(r'<div class="card-title[^>]*>(.*?)</div>', s0, re.S)
+        titles = [re.sub(r'<[^>]+>', '', t) for t in titles]
+        if len(fps) != len(titles):
+            errors.append(
+                f'[闸6] fingerprint 段数 {len(fps)} != S0 卡数 {len(titles)}'
+                f'（指纹：{m.group(1)}）'
+            )
+        for seg in fps:
+            key = seg.strip()[:4]
+            if not any(key in t for t in titles):
+                errors.append(
+                    f'[闸6] fingerprint 段「{seg}」在今日 S0 标题中找不到对应卡'
+                    f'——指纹疑似停留在旧的一天，请同步为当日 S0 四事件'
+                )
+
     # ============ 输出 ============
     print(f'===== gate_check @ {TODAY} =====')
     for w in warns:
@@ -208,7 +233,8 @@ def main():
     if errors:
         print(f'\n拒绝提交：{len(errors)} 个硬违规。修复后重跑。')
         sys.exit(1)
-    print(f'\n✅ 三道硬闸通过（{len(warns)} 条告警需人工确认）')
+    print(f'\n✅ 硬闸全部通过（闸0 marker / 闸1 区间 / 闸2 T-14 / 闸3 黑名单 / 闸6 指纹，'
+          f'{len(warns)} 条告警需人工确认）')
     sys.exit(0)
 
 if __name__ == '__main__':
