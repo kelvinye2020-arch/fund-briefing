@@ -236,6 +236,22 @@ def main():
                     f'——指纹疑似停留在旧的一天，请同步为当日 S0 四事件'
                 )
 
+    # ============ 闸7：head 元信息完整性 ============
+    # 背景：2026-09-25 兜底审计发现 <meta name="viewport"> 的 content 被写成了
+    # description 文本（历史遗留，至少自 09-23 起存在），导致移动端视口失效、
+    # 页面在手机上按桌面宽度缩放渲染。此闸把「viewport 被污染」变成硬失败。
+    m = re.search(r'<meta name="viewport" content="([^"]*)">', src)
+    if not m:
+        errors.append('[闸7] 未找到 <meta name="viewport">')
+    elif 'width=device-width' not in m.group(1):
+        errors.append(
+            f'[闸7] viewport content 被污染（现为「{m.group(1)[:40]}」），'
+            f'应为 width=device-width, initial-scale=1.0'
+        )
+    nv = src.count('name="viewport"')
+    if nv != 1:
+        errors.append(f'[闸7] name="viewport" 出现 {nv} 次（应为 1 次）')
+
     # ============ 输出 ============
     print(f'===== gate_check @ {TODAY} =====')
     for w in warns:
@@ -245,8 +261,8 @@ def main():
     if errors:
         print(f'\n拒绝提交：{len(errors)} 个硬违规。修复后重跑。')
         sys.exit(1)
-    print(f'\n✅ 硬闸全部通过（闸0 marker / 闸1 区间 / 闸2 T-14 / 闸3 黑名单 / 闸6 指纹，'
-          f'{len(warns)} 条告警需人工确认）')
+    print(f'\n✅ 硬闸全部通过（闸0 marker / 闸1 区间 / 闸2 T-14 / 闸3 黑名单 / '
+          f'闸6 指纹 / 闸7 元信息，{len(warns)} 条告警需人工确认）')
     sys.exit(0)
 
 if __name__ == '__main__':
