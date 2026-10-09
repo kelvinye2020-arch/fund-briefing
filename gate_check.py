@@ -266,6 +266,34 @@ def main():
     if nv != 1:
         errors.append(f'[闸7] name="viewport" 出现 {nv} 次（应为 1 次）')
 
+    # ============ 闸8：meta description 必须对应当日 S0 事件 ============
+    # 背景：description 停留在前一天已复发 5 次（09-30/10-01/10-02/10-06/10-09）——
+    # 主任务/兜底重写了 S0 卡片却漏同步 description，导致 SEO 摘要与页面内容脱节。
+    # 判据：description 按 | 分段，前 N 段（N = S0 卡数）每段的前 4 字必须能在
+    # 当日 S0 某张卡标题里找到；末段为行情段（沪指…收…），不参与比对。
+    m = re.search(r'<meta name="description" content="([^"]*)">', src)
+    if not m:
+        errors.append('[闸8] 未找到 <meta name="description">')
+    else:
+        dsegs = [x.strip() for x in m.group(1).split('|') if x.strip()]
+        s0 = src[src.find('Section 0'):src.find('Section 1')]
+        titles = re.findall(r'<div class="card-title[^>]*>(.*?)</div>', s0, re.S)
+        titles = [re.sub(r'<[^>]+>', '', t) for t in titles]
+        mfp = re.search(r'<meta name="content-fingerprint" content="([^"]*)">', src)
+        nfp = len([x for x in mfp.group(1).split('|') if x.strip()]) if mfp else len(titles)
+        need = nfp
+        if len(dsegs) < need:
+            errors.append(
+                f'[闸8] description 段数 {len(dsegs)} < S0 事件数 {need}（现为「{m.group(1)[:50]}」）'
+            )
+        for seg in dsegs[:need]:
+            key = seg[:4]
+            if not any(key in t for t in titles):
+                errors.append(
+                    f'[闸8] description 段「{seg[:20]}」在今日 S0 标题中找不到对应卡'
+                    f'——description 疑似停留在旧的一天，请同步为当日 S0 事件'
+                )
+
     # ============ 输出 ============
     print(f'===== gate_check @ {TODAY} =====')
     for w in warns:
@@ -276,7 +304,7 @@ def main():
         print(f'\n拒绝提交：{len(errors)} 个硬违规。修复后重跑。')
         sys.exit(1)
     print(f'\n✅ 硬闸全部通过（闸0 marker / 闸1 区间 / 闸2 T-14 / 闸3 黑名单 / '
-          f'闸6 指纹 / 闸7 元信息，{len(warns)} 条告警需人工确认）')
+          f'闸6 指纹 / 闸7 元信息 / 闸8 摘要，{len(warns)} 条告警需人工确认）')
     sys.exit(0)
 
 if __name__ == '__main__':
