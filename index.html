@@ -1,1322 +1,2382 @@
-<!DOCTYPE html>
-<!-- daily-update: 2026-10-22 -->
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="首批18只主动ETF定档10月23日开售|公募投研迎基准锚定大考|郑巍山卸任全部在管基金产品|公募多策并举提升投资者持有体验|沪指10-21收3713.03 纳指涨1.05%">
-<meta name="content-fingerprint" content="首批18|公募投研|郑巍山卸|公募多策">
-
-<title>基金行业资讯看板 | 腾安基金</title>
-<style>
-  :root {
-    --primary: #1a56db;
-    --primary-light: #e8eefb;
-    --danger: #dc2626;
-    --danger-light: #fef2f2;
-    --warning: #d97706;
-    --warning-light: #fffbeb;
-    --success: #059669;
-    --success-light: #ecfdf5;
-    --info: #6366f1;
-    --info-light: #eef2ff;
-    --gray-50: #f9fafb;
-    --gray-100: #f3f4f6;
-    --gray-200: #e5e7eb;
-    --gray-300: #d1d5db;
-    --gray-400: #9ca3af;
-    --gray-500: #6b7280;
-    --gray-600: #4b5563;
-    --gray-700: #374151;
-    --gray-800: #1f2937;
-    --gray-900: #111827;
-    --radius: 12px;
-    --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
-    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -2px rgba(0,0,0,0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.06);
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-    background: linear-gradient(135deg, #f0f4ff 0%, #f5f3ff 50%, #fdf2f8 100%);
-    color: var(--gray-800);
-    line-height: 1.6;
-    min-height: 100vh;
-  }
-
-  /* Header */
-  .header {
-    background: linear-gradient(135deg, #1e3a8a 0%, #1a56db 40%, #6366f1 100%);
-    color: white;
-    padding: 32px 40px 48px;
-    position: relative;
-    overflow: hidden;
-  }
-  .header::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -10%;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
-    border-radius: 50%;
-  }
-  .header::after {
-    content: '';
-    position: absolute;
-    bottom: -60%;
-    left: 20%;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
-    border-radius: 50%;
-  }
-  .header-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    position: relative;
-    z-index: 1;
-  }
-  .header h1 {
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    margin-bottom: 6px;
-  }
-  .header .subtitle {
-    font-size: 14px;
-    opacity: 0.8;
-    font-weight: 400;
-  }
-  .header .date-badge {
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.2);
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 13px;
-    white-space: nowrap;
-  }
-
-  /* Stats Bar */
-  .stats-bar {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    padding: 0 40px;
-    margin-top: -24px;
-    position: relative;
-    z-index: 2;
-  }
-  .stat-card {
-    background: white;
-    border-radius: var(--radius);
-    padding: 24px 28px;
-    box-shadow: var(--shadow-md);
-    transition: transform 0.2s;
-    position: relative;
-    overflow: hidden;
-  }
-  .stat-card::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    border-radius: 4px 0 0 4px;
-  }
-  .stat-card:nth-child(1)::before { background: var(--primary); }
-  .stat-card:nth-child(2)::before { background: var(--danger); }
-  .stat-card:nth-child(3)::before { background: var(--success); }
-  .stat-card:nth-child(4)::before { background: var(--warning); }
-  .stat-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
-  .stat-number {
-    font-size: 30px;
-    font-weight: 800;
-    color: var(--gray-900);
-    line-height: 1.2;
-    margin-bottom: 4px;
-  }
-  .stat-card:nth-child(2) .stat-number { color: var(--danger); }
-  .stat-card:nth-child(3) .stat-number { color: var(--success); }
-  .stat-card:nth-child(4) .stat-number { color: var(--warning); }
-  .stat-label {
-    font-size: 13px;
-    color: var(--gray-600);
-    margin-bottom: 6px;
-    line-height: 1.4;
-  }
-  .stat-change {
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--gray-500);
-  }
-  .stat-change.up { color: var(--danger); }
-  .stat-change.down { color: var(--success); }
-  .stat-change.neutral { color: var(--gray-400); }
-
-  /* Main Content */
-  .main { padding: 24px 40px 40px; }
-
-  /* Section */
-  .section {
-    margin-bottom: 28px;
-  }
-  .section-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 16px;
-  }
-  .section-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    flex-shrink: 0;
-  }
-  .section-title-group {
-    display: flex;
-    align-items: baseline;
-    gap: 8px;
-    min-width: 0;
-    flex: 1;
-  }
-  .section-title {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--gray-900);
-    white-space: nowrap;
-  }
-  .section-context {
-    font-size: 12px;
-    color: var(--gray-500);
-    white-space: nowrap;
-  }
-  .section-badge {
-    font-size: 11px;
-    padding: 2px 8px;
-    border-radius: 10px;
-    font-weight: 600;
-    margin-left: 4px;
-    flex-shrink: 0;
-    white-space: nowrap;
-  }
-
-  /* Cards */
-  .card-grid {
-    display: grid;
-    gap: 12px;
-  }
-  .card {
-    background: white;
-    border-radius: var(--radius);
-    padding: 20px 24px;
-    box-shadow: var(--shadow);
-    border-left: 4px solid transparent;
-    transition: all 0.2s;
-    position: relative;
-  }
-  .card:hover {
-    box-shadow: var(--shadow-md);
-    transform: translateX(2px);
-  }
-
-  /* Priority Levels */
-  .card.p0 { border-left-color: var(--danger); }
-  .card.p1 { border-left-color: var(--warning); }
-  .card.p2 { border-left-color: var(--primary); }
-  .card.p3 { border-left-color: var(--success); }
-
-  .card-top {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 12px;
-    margin-bottom: 8px;
-  }
-  .card-title {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--gray-900);
-    line-height: 1.5;
-    flex: 1;
-  }
-  .card-meta {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-shrink: 0;
-  }
-  .priority-tag {
-    font-size: 10px;
-    font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 4px;
-    letter-spacing: 0.5px;
-  }
-  .priority-tag.urgent { background: var(--danger-light); color: var(--danger); }
-  .priority-tag.important { background: var(--warning-light); color: var(--warning); }
-  .priority-tag.normal { background: var(--primary-light); color: var(--primary); }
-  .priority-tag.fyi { background: var(--success-light); color: var(--success); }
-
-  .date-tag {
-    font-size: 11px;
-    color: var(--gray-400);
-    white-space: nowrap;
-  }
-
-  .card-body {
-    font-size: 13px;
-    color: var(--gray-600);
-    line-height: 1.7;
-    margin-bottom: 10px;
-  }
-  .card-footer {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-  .source-tag {
-    font-size: 11px;
-    padding: 2px 10px;
-    border-radius: 12px;
-    background: var(--gray-100);
-    color: var(--gray-600);
-    font-weight: 500;
-  }
-  a .source-tag,
-  a.source-link .source-tag {
-    background: #e8f4fd;
-    color: #1890ff;
-    border: 1px solid rgba(24,144,255,0.25);
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  a .source-tag::after,
-  a.source-link .source-tag::after {
-    content: ' ↗';
-    font-size: 10px;
-    opacity: 0.7;
-  }
-  a:hover .source-tag,
-  a.source-link:hover .source-tag {
-    background: #1890ff;
-    color: white;
-    border-color: #1890ff;
-  }
-  a:hover .source-tag::after,
-  a.source-link:hover .source-tag::after {
-    opacity: 1;
-  }
-  .impact-tag {
-    font-size: 11px;
-    padding: 2px 10px;
-    border-radius: 12px;
-    font-weight: 600;
-  }
-  .impact-tag.high { background: #fef2f2; color: #b91c1c; }
-  .impact-tag.medium { background: #fffbeb; color: #92400e; }
-  .impact-tag.low { background: #ecfdf5; color: #065f46; }
-
-  .card-link {
-    font-size: 12px;
-    color: var(--primary);
-    text-decoration: none;
-    font-weight: 500;
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    gap: 3px;
-    transition: opacity 0.2s;
-  }
-  .card-link:hover { opacity: 0.7; }
-
-  /* Action Items */
-  .action-box {
-    background: linear-gradient(135deg, #eff6ff, #eef2ff);
-    border: 1px solid #c7d2fe;
-    border-radius: var(--radius);
-    padding: 16px 20px;
-    margin-top: 6px;
-  }
-  .action-label {
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--info);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 6px;
-  }
-  .action-text {
-    font-size: 13px;
-    color: var(--gray-700);
-    line-height: 1.6;
-  }
-
-  /* Two column layout */
-  .two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-
-  /* Timeline */
-  .timeline-item {
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
-    padding: 7px 0;
-    border-bottom: 1px solid var(--gray-100);
-  }
-  .timeline-item:last-child { border-bottom: none; }
-  .timeline-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    align-self: center;
-    flex-shrink: 0;
-  }
-  .timeline-dot.red { background: var(--danger); }
-  .timeline-dot.yellow { background: var(--warning); }
-  .timeline-dot.blue { background: var(--primary); }
-  .timeline-dot.green { background: var(--success); }
-  .timeline-date {
-    font-size: 12px;
-    color: var(--gray-400);
-    flex-shrink: 0;
-    width: 84px;
-    font-variant-numeric: tabular-nums;
-  }
-  .timeline-title {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--gray-800);
-    flex: 1;
-    line-height: 1.45;
-  }
-
-  /* Competitor Table */
-  .comp-table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    background: white;
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: var(--shadow);
-  }
-  .comp-table th {
-    background: var(--gray-50);
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--gray-600);
-    padding: 12px 16px;
-    text-align: left;
-    border-bottom: 1px solid var(--gray-200);
-  }
-  .comp-table td {
-    font-size: 13px;
-    padding: 14px 16px;
-    border-bottom: 1px solid var(--gray-100);
-    color: var(--gray-700);
-    vertical-align: top;
-  }
-  .comp-table tr:last-child td { border-bottom: none; }
-  .comp-table tr:hover td { background: var(--gray-50); }
-  .comp-name {
-    font-weight: 600;
-    color: var(--gray-900);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .comp-emoji { font-size: 16px; }
-  .comp-links {
-    margin-top: 8px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-  .comp-link {
-    font-size: 11px;
-    color: var(--primary);
-    text-decoration: none;
-    font-weight: 500;
-    padding: 3px 10px;
-    border-radius: 12px;
-    background: var(--primary-light);
-    border: 1px solid rgba(26,86,219,0.15);
-    transition: all 0.2s;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-  }
-  .comp-link:hover {
-    background: var(--primary);
-    color: white;
-    border-color: var(--primary);
-  }
-  .comp-link .link-icon { font-size: 10px; }
-  .alert-dot {
-    width: 7px;
-    height: 7px;
-    background: var(--danger);
-    border-radius: 50%;
-    display: inline-block;
-    animation: pulse 2s infinite;
-  }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
-  }
-
-  /* Footer */
-  .footer {
-    text-align: center;
-    padding: 24px 40px;
-    font-size: 12px;
-    color: var(--gray-400);
-    border-top: 1px solid var(--gray-200);
-    background: white;
-  }
-
-  /* Priority legend */
-  .legend {
-    display: flex;
-    gap: 16px;
-    padding: 16px 24px;
-    background: white;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    margin-bottom: 24px;
-    align-items: center;
-  }
-  .legend-title {
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--gray-500);
-    margin-right: 4px;
-  }
-  .legend-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 12px;
-    color: var(--gray-600);
-  }
-  .legend-dot {
-    width: 12px;
-    height: 4px;
-    border-radius: 2px;
-  }
-  .legend-dot.red { background: var(--danger); }
-  .legend-dot.orange { background: var(--warning); }
-  .legend-dot.blue { background: var(--primary); }
-  .legend-dot.green { background: var(--success); }
-
-  /* Responsive */
-  @media (max-width: 900px) {
-    .stats-bar { grid-template-columns: repeat(2, 1fr); }
-    .two-col { grid-template-columns: 1fr; }
-    .header, .main, .stats-bar { padding-left: 20px; padding-right: 20px; }
-  }
-  @media (max-width: 640px) {
-    .section-header { align-items: flex-start; gap: 8px; }
-    .section-title-group { flex-wrap: wrap; gap: 2px 8px; }
-    .section-title { font-size: 17px; }
-    .section-context { width: 100%; font-size: 11px; }
-  }
-</style>
-</head>
-<body>
-
-  <!-- Header -->
-<div class="header">
-  <div class="header-top">
-    <div>
-      <h1>📊 基金行业资讯看板</h1>
-      <div class="subtitle">腾安基金 · 行业情报中心 · 近两周核心资讯聚合</div>
-    </div>
-    <div class="date-badge">📅 数据区间：2026.10.08 — 2026.10.22（每日更新）</div>
-  </div>
-</div>
-
-<!-- Stats Bar -->
-    <div class="stats-bar">
-    <div class="stat-card">
-      <div class="stat-number">18只</div>
-      <div class="stat-label">首批主动ETF 10月23日集中开售·单只募集上限20亿元·合计约360亿元</div>
-      <div class="stat-change up">▲ 年管理费均为1%·托管费率0.1%—0.15%</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number">3713.03</div>
-      <div class="stat-label">沪指10-21收盘·跌0.60%·沪深北三市成交14421亿元</div>
-      <div class="stat-change down">▼ 创业板指跌1.62%·恒生指数跌0.90%</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number">364位</div>
-      <div class="stat-label">年内离任基金经理·同期新上任基金经理达606名</div>
-      <div class="stat-change neutral">● 郑巍山卸任银河基金全部在管产品</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number">60亿元</div>
-      <div class="stat-label">10月以来基金分红总额·超200只基金宣布分红</div>
-      <div class="stat-change up">▲ 仅10月21日就有25只基金发布分红公告</div>
-    </div>
-  </div>
-<div class="main">
-
-  <!-- Priority Legend -->
-  <div class="legend">
-    <span class="legend-title">优先级：</span>
-    <span class="legend-item"><span class="legend-dot red"></span>紧急必看</span>
-    <span class="legend-item"><span class="legend-dot orange"></span>重要关注</span>
-    <span class="legend-item"><span class="legend-dot blue"></span>建议了解</span>
-    <span class="legend-item"><span class="legend-dot green"></span>知悉即可</span>
-  </div>
-
-                                <!-- ============ Section 0: 今日焦点 ============ -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-icon" style="background:#fef2f2;color:var(--danger);">🔥</div>
-      <div class="section-title-group">
-        <span class="section-title">今日焦点</span>
-        <span class="section-context">10月22日 · 4条今日要闻</span>
-      </div>
-      <span class="section-badge" style="background:var(--danger-light);color:var(--danger);">今日更新</span>
-    </div>
-
-    <div class="card-grid">
-      <!-- S0 Card 1 (10-22 P0) -->
-      <div class="card p0">
-        <div class="card-top">
-          <div class="card-title">🔴 首批18只主动ETF明日开售·10月23日集中发行·单只上限20亿元·年管理费1%</div>
-          <div class="card-meta">
-            <span class="priority-tag urgent">P0 紧急必看</span>
-            <span class="date-tag">10-22</span>
-          </div>
-        </div>
-        <div class="card-body">
-          证券时报10月22日报道（记者李明珠）：根据披露的发售公告，10月19日获批的18只主动ETF发行日期正式敲定为<b>10月23日</b>，单只产品募集上限均为<b>20亿元</b>，按上限静态测算，18只产品有望最多带来<b>360亿元</b>增量资金。<br>
-          <b>发行节奏：</b>易方达、华夏、华泰柏瑞、招商、南方、华安<b>6家</b>公司旗下产品发行期定为10月23日至10月29日，募集周期仅<b>5个工作日</b>；富国、汇添富产品募集期稍长，至10月30日收官，合计<b>6个工作日</b>；工银瑞信、建信、华宝等<b>10家</b>公募则将募集截止日期安排在11月初。<br>
-          <b>费率与托管：</b>依托场内ETF的产品形态，主动ETF费率水平普遍优于场外主动权益基金。从已披露文件看，18只产品年管理费均为<b>1%</b>，托管费率落在<b>0.1%至0.15%</b>之间。托管人共涉及<b>12家机构</b>（7家银行、5家券商），招商银行、工商银行、建设银行、浦发银行、农业银行、中国银行、兴业银行累计揽下<b>11只</b>主动ETF的托管；券商方面广发证券托管<b>2只</b>，国信证券、国泰海通、中信证券、申万宏源各托管1只。<br>
-          <b>策略与管理方式：</b>18只产品覆盖18家基金管理人，在沪深交易所上市的产品各<b>9只</b>；按主要投资风格划分为均衡策略<b>9只</b>、价值策略<b>4只</b>、红利策略<b>3只</b>、质量策略与大盘成长策略各<b>1只</b>。管理方式上<b>13只</b>采用基本面主动选股策略、<b>5只</b>采用量化策略；<b>15只</b>采用“主动＋被动”双基金经理模式，仅华夏基金、富国基金、摩根资产管理旗下3只选择单基金经理负责制。<br>
-          <b>投资者适配：</b>鹏华基金建议投资者首先厘清自身投资风格、匹配对应产品策略——风险承受能力偏低、追求长期稳健增值的投资者可优先关注均衡价值、红利策略类主动ETF，这类策略换手率适中、持仓分散，更适配每日透明披露的运作模式；习惯于短线频繁交易、追逐短期题材行情的投资者则需谨慎参与，主动ETF受持仓透明规则约束，很难实现快速轮动博弈。<br>
-          <b>对腾安启示：</b>18只主动ETF明日起集中开售且募集期最短仅5个工作日，货架须在10月23日开售前完成品类建档与风险揭示，把“募集上限20亿元”“合计约360亿元”标注为按上限静态测算的上限值而非实际募集规模；费率须按“管理费1%＋托管费0.1%—0.15%”分列展示，不得合并宣传为“总成本1%”；对红利、价值、均衡等不同策略产品须分栏陈列并标注业绩比较基准差异，不得以“主动ETF”单一标签替代策略区分，也不得把双基金经理配置包装为收益保障。
-        </div>
-        <div class="card-footer">
-          <a href="https://finance.sina.com.cn/roll/2026-10-22/doc-inivziwc6096668.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">新浪财经·证券时报·10-22</span></a>
-          <span class="impact-tag high">影响：高</span>
-        </div>
-        <div class="action-box">
-          <div class="action-label">⚡ 腾安行动建议</div>
-          <div class="action-text">
-            ① 上架准备→10月23日开售前完成18只主动ETF建档，字段须包含“策略风格（均衡／价值／红利／质量／大盘成长）”“管理方式（基本面／量化）”“基金经理模式（双／单）”“募集期与首募上限”“管理费与托管费”，并与被动宽基ETF分栏陈列；<br>
-            ② 销售话术→“合计约360亿元”“管理费1%”一律标注为按20亿元上限的静态测算值与已披露费率，禁止写成预计募集规模或总成本；<br>
-            ③ 适当性→持仓每日透明不等于低风险，须在详情页前置“主动ETF受持仓透明规则约束、不适配短线轮动博弈”的提示，并同步提示比例确认与配售规则。
-          </div>
-        </div>
-      </div>
-
-      <!-- S0 Card 2 (10-22 P1) -->
-      <div class="card p1">
-        <div class="card-top">
-          <div class="card-title">🟡 公募投研迎“基准锚定”大考·业绩比较基准硬约束·80%总资产界定投资方向</div>
-          <div class="card-meta">
-            <span class="priority-tag important">P1 重要关注</span>
-            <span class="date-tag">10-22</span>
-          </div>
-        </div>
-        <div class="card-body">
-          中国证券报10月22日报道（记者魏昭宇）：监管部门就《公开募集证券投资基金运作管理办法（征求意见稿）》及配套规则公开征求意见，多项围绕产品风险收益特征透明化的约束条款引发行业关注。<br>
-          <b>两条关键约束：</b>一是基金管理人应当为基金设置业绩比较基准，建立全流程管理机制，确保基准有效表征投资风格、衡量业绩并<b>约束投资行为</b>；二是基金名称显示投资方向的，须以可识别或可量化方式清晰界定，且<b>80%以上基金总资产</b>属于该方向，并建立投资对象风格库；非行业主题基金不得集中投资单一行业或主题。<br>
-          <b>口径收紧：</b>中金公司表示，计量端将80%比例的计算口径由“非现金基金资产”调整为“<b>基金总资产</b>”，避免产品通过保留高现金仓位稀释实际持有占比；命名端强调“符合市场基本常识和普遍认知、与投资方向直接相关”。<br>
-          <b>混合基金细分：</b>偏股混合基金权益比例下限为<b>60%以上</b>，偏债混合基金上限为<b>30%以下</b>，其他混合基金上下限区间幅度原则上不超过<b>40个百分点</b>；权益比例可高于<b>80%</b>的产品按股票基金管理风险等级；权益与可转债、可交换债比例上限合计高于<b>30%</b>的混合基金，不得使用“固收增强”“稳健收益”等表述。<br>
-          <b>新增禁止情形：</b>本次修订新增“他人下达投资指令或违规提供投资建议、为规避监管提供便利、非公平交易与利益输送、违规返还管理费、进行不必要交易”等禁止情形，并提高处罚幅度、增加对责任人员的处罚依据。<br>
-          <b>负债端与持有人大会：</b>除特殊情形外，开放式基金不得接受导致单一投资者持有份额超过<b>50%</b>的申购，超过<b>20%</b>的须确认持有期不低于<b>3个月</b>且单日净赎回不超过总份额<b>10%</b>；投资比例微调、增加风险收益特征无重大差异的工具等常规优化，可由管理人与托管人协商一致、在开放期内提前<b>30日</b>公告后办理，仅在投资目标、范围、策略、运作方式发生重大变更时才需召开持有人大会。<br>
-          <b>对腾安启示：</b>“业绩比较基准硬约束＋80%总资产投向界定”落地后，产品命名与风险收益特征的对应关系将显著收紧，货架须同步更新“基金名称—投资方向—业绩比较基准”三字段并列展示，禁止沿用仅按历史业绩或赛道热度的归类口径；混合基金须按偏股／偏债／其他三类重新标注风险等级，“固收增强”“稳健收益”等表述不得用于权益与可转债比例上限合计高于30%的产品；单一投资者持有比例与持有期限制属负债端安排，详情页不得将其解读为对收益的保证。
-        </div>
-        <div class="card-footer">
-          <a href="https://www.cs.com.cn/tzjj/01/2026/10/22/detail_2026102210046357.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">中国证券报·10-22</span></a>
-          <span class="impact-tag high">影响：高</span>
-        </div>
-      </div>
-
-      <!-- S0 Card 3 (10-22 P1) -->
-      <div class="card p1">
-        <div class="card-top">
-          <div class="card-title">🔵 郑巍山卸任银河基金全部在管产品·3只合计210.35亿元·年内364位基金经理离任</div>
-          <div class="card-meta">
-            <span class="priority-tag important">P1 重要关注</span>
-            <span class="date-tag">10-22</span>
-          </div>
-        </div>
-        <div class="card-body">
-          中国基金报10月22日报道（记者曹雯璟）：10月22日，银河创新成长、银河和美生活、银河智联主题分别发布基金经理变更公告，郑巍山离任基金经理一职。至此，郑巍山卸任<b>全部在管产品</b>的基金经理职务，银河基金对其任职期间的贡献表示诚挚感谢。<br>
-          <b>业绩与规模：</b>郑巍山是业内知名科技领域基金经理，深耕半导体产业链，其管理的3只基金产品合计规模达<b>210.35亿元</b>。Wind数据显示，截至10月21日，他管理的银河创新成长任职回报率高达<b>284.87%</b>，年化回报率达<b>19.82%</b>，同类排名<b>18/702</b>。<br>
-          <b>履历：</b>郑巍山为硕士研究生学历，拥有<b>18年</b>证券行业从业经历、<b>7年</b>公募基金管理经历，曾先后就职于国元证券研究中心、景顺长城基金、兴业基金；2018年10月加入银河基金，此前担任过股票投资部总监。银河基金表示，本次变更前已完成投研工作交接，新任基金经理均为公司内部成熟投研人员，各基金投资目标、投资策略保持不变。<br>
-          <b>行业流动：</b>Wind数据显示，截至10月21日，今年以来新上任基金经理达<b>606名</b>，离任的基金经理达<b>364位</b>，其中包括招商基金李崟、信达澳亚基金李晓西、广发基金傅友兴、兴证全球基金董理、华安基金蒋璆、华富基金陈启明，以及天弘基金原“固收+”名将姜晓丽、中银基金原核心基金经理郑宁等。<br>
-          <b>公司层面：</b>银河基金成立于2002年，截至9月30日在管规模达<b>1212.80亿元</b>，较去年同期增长超<b>12%</b>；中国银河证券基金研究中心数据显示，截至9月30日其主动股票投资管理能力过去二十年排名<b>1/36</b>、过去十年<b>3/70</b>、过去三年<b>4/123</b>。<br>
-          <b>对腾安启示：</b>基金经理变更属影响持有决策的重大信息，货架须在公告当日同步更新在管产品的基金经理字段与变更生效日，禁止继续展示离任经理的任职回报、年化回报与同类排名作为卖点；对“18年从业”“任职回报284.87%”一类历史业绩须标注统计截止日与产品范围，不得跨产品迁移使用；年内606名新任、364位离任的行业流动数据可用于说明“平台化投研”趋势，但不得据此暗示单一产品业绩的稳定性。
-        </div>
-        <div class="card-footer">
-          <a href="https://www.chnfund.com/article/AR01d7b90e-eee5-03f3-2d70-3a2473458eca" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">中国基金报·10-22</span></a>
-          <span class="impact-tag medium">影响：中</span>
-        </div>
-      </div>
-
-      <!-- S0 Card 4 (10-22 P2) -->
-      <div class="card p2">
-        <div class="card-top">
-          <div class="card-title">🔵 公募多策并举提升持有体验·10月以来分红超60亿元·港股基金申赎提速至T+1</div>
-          <div class="card-meta">
-            <span class="priority-tag normal">P2 建议了解</span>
-            <span class="date-tag">10-22</span>
-          </div>
-        </div>
-        <div class="card-body">
-          上海证券报10月22日报道（记者赵明超）：近期基金密集宣布分红，多只产品下调费率，港股主题基金申赎交易提速，公募行业多策并举持续提升投资者持有体验。<br>
-          <b>分红：</b>10月21日有<b>25只</b>基金发布分红公告；10月以来已有超过<b>200只</b>基金宣布分红，分红总额超<b>60亿元</b>。多只权益类基金大手笔分红：红利ETF易方达分红<b>8亿元</b>，上证180ETF华安、易方达价值精选混合基金等10月分红均超过<b>1亿元</b>。业内人士表示，在震荡行情中基金分红让部分收益落袋为安，有助于提升持有体验。<br>
-          <b>降费：</b>诺安基金10月20日公告，自<b>10月23日</b>起，诺安货币市场基金管理费年费率由<b>0.33%降至0.15%</b>、托管费年费率由<b>0.10%降至0.04%</b>，A类、C类、D类基金份额销售服务费年费率由<b>0.25%降至0.15%</b>。浦银基金10月21日公告，自10月22日起旗下浦银半导体产业混合基金新增招商银行为代销机构并开通定投业务，参加其费率优惠活动。<br>
-          <b>提速：</b>中欧基金公告，自10月20日起调整中欧港股消费混合基金、中欧港股医药混合基金的估值时间和申赎确认时间，估值时间由<b>T+1日调整为T日</b>，申购赎回确认时间由<b>T+2日调整为T+1日</b>；长城港股医疗保健精选混合基金、长城港股价值优选股票基金自同日起作相同调整。<br>
-          <b>政策背景：</b>监管部门机构监管通报《优化新模式浮动费率产品注册安排 纵深推进公募基金改革》明确，按照分类监管、稳步推进的原则，将新模式浮动费率产品参与机构范围拓展至主动权益类基金管理规模居前的中型基金管理人；对符合持有期要求的投资者，业绩符合同期基准适用基准档费率、明显低于基准适用低档、显著超越基准适用升档。<br>
-          <b>对腾安启示：</b>分红、降费、申赎提速均属影响客户实际到账与体验的要素，货架须同步更新分红公告日期与每份派发金额、最新适用费率与生效日、港股基金的估值与确认时点，禁止沿用降费前的费率口径；展示“分红总额超60亿元”时须标明统计区间与只数口径，不得把分红等同于额外收益；浮动费率产品的三档费率须标注适用条件与持有期要求，不能简化为“多赚多收”的承诺。
-        </div>
-        <div class="card-footer">
-          <a href="https://paper.cnstock.com/html/2026-10/22/content_2279866.htm" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">上海证券报电子版·10-22</span></a>
-          <span class="impact-tag medium">影响：中</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<!-- ============ Section 1: 重磅信息 ============ -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-icon" style="background:#fef2f2;color:var(--danger);">🏆</div>
-      <div class="section-title">重磅信息</div>
-      <span class="section-badge" style="background:var(--danger-light);color:var(--danger);">近两周核心</span>
-    </div>
-
-    <div class="card-grid">
-
-      <!-- S1 Card: 顶流大V银行螺丝钉告别券商 (10-11 P1) -->
-      <div class="card p1">
-        <div class="card-top">
-          <div class="card-title">🟡 顶流大V“银行螺丝钉”告别券商转投雪球·“定投十年赚十倍”实际折算年化仅2.14%·大V机构化实验遇挫</div>
-          <div class="card-meta">
-            <span class="priority-tag important">P1 重要关注</span>
-            <span class="date-tag">10-11</span>
-          </div>
-        </div>
-        <div class="card-body">
-          21世纪经济报道10月11日报道（记者李域、编辑姜诗蔷）：以“定投十年赚十倍”口号出圈、被视作“大V拥抱监管”标杆的“银行螺丝钉”（本名王磊）已从某大型券商离职，转投雪球基金。其<b>2022年5月</b>带领“钉大”团队整体加盟上海某券商并出任首席投顾官，组合资产与策略同步平移至证券公司投顾业务；截至2022年底，加盟机构基金投顾管理规模超<b>149亿元</b>，为国内首批突破百亿规模的基金投顾机构之一。王磊目前在雪球拥有<b>97.4万</b>粉丝、微博<b>149.6万</b>粉丝，管理组合规模超<b>200亿元</b>。<br>
-          <b>业绩拷问：</b>“十年十倍”对应长期年化约<b>25%</b>；据公众号“微积分量化价投”对其指数组合过去十年业绩拼接计算，实际累计收益率约<b>22.1%</b>，折算年化收益率仅<b>2.14%</b>，几乎与同期银行理财年化收益持平。<b>2025年1月</b>曝光的关联私募“仟上螺丝钉主动优选天益私募证券投资基金2期”在成立后跑输市场指数、亏损幅度较大。<br>
-          <b>为何关键：</b>2021年11月证监会下发《关于规范基金投资建议活动的通知》，明确不具备基金投顾业务资格的机构不得提供基金组合策略建议，活跃在微博、雪球、公众号上的基金大V被集体“收编”——要么把组合交给持牌机构主理，要么自己考取资质、入职机构。四年后标杆样本解体，说明“大V流量＋持牌身份”的组合未能同时满足合规约束、客户预期与机构利益三重目标；叠加9月30日《金融产品网络营销管理办法》施行后大V合作全面叫停，个人IP驱动的获客模式已进入制度性退场。<br>
-          <b>对腾安的启示：</b>①内容供给必须内生——把组合策略的解释权收回自营账号与持牌投顾，不再依赖外部个人IP；②客户预期管理要前置，用“权益仓位中枢＋最大回撤＋建议持有期”替代高收益口号，避免重演“预期25%、实得2%”的信任崩塌；③可承接从机构流出的人才与客群，但须先完成合规身份、内容边界与留痕要求的制度化，并明确投顾主理人不得作出损害公司利益的单独表态。
-        </div>
-        <div class="card-footer">
-          <a href="https://finance.sina.com.cn/stock/roll/2026-10-11/doc-iniuwkhf8779040.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">新浪财经·21世纪经济报道·10-11</span></a>
-          <span class="impact-tag high">影响：高</span>
-        </div>
-      </div>
-<!-- S1 Card: 内地公募香港子公司成港交所ETF扩容主力 (10-13 P1) -->
-      <div class="card p1">
-        <div class="card-top">
-          <div class="card-title">🟡 内地公募香港子公司成港交所ETF扩容主力·前三季度新上市51只</div>
-          <div class="card-meta">
-            <span class="priority-tag important">P1 重要关注</span>
-            <span class="date-tag">10-13</span>
-          </div>
-        </div>
-        <div class="card-body">
-          每日经济新闻10月13日报道：今年以来香港ETF市场新品上市节奏持续加快，内地公募基金的香港子公司已成为港交所ETF扩容的绝对主力。据统计，今年前三季度港交所新上市ETF产品共计<b>51只</b>，其中<b>超六成</b>产品由内地公募香港子公司发行，南方东英、广发国际、华夏基金（香港）、易方达（香港）等机构密集发力，持续丰富香港ETF产品体系。<br>
-          <b>队伍继续壮大：</b>今年7月，监管部门正式批复同意设立兴业基金（香港）有限公司；截至目前，内地公募在香港设立的持牌子公司数量已接近<b>30家</b>，成为香港资管市场高度活跃的中坚力量。<br>
-          <b>业务含义：</b>内地公募香港子公司已从“走出去的通道”转为离岸指数工具的主要供给方，产品覆盖宽基、行业主题与跨市场策略，离岸业务正成长为行业“第二增长曲线”。<br>
-          <b>对腾安启示：</b>港股相关标的的筛选须从“是否港交所上市”细化到“发行人是否为内地公募香港子公司、是否具备ETF通资格、跟踪指数是否跨市场”三个维度，并向用户明示交易时段、汇率与结算差异，不得把港股ETF直接等同为A股宽基替代。
-        </div>
-        <div class="card-footer">
-          <a href="https://www.nbd.com.cn/articles/2026-10-13/4602916.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">每日经济新闻·10-13</span></a>
-          <a href="https://www.mrjjxw.com/articles/2026-10-12/4602064.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">每日经济新闻·10-12</span></a>
-          <span class="impact-tag medium">影响：中</span>
-        </div>
-      </div>
-
-<!-- S1 Card: 年内122只发起式基金清盘创历史新高 (10-16 P1) -->
-      <div class="card p1">
-        <div class="card-top">
-          <div class="card-title">🟡 年内122只发起式基金清盘创历史新高·运作办法拟取消“3年2亿”强制清盘线</div>
-          <div class="card-meta">
-            <span class="priority-tag important">P1 重要关注</span>
-            <span class="date-tag">10-16</span>
-          </div>
-        </div>
-        <div class="card-body">
-          每日经济新闻10月16日报道（每经记者肖芮冬、编辑叶峰）：<b>10月15日</b>，多只发起式基金发布可能触发基金合同终止情形的提示性公告。据统计，截至三季度末，今年以来已有<b>122只</b>发起式基金清盘，<b>创历史新高</b>。<br>
-          <b>规则变化：</b>近日《公开募集证券投资基金运作管理办法（征求意见稿）》发布，若新规落地，发起式迷你基金将不用再因规模不达标而清盘——征求意见稿优化发起式基金退出要求，删除现行关于发起式基金成立满3年规模不足<b>2亿元</b>需终止基金合同的规定，将发起式基金退出门槛与普通基金拉平；同时完善“迷你基金”监管要求，管理人选择持续运作的须承担基金运作固定费用成本，并要求建立基金产品规模过低的强制退出机制。<br>
-          <b>对腾安启示：</b>发起式基金“满三年即可能因规模不达标清盘”的硬约束若取消，货架上相关产品的存续预期将发生实质变化，须把“是否发起式、成立满三年时点、规模是否接近2亿元”从一次性风险提示改为持续跟踪项；对仍可能触发清盘的存量产品，须提前准备持有人告知与份额转换方案，不得用“新规即将取消清盘线”作安抚性表述。
-        </div>
-        <div class="card-footer">
-          <a href="https://cd.nbd.com.cn/articles/2026-10-16/4606610.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">每日经济新闻·10-16</span></a>
-          <span class="impact-tag medium">影响：中</span>
-        </div>
-      </div>
-
-<!-- S1 Card: 公募高质量发展新规实施一年 (10-16 P1) -->
-      <div class="card p1">
-        <div class="card-top">
-          <div class="card-title">🟡 公募高质量发展新规实施一年·考核由规模转向投资者回报·降费省出约500亿管理费</div>
-          <div class="card-meta">
-            <span class="priority-tag important">P1 重要关注</span>
-            <span class="date-tag">10-16</span>
-          </div>
-        </div>
-        <div class="card-body">
-          证券日报“十五五”产业图谱与资管配置新坐标圆桌论坛（同花顺财经10月16日刊发）：海富通基金副总经理周小波表示，《推动公募基金高质量发展行动方案》实施近一年，最根本的转变是行业核心考核指标由<b>规模</b>转向<b>投资者回报</b>，部分公司高管考核中该权重已达<b>50%</b>。<br>
-          <b>投资端：</b>业绩比较基准成为过去一年讨论最多的议题，正在改变基金经理行为——基金经理不再只是投资人员，同时也是“产品经理”，须在产品合同与产品要素约定范围内投资，把产品打磨成风格更清晰的工具，即业内所称“白盒化”。周小波表示海富通在基准实施前已对投资行业偏离与集中度执行比同行略严格的管控，全行业则仍在适应过程中。<br>
-          <b>产品与销售端：</b>去年一轮降费为投资者省出的管理费约<b>500亿元</b>；费率形态正从头部公司试点向中型公司推开浮动费率产品；销售端考核权重将加入投资者盈利，今年5—6月市场较好时主动限购、限大额的产品数量明显增多。<br>
-          <b>格局判断：</b>周小波认为头部化持续集中，中型公司的机会在于特色化；海富通的特色方向为养老金融与固收工具类（固收ETF、“固收+”），权益端偏成长。<br>
-          <b>对腾安启示：</b>“投资者回报”进入公募考核核心，货架的选品与展示口径须同步从“规模／排名”切换到“持有体验”，把基准偏离度、风格稳定性与三年／五年期业绩权重前置；浮动费率向中型公司扩容后，须把费率档位与挂钩基准做成可比字段，不得继续用单一规模指标排序推荐。
-        </div>
-        <div class="card-footer">
-          <a href="https://news.10jqka.com.cn/20261016/c680780186.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">同花顺财经·证券日报·10-16</span></a>
-          <span class="impact-tag medium">影响：中</span>
-        </div>
-      </div>
-
-<!-- S1 Card: 弘毅远方严选混合拟发行 (10-16 P2) -->
-      <div class="card p2">
-        <div class="card-top">
-          <div class="card-title">🔵 弘毅远方严选混合拟发行·拟任基金经理在管4只产品任职回报亏损·2只跌逾37%</div>
-          <div class="card-meta">
-            <span class="priority-tag normal">P2 建议了解</span>
-            <span class="date-tag">10-16</span>
-          </div>
-        </div>
-        <div class="card-body">
-          中国经济网10月16日报道：弘毅远方基金发布弘毅远方严选混合型发起式证券投资基金份额发售公告，该基金自<b>2026年10月19日</b>起至<b>2027年1月18日</b>通过销售机构公开发售，募集期限不超过3个月、募集期内不设规模上限；发起资金提供方认购金额不少于<b>1000万元</b>且承诺持有期不少于3年。<br>
-          <b>拟任基金经理：</b>章劲2022年2月加入弘毅远方基金，曾任上海银行资金营运中心自营业务科经理、华夏基金基金经理、华泰资产管理公司证券投资事业部固定收益投资部总经理与证券投资总监、华泰保兴基金副总经理兼首席投资官等职；目前共管理<b>8只</b>基金（各类份额分开计算），其中4只任职回报为负——弘毅远方医疗创新混合A <b>-7.46%</b>、C <b>-7.65%</b>，弘毅远方消费升级混合A <b>-37.26%</b>、C <b>-38.16%</b>。<br>
-          <b>对腾安启示：</b>弱势业绩基金经理继续挂帅新发产品，是“重首发、轻持营”惯性的典型样本；货架须把拟任基金经理在管产品的任职回报与最大回撤做成新发基金页的必展示项，并区分A／C份额口径，不得只展示公司品牌与赛道概念，也不得以“发起式”“自购1000万元”替代业绩披露。
-        </div>
-        <div class="card-footer">
-          <a href="https://finance.ce.cn/jjpd/jjpdgd/202610/t20261016_3260583.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">中国经济网·10-16</span></a>
-          <a href="https://finance.sina.com.cn/jjxw/2026-10-16/doc-inivmazr8378490.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">新浪财经·10-16</span></a>
-          <span class="impact-tag medium">影响：中</span>
-        </div>
-      </div>
-
-
-
-      <!-- S1 Card: 外资公募量化版图加速扩容 (10-19 P1) -->
-      <div class="card p1">
-        <div class="card-top">
-          <div class="card-title">🟡 外资公募量化版图加速扩容·贝莱德路博迈联博3家已发8只量化产品</div>
-          <div class="card-meta">
-            <span class="priority-tag important">P1 重要关注</span>
-            <span class="date-tag">10-19</span>
-          </div>
-        </div>
-        <div class="card-body">
-          新浪财经10月19日报道：10月，外资公募<b>路博迈基金</b>旗下红利量化选股基金正式成立，首发规模约<b>2.72亿元</b>。Wind数据显示，5家新设外资公募中，已有<b>贝莱德基金、路博迈基金、联博基金</b>3家发行量化投资相关产品，合计<b>8只</b>，涵盖<b>指数增强与主动选股</b>两类策略。从以跟踪指数为主的“稳中求进”，到红利、行业轮动等策略的主动出击，外资公募的量化版图正加速扩容。<br>
-          <b>策略延伸：</b>除股票量化外，外资公募还在探索多资产配置方向，将量化模型与基金经理判断相结合，以风险平价等方式平滑组合波动，满足投资者稳健收益需求。<br>
-          <b>对腾安启示：</b>外资量化产品线已从“跟踪指数为主”转向红利、行业轮动等主动策略，做竞品对比时须按策略类型（指数增强／主动量化／多资产配置）而非“外资／内资”标签分类，并标明成立规模、策略口径与费率结构；对“量化”标签不得默认等同于低波动或稳健收益。
-        </div>
-        <div class="card-footer">
-          <a href="https://finance.sina.com.cn/jjxw/2026-10-19/doc-inivsstc6328463.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">新浪财经·10-19</span></a>
-          <span class="impact-tag medium">影响：中</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<!-- ============ Section 2: 监管政策 ============ -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-icon" style="background:#fef2f2;color:var(--danger);">🏛️</div>
-      <span class="section-title">监管政策动态</span>
-      <span class="section-badge" style="background:var(--danger-light);color:var(--danger);">最高优先级</span>
-    </div>
-
-    <div class="card-grid">
-
-      <!-- S2 Card: 浙江证监局对两家私募出具警示函 (10-08 P1 / A级官方源) -->
-      <div class="card p1">
-        <div class="card-top">
-          <div class="card-title">🟡 浙江证监局同日对两家私募出具警示函·信息造假与投管职责委外成整治重点</div>
-          <div class="card-meta">
-            <span class="priority-tag important">P1 重要关注</span>
-            <span class="date-tag">10-08</span>
-          </div>
-        </div>
-        <div class="card-body">
-          据证监会浙江监管局10月8日发布的《关于对浙江冠金投资管理有限公司采取出具警示函措施的决定》（落款2026年10月8日）及北京商报同日报道：浙江冠金投资存在未按基金合同约定召开合伙人会议、未按基金合同约定履行信息披露义务、从事与私募基金无关业务三项问题，违反《私募投资基金监督管理暂行办法》（证监会令第105号）第四条第一款与第二十四条，被采取<b>出具警示函</b>的监督管理措施并记入证券期货市场诚信档案，须在收到决定书之日起15个工作日内提交书面报告；其法定代表人、总经理兼执行董事宋晋徽因对上述行为负主要责任同被警示。<br>
-          同日，杭州复投私募基金管理合伙企业（有限合伙）及两名责任人也领警示函：报送的<b>实际控制人等信息存在虚假记载</b>、<b>部分基金的投资管理职责委托他人行使</b>、提供并报送的部分基金产品的<b>基金经理等信息存在虚假记载</b>；孙勇作为向基金业协会报送的实际控制人及新享1号私募证券投资基金等多只产品的基金经理负有主要责任，时任合规负责人徐勇升参与公司日常经营管理同样负有主要责任。两家机构及相关责任人均须在收到决定书之日起15个工作日内提交书面报告。<br>
-          这是继9月中基协撤销台州沃源管理人登记之后，私募领域“委托他人行使投资管理职责”这一违规类型再次被地方证监局点名，说明监管对管理人<b>通道化、出借牌照</b>的排查仍在扩围。<br>
-          <b>对腾安启示：</b>代销与代销合作机构的准入复核须把“实际控制人／基金经理报送信息一致性”“投资管理职责是否发生委外”纳入定期核查项，发现公示信息与实际不符立即暂停上架；同时不得为存在投管职责委外记录的私募产品提供任何形式的引流或展示。
-        </div>
-        <div class="card-footer">
-          <a href="https://www.csrc.gov.cn/zhejiang/c103952/c7662900/content.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">证监会·10-08</span></a>
-          <a href="https://news.qq.com/rain/a/20261008A08WIB00" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">腾讯新闻·北京商报·10-08</span></a>
-          <span class="impact-tag high">影响：高</span>
-        </div>
-      </div>
-      <!-- S2 Card: 新规落地首周 大V引流全面冰封 (10-09 P1) -->
-      <div class="card p1">
-        <div class="card-top">
-          <div class="card-title">🟡 新规落地首周行业实况·大V引流全面冰封·10余家公募公开第三方平台名单·嘉实15家广发25家</div>
-          <div class="card-meta">
-            <span class="priority-tag important">P1 重要关注</span>
-            <span class="date-tag">10-09</span>
-          </div>
-        </div>
-        <div class="card-body">
-          中国证券报10月9日报道（本报记者张凌之）：《金融产品网络营销管理办法》<b>9月30日</b>由八部门联合发布并正式实施，被业内视为基金网络营销的“分水岭”。新规实施的第二个工作日，记者走访多家基金公司发现落实沿三条线同步展开——<b>内部</b>制定细则、开展合规培训、优化流程与营销素材管理系统；<b>对外</b>营销使用的第三方互联网平台名单首次集中公开；<b>大V群体</b>全面暂停合作。<br>
-          <b>名单披露实况：</b>新规实施首日嘉实基金、易方达基金、广发基金率先在网站披露，随后富国、招商、大成、摩根、鹏华、工银瑞信、天弘等跟进。其中<b>嘉实基金</b>披露15家合作第三方互联网平台（一类为第三方代销机构如支付宝App、天天基金App、微信App、理财通App、京东金融App、陆基金App、且慢App，另一类为运营官方账号的平台如小宇宙、小红书、视频号，并披露具体营销产品名称）；<b>广发基金</b>披露25家第三方互联网平台经营主体及营销使用的通信码号资源，涉及百度、抖音、网易、小红书、微博等运营主体以及华为、苹果、小米、vivo等公司；<b>易方达基金</b>披露微信、抖音、腾讯自选股、同花顺、小红书、哔哩哔哩、雪球、网易云音乐、小宇宙、万得；<b>富国基金</b>披露东方财富、京东金融、腾讯自选股、雪球。<br>
-          <b>合规体系升级：</b>北京一家大型基金公司搭建数字化营销素材管理系统平台，对直播回放、短视频、图文等内容实现自动留存归档，明确保存期限与检索路径；一家第三方销售机构亦升级营销内容可回溯系统，所有短视频、直播、图文与广告投放资料全部自动存档、长期留存。有南方基金公司合规负责人表示，以往平台及合作博主承接用户产品咨询、投资答疑、互动解读的引流合作模式已超越单纯技术服务边界，属违规展业，将全面叫停；<b>未来平台合作只能保留合规技术导流功能，所有金融服务、客户答疑、产品解读均由基金机构自主承接</b>。<br>
-          <b>对腾安的启示：</b>①第三方平台从“销售参与方”回归“技术服务方”，腾安须重签与合作平台的服务边界——产品咨询、投资答疑、互动解读一律由自营团队承接，平台只保留技术导流；②微信理财通作为腾安代销载体已出现在多家基金公司的公示名单中，腾安应主动准备对客的渠道公示口径与查询核实入口；③营销素材留痕与可回溯应做成系统能力而非人工台账，凡对客输出的直播、短视频须自动归档并随时可查验。
-        </div>
-        <div class="card-footer">
-          <a href="https://www.ce.cn/xwzx/gnsz/gdxw/202610/t20261009_3250222.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">中国经济网·中国证券报·10-09</span></a>
-          <span class="impact-tag high">影响：高</span>
-        </div>
-      </div>
-
-      <!-- S2 Card: 中基协发布后续职业培训大纲2026年度修订 (10-16 P2 / A级官方源) -->
-      <div class="card p2">
-        <div class="card-top">
-          <div class="card-title">🔵 中基协发布《基金从业人员后续职业培训大纲（2026年度修订）》·中基协字〔2026〕341号</div>
-          <div class="card-meta">
-            <span class="priority-tag normal">P2 建议了解</span>
-            <span class="date-tag">10-16</span>
-          </div>
-        </div>
-        <div class="card-body">
-          中国证券投资基金业协会10月16日发布中基协字〔2026〕341号通知（落款2026年10月13日）：为加快建设一流投资机构，系统提升基金从业人员的职业道德、专业技能和胜任能力，协会根据法律法规更新和行业发展形势、结合行业培训需要，编制《基金从业人员后续职业培训大纲（2026年度修订）》并予发布，<b>自发布之日起施行</b>。<br>
-          <b>配套专题培训：</b>协会10月15日另发中基协字〔2026〕339号通知，定于<b>10月22日</b>举办私募股权投资基金业务直播培训，内容为人工智能、量子科技行业的发展现状、产业链、行业研究方法及投资展望；并与香港交易所定于<b>10月29日</b>在北京合办2026年港股通业务培训班，聚焦互联互通与港股通ETF发展、多资产配置与风险管理、人工智能应用等主题。<br>
-          <b>对腾安启示：</b>培训大纲修订与港股通、AI、量子科技等专题培训同步落地，反映监管对从业人员胜任能力的要求正与新质生产力、跨境配置、AI应用三条主线对齐；一线销售与投顾团队须把后续职业培训学时纳入合规台账，并在港股通ETF、AI主题产品的对客话术前完成对应专题学习，避免以旧口径解释新规则。
-        </div>
-        <div class="card-footer">
-          <a href="https://www.amac.org.cn/xwfb/tzgg/202610/t20261016_28171.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">中国证券投资基金业协会·10-16</span></a>
-          <a href="https://finance.sina.com.cn/wm/2026-10-16/doc-inivkncp7036266.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">新浪财经·中基协·10-16</span></a>
-          <span class="impact-tag medium">影响：中</span>
-        </div>
-      </div>
-
-
-      <!-- S2 Card: 百亿私募杭州图灵一日收三份警示函 (10-09 P1) -->
-      <div class="card p1">
-        <div class="card-top">
-          <div class="card-title">🟡 百亿私募杭州图灵一日收三份警示函·七项违规·总经理与风控负责人双双被点名</div>
-          <div class="card-meta">
-            <span class="priority-tag important">P1 重要关注</span>
-            <span class="date-tag">10-09</span>
-          </div>
-        </div>
-        <div class="card-body">
-          浙江证监局于<b>10月9日</b>先后下发三份行政监管措施决定书（10月13日起媒体陆续披露）：对私募基金管理人<b>杭州图灵资产管理有限公司</b>、法定代表人兼总经理<b>王晓妍</b>、合规风控负责人<b>李琼</b>分别采取出具警示函的监督管理措施，相关记录记入证券期货市场诚信档案，三方须于收到决定书<b>15个工作日内</b>提交书面整改报告。<br>
-          <b>七项违规（四项涉募集推介与信披）：</b>不配合监管机构依法开展的监督检查；宣传推介材料存在虚假记载；不公平对待同一基金的不同投资者、损害部分投资者利益；向投资者披露的信息不准确、不完整；未保持应有的独立性、与关联方人员混同办公；投资决策相关内部制度执行不到位；投资者适当性程序违规。<br>
-          <b>条款对应：</b>不配合监督检查与投资者适当性程序违规对应《私募投资基金监督管理条例》第三十二条第一项；宣传推介材料虚假记载、不公平对待投资者、混同办公、内控执行不到位四项对应第三条第三款；披露信息不准确不完整对应第四十一条第二款。<br>
-          <b>主体情况：</b>中基协登记信息显示，杭州图灵成立于2016年9月、2019年3月完成登记，机构类型为私募股权、创业投资基金管理人，管理规模在<b>100亿元</b>以上，全职员工19人；王晓妍为实际控制人，持股<b>82%</b>。截至2026年10月16日，年内新备案产品共<b>20只</b>（集中在1月至5月，5月之后未有新增），存续产品共计<b>56只</b>。<br>
-          <b>对腾安启示：</b>监管已把合规岗位的实际履职情况单独审视——风控负责人与总经理并列被点名，说明“合规负责人是否只是挂名、履职是否留痕”正成为检查项；对合作机构的展示须同步呈现其监管措施记录与整改状态，不得以“明星投资人”“明星战绩”叙事覆盖合规瑕疵，也不得因规模百亿而弱化风险提示。
-        </div>
-        <div class="card-footer">
-          <a href="https://www.mrjjxw.com/articles/2026-10-14/4604272.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">每日经济新闻·10-14</span></a>
-          <a href="https://finance.ce.cn/stock/gsgdbd/202610/t20261013_3256410.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">中国经济网·10-13</span></a>
-          <span class="impact-tag high">影响：高</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<!-- ============ Section 3: 竞争对手动态 ============ -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-icon" style="background:#fffbeb;color:var(--warning);">🏁</div>
-      <span class="section-title">竞争对手动态</span>
-      <span class="section-badge" style="background:var(--warning-light);color:var(--warning);">重点跟踪</span>
-    </div>
-
-    <div class="comp-table">
-      <table style="width:100%;border-collapse:collapse;">
-        <thead>
-          <tr>
-            <th style="width:15%">机构</th>
-            <th style="width:15%">时间</th>
-            <th style="width:45%">动态详情</th>
-            <th style="width:12%">威胁等级</th>
-            <th style="width:13%">对腾安启示</th>
-          </tr>
-        </thead>
-                <tbody>
-                    <tr>
-            <td><span class="comp-name"><span class="comp-emoji">🐜</span>蚂蚁基金</span></td>
-            <td>10-16</td>
-            <td>
-              <b>中国证券报电子版10月16日披露金元顺安基金公告（落款二〇二六年十月十六日）：自2026年10月19日起新增14家销售机构销售金元顺安丰瑞债券型证券投资基金，蚂蚁（杭州）基金销售有限公司列名单第13位</b>，业务范围覆盖开户、认购、申购、赎回、定期定额投资与基金转换，定期定额投资最低限额为<b>10元</b>，并同步参加销售机构费率优惠。同期上海证券报10月12日报道（记者陈玥），蚂蚁平台“固收+”页面把推荐产品分为<b>“低波固收+”“中波固收+”“高波固收+”</b>三档，并叠加<b>“债券+可转债”“债券+黄金股票+大盘”“债券+科技+大盘”</b>等标签，方便投资者按底层资产与增强逻辑筛选。<br>
-              <span style="color:var(--danger);font-weight:600;">⚡ 货架＋标签双线推进：蚂蚁一边用新增代销公告持续补齐债基货架，一边用“波动档位＋增强来源”两层标签把“固收+”重做成风险敞口选择</span>
-              <div class="comp-links">
-                <a class="comp-link" href="https://epaper.cs.com.cn/zgzqb/html/2026-10/16/nw.D110000zgzqb_20261016_6-B018.htm" target="_blank"><span class="link-icon">📄</span>中国证券报电子版·10-16</a>
-                <a class="comp-link" href="https://finance.china.com.cn/money/fund/20261012/6325823.shtml" target="_blank"><span class="link-icon">📊</span>中国网财经·上海证券报·10-12</a>
-              </div>
-            </td>
-            <td><span class="impact-tag high">🔴 入口重构</span></td>
-            <td style="font-size:12px;color:var(--gray-600);">蚂蚁与腾安同处“新增销售机构”公告名单已成常态，竞争不在“有没有”而在“怎么解释”——腾安须把波动档位与增强来源做成货架默认字段</td>
-          </tr>
-          <tr>
-            <td><span class="comp-name"><span class="comp-emoji">🏦</span>招商银行</span></td>
-            <td>10-13</td>
-            <td>
-              <b>证券日报电子版10月13日披露国海富兰克林基金公告（落款二〇二六年十月十三日）：自2026年10月14日起，招商银行代理销售富兰克林国海北证50成份指数型发起式证券投资基金A类（027723）、C类（027724）</b>，同步开通基金转换与定期定额投资业务，<b>定投起点金额1元</b>，A类份额参加费率优惠、优惠活动起始时间为<b>2026年10月14日</b>。<br>
-              <b>货架含义：</b>北证50成份指数属高波动宽基工具，此前主要经由券商与三方平台销售；招行此次以<b>“1元起投＋费率优惠＋基金转换”</b>三件套接入，等于把高波动指数工具正式纳入银行零售货架，货架的风险梯度由低波底仓向高波工具外扩。<br>
-              <span style="color:var(--danger);font-weight:600;">⚡ 风险梯度补全：招行用1元定投把高波动指数工具做进银行App，货架宽度与风险分层同步外扩</span>
-              <div class="comp-links">
-                <a class="comp-link" href="http://epaper.zqrb.cn/html/2026-10/13/content_1279192.htm" target="_blank"><span class="link-icon">📄</span>证券日报电子版·10-13</a>
-              </div>
-            </td>
-            <td><span class="impact-tag high">🔴 货架扩张</span></td>
-            <td style="font-size:12px;color:var(--gray-600);">银行渠道不再只做低波，“1元起投＋费率优惠”是高波动指数下沉零售的标配打法；腾安须在高波动产品页前置波动率与最大回撤区间，不能只靠起投门槛吸引</td>
-          </tr>
-                    <tr>
-            <td><span class="comp-name"><span class="comp-emoji">📈</span>天天基金/东方财富</span></td>
-            <td>10-16</td>
-            <td>
-              <b>上海证券报电子版10月14日披露山证资管公告（落款2026年10月14日）：自2026年10月14日起新增上海天天基金销售有限公司、上海好买基金销售有限公司为山证资管裕利定期开放债券型发起式证券投资基金的销售机构</b>，可办理开户、申购、赎回、基金转换与定期定额投资等业务。同期的中国证券报电子版10月16日金元顺安丰瑞债券新增销售机构公告中，天天基金列14家名单的<b>第14位</b>，与中信证券华南、中信证券（山东）、中信期货等同批进场。<br>
-              <span style="color:var(--warning);font-weight:600;">⚡ 双线补位：天天基金一边接管定期开放债基的日常申赎通道，一边进入新基金首发名单，货架与交易场景同步扩容</span>
-              <div class="comp-links">
-                <a class="comp-link" href="https://paper.cnstock.com/html/2026-10/14/content_2277017.htm" target="_blank"><span class="link-icon">📊</span>上海证券报·10-14</a>
-                <a class="comp-link" href="https://epaper.cs.com.cn/zgzqb/html/2026-10/16/nw.D110000zgzqb_20261016_6-B018.htm" target="_blank"><span class="link-icon">📄</span>中国证券报电子版·10-16</a>
-              </div>
-            </td>
-            <td><span class="impact-tag medium">🟡 货架扩容</span></td>
-            <td style="font-size:12px;color:var(--gray-600);">三方货架补齐速度已快于银行，腾安须用“内容解释力”而非“货架宽度”建立差异；与中信系券商同批进场也提示腾安评估券商通道的协同价值</td>
-          </tr>
-                    <tr>
-            <td><span class="comp-name"><span class="comp-emoji">🏛</span>上海基煜基金</span></td>
-            <td>10-16</td>
-            <td>
-              <b>中国证券报电子版10月16日披露金元顺安基金公告（落款二〇二六年十月十六日）：自2026年10月19日起新增14家销售机构，上海基煜基金销售有限公司列名单第9位</b>，位次高于上海长量（第10位）、上海万得（第11位）与浙江同花顺（第12位），低于中信期货（第4位）与泰信财富（第6位）；业务范围覆盖开户、认购、申购、赎回、定期定额投资与基金转换，定投最低限额<b>10元</b>。基煜延续其服务机构客户的B端路线——不与C端争流量，靠机构开户、交易与投研服务的标准化把B端资金批量沉淀。<br>
-              <span style="color:var(--warning);font-weight:600;">⚡ B端深耕：基煜在多家基金公司的新增销售机构名单中稳定占位，靠机构开户—交易—投研的标准化服务把B端资金批量沉淀</span>
-              <div class="comp-links">
-                <a class="comp-link" href="https://epaper.cs.com.cn/zgzqb/html/2026-10/16/nw.D110000zgzqb_20261016_6-B018.htm" target="_blank"><span class="link-icon">📄</span>中国证券报电子版·10-16</a>
-              </div>
-            </td>
-            <td><span class="impact-tag medium">🟡 To B深耕</span></td>
-            <td style="font-size:12px;color:var(--gray-600);">机构端代销是与C端完全不同的能力栈（交易、托管、投研接口），腾安需明确是否进入，避免两头都做浅</td>
-          </tr>
-                    <tr>
-            <td><span class="comp-name"><span class="comp-emoji">🤖</span>盈米基金</span></td>
-            <td>10-16</td>
-            <td>
-              <b>中国证券报电子版10月16日披露金元顺安基金公告（落款二〇二六年十月十六日）：自2026年10月19日起新增14家销售机构，珠海盈米基金销售有限公司列名单第3位</b>，在三方销售机构中位次最高。同期21世纪经济报道10月11日报道（记者李域、编辑姜诗蔷），盈米基金投顾事业部出台展业合规管理办法，把<b>线上渠道</b>（公众号、短视频、直播、社群、图文发布，以及企业微信、电话、腾讯会议等客户互动）与<b>线下渠道</b>（路演、沙龙、投资者见面会、客户答谢会、讲座、培训及面对面营销）三类展业行为一并纳入规范。<br>
-              <span style="color:var(--danger);font-weight:600;">⚡ 货架＋合规同步：盈米在扩充代销名单的同时把展业边界写成成文制度，用制度化内控承接“大V退场”后的服务真空</span>
-              <div class="comp-links">
-                <a class="comp-link" href="https://epaper.cs.com.cn/zgzqb/html/2026-10/16/nw.D110000zgzqb_20261016_6-B018.htm" target="_blank"><span class="link-icon">📄</span>中国证券报电子版·10-16</a>
-                <a class="comp-link" href="https://finance.sina.com.cn/stock/roll/2026-10-11/doc-iniuwkhf8779040.shtml" target="_blank"><span class="link-icon">📊</span>新浪财经·21世纪经济报道·10-11</a>
-              </div>
-            </td>
-            <td><span class="impact-tag high">🔴 合规内控</span></td>
-            <td style="font-size:12px;color:var(--gray-600);">新规下展业边界需要成文制度落地，腾安应参照把线上内容发布、客户互动与线下活动三类展业行为一并纳入合规办法，避免依赖口头口径</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <!-- ============ Section 4: 行业趋势 ============ -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-icon" style="background:var(--primary-light);color:var(--primary);">📈</div>
-      <span class="section-title">行业趋势与市场数据</span>
-      <span class="section-badge" style="background:var(--primary-light);color:var(--primary);">趋势洞察</span>
-    </div>
-
-    <div class="two-col">
-      <!-- S4 Card: 高股息资产热度升温·红利基金密集限购 (10-13 P1) -->
-      <div class="card p1">
-        <div class="card-top">
-          <div class="card-title">🟡 高股息资产热度升温·节后18只红利基金密集限购·新品同步提速</div>
-          <div class="card-meta">
-            <span class="priority-tag important">P1 重要关注</span>
-            <span class="date-tag">10-13</span>
-          </div>
-        </div>
-        <div class="card-body">
-          中国经济网10月13日报道（Wind数据）：国庆假期以来红利基金掀起一轮"限购潮"，截至10月12日，节后已有<b>18只</b>红利主题基金发布暂停或限制大额申购相关公告，成为本轮限购主力品种。<br>
-          <b>限购清单：</b>银河基金将银河中证红利低波动100指数、银河上证国有企业红利ETF发起式联接基金单日申购限额设定为<b>100万元</b>，自10月13日起恢复办理大额申购；交银中证红利低波动100指数、景顺长城中证沪港深红利成长低波动指数同样设定100万元单日限额；天弘旗下两只红利基金单日单账户限购<b>500万元</b>；富国恒生港股通红利低波动ETF联接对单账户日累计超<b>1000万元</b>的申购予以暂停；招商中证红利ETF联接对非个人投资者实施单日<b>10万元</b>限额。<br>
-          <b>风格再平衡：</b>Wind数据显示，今年上半年上证红利指数下跌6%，同期上证指数、深证成指、创业板指分别上涨3.16%、19.82%、35.58%；下半年以来截至10月12日，上证红利指数涨超<b>14%</b>，三大宽基指数则出现不同程度回调。全市场81只名称含"红利"的ETF中，<b>70只</b>近三个月回报为正，<b>12只</b>近三个月净值增长超10%，华泰柏瑞、融通、富国旗下央企红利ETF均超13%。<br>
-          <b>供需双向扩容：</b>路博迈红利量化选股股票基金提前结束募集（原定募集截止日10月16日）；嘉实、汇添富分别提交中证全指红利质量ETF募集申请，工银瑞信、万家、易方达、南方、富国等多家提交中证红利增长ETF申请；10月12日博时恒生港股通红利低波动ETF、银华中证全指红利质量ETF、广发中证红利低波动ETF同步启动发行。<br>
-          <b>对腾安影响：</b>红利赛道"存量限购＋新品提速"双向扩容，货架须把限购状态、恢复日期与单日限额前置展示，避免用户在限额期内产生申购失败体验；同时提示红利资产行业集中于银行、资源、公用事业、交运，不得把短期风格切换包装成无风险收益。
-        </div>
-        <div class="card-footer">
-          <a href="https://www.ce.cn/xwzx/gnsz/gdxw/202610/t20261013_3255557.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">中国经济网·10-13</span></a>
-          <a href="https://paper.cnstock.com/html/2026-10/12/content_2276193.htm" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">上海证券报·10-12</span></a>
-          <span class="impact-tag medium">供给结构：中</span>
-        </div>
-      </div>
-
-      <!-- S4 Card: 公募探寻“产、投、销、考”全链条稳市路径 (10-19 P1) -->
-      <div class="card p1">
-        <div class="card-top">
-          <div class="card-title">🟡 公募探寻“产、投、销、考”全链条稳市路径·年内新成立1385只已超去年</div>
-          <div class="card-meta">
-            <span class="priority-tag important">P1 重要关注</span>
-            <span class="date-tag">10-19</span>
-          </div>
-        </div>
-        <div class="card-body">
-          证券时报10月19日报道（记者裴利瑞）：A股震荡反复、短期资金追涨杀跌，多家受访机构认为公募要真正发挥市场“稳定器”作用，关键并非简单扩大权益投资规模，而是<b>减少顺周期行为、增强跨周期投资能力</b>，需在“产、投、销、考”四个环节协同发力。<br>
-          <b>产品端：</b>Wind数据显示，截至2026年三季度末，今年以来全市场新成立<b>1385只</b>基金，已超去年同期的<b>1110只</b>；市场上涨的二季度新成立<b>498只</b>，远超去年同期的<b>369只</b>，名称带有“科创”“芯片”“智选”等关键词的新产品募集成绩尤为亮眼，顺周期发行的规模路径依赖仍存。一位第三方基金评价人士举例，部分五六月份在科技板块高位成立的基金，到三季度便遭遇<b>百分之二三十</b>的回撤。监管侧已强制披露“盈利投资者占比”“持有期收益”并将“投资者盈亏与持有期限”纳入代销机构考核；《公开募集证券投资基金运作管理办法（征求意见稿）》拟将非固收类基金成立门槛由2亿份／2亿元降至<b>5000万份／5000万元</b>，中欧基金认为这有利于降低产品成立对短期市场热度的依赖。<br>
-          <b>投资端：</b>博时基金首席策略分析师陈显顺表示，公募须从“组合管理”转向“资产配置管理”，在行业配置、仓位管理和风险预算方面建立系统化框架；晨星（中国）基金研究中心总监孙珩建议完善基金经理长期考核机制、收紧基金合同投资边界、建立内部持仓风格定期稽核体系，销售渠道须充分披露产品风格定位与风格漂移风险。<br>
-          <b>销售端：</b>博时基金提出构建“认知引导、情绪陪伴、产品支撑、渠道协同”四位一体投教陪伴体系，大力发展持有期基金、FOF、多资产配置工具并推广纪律化定投；晨星中国董事长陈鹏认为下一步关键是推出真正的<b>投顾份额（干净份额）</b>，把信义义务落实到投顾业务实操细则，并用好个人养老金等制度管道探索默认配置模式。<br>
-          <b>考核端：</b>嘉实基金表示将围绕长周期考核全面建立以基金投资收益为核心的考核体系；陈显顺建议行业评价体系从“规模导向”转向“价值创造导向”。<br>
-          <b>对腾安启示：</b>“逆周期布局”已从监管要求下沉到产品、投资、销售、考核四个环节，货架排序与推荐逻辑须同步弱化新发规模与短期排名权重，改为展示盈利投资者占比、持有期收益与风格稳定性；对高位成立的次新基金须在详情页标注成立时点与建仓区间，不得以“赛道景气”掩盖“成立即高位”的回撤来源。
-        </div>
-        <div class="card-footer">
-          <a href="https://finance.sina.com.cn/jjxw/2026-10-19/doc-inivsstf7059851.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">新浪财经·证券时报·10-19</span></a>
-          <span class="impact-tag medium">影响：中</span>
-        </div>
-      </div>
-
-      <!-- S4 Card: 公募固收+发展迎来三重共振 (10-12 P1) -->
-      <div class="card p1">
-        <div class="card-top">
-          <div class="card-title">🟡 公募“固收+”迎来三重共振·二季度末规模3.67万亿占全市场9.5%·白盒化成渠道主流</div>
-          <div class="card-meta">
-            <span class="priority-tag important">P1 重要关注</span>
-            <span class="date-tag">10-12</span>
-          </div>
-        </div>
-        <div class="card-body">
-          上海证券报10月12日报道（记者陈玥）：随着新发产品募集资金加速流入、个人养老金产品池扩容、白盒化策略成为渠道主流，公募“固收+”迎来新的发展契机。9月以来受市场波动影响，一些权益类产品延长募集期，一批“固收+”新发产品却公告提前结束募集，如<b>中欧宽泽债券、嘉实稳健瑞庆6个月持有、平安添鑫、招商安拓</b>等；东吴证券研报显示，首批26只“固收+”个人养老金基金的管理费均为原份额管理费的<b>50%</b>，托管费也大多下降约<b>50%</b>。<br>
-          <b>规模与结构：</b>华源证券统计数据显示，截至<b>2026年二季度末</b>，公募“固收+”整体规模站上<b>3.67万亿元</b>，占全市场基金规模的比重达<b>9.5%</b>。产品形态已从早期“70%债券＋30%股票”的固定比例升级为多资产工具箱——股票类别细分至红利、科技、周期、可转债，资产类别扩展到公募REITs、黄金、海外债券及股票、ETF与另类资产。南开大学金融学院教授田利辉表示，“固收+”的风险收益特征与养老资金追求长期稳健增值的核心诉求天然契合，让整个账户的风险梯度变得完善、平滑。<br>
-          <b>白盒化两条路线：</b>国泰海通证券研报认为，“白盒”就是把“+”摊开——加哪类资产、用什么方法、守什么纪律。<b>赛道“白盒”</b>锚定科技、红利、转债等明确方向；<b>方法“白盒”</b>则用指数增强、量化选股、波动控制等规则化方法。渠道端已行动：招商银行“策略固收+”栏目分<b>红利+、科创+、量化+、转债+</b>四种；蚂蚁平台分低波／中波／高波三档并叠加策略标签；天天基金同样划分三档板块。<br>
-          <b>管理人侧配合：</b>南方基金打造丰泽、泓享、荣信、乾元一组差异化二级债基——丰泽稳健添利侧重产业周期驱动的成长方向，泓享稳健添利3个月持有更重视回撤约束下的均衡增强，荣信稳健添利看好“红利＋科技”，乾元稳健添利债券则通过纪律化量化增强增厚收益；平安基金规划<b>稳健型、高弹性、工具型</b>三大类“白盒化”固收+基金。南方基金介绍“固收+”的稳健更依赖平台化支撑：全栈自研风控系统实现投前、投中、投后全流程覆盖，自主研发系统整合智能研究、投研协同、智能风控、精准交易四大板块。<br>
-          <b>对腾安启示：</b>“固收+”已从单一产品变成渠道竞争的标准化战场——腾安须在货架上同时提供<b>波动档位</b>（低波／中波／高波）与<b>增强来源</b>（红利／科技／转债／量化）两个筛选维度，并把权益仓位中枢与最大回撤前置到产品页；同时可借个人养老金Y份额费率减半的政策窗口，把“固收+”与养老账户做成组合式入口。
-        </div>
-        <div class="card-footer">
-          <a href="https://finance.china.com.cn/money/fund/20261012/6325823.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">中国网财经·上海证券报·10-12</span></a>
-          <span class="impact-tag medium">供给结构：中</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-<!-- ============ Section 5: 金融科技与AI ============ -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-icon" style="background:#eef2ff;color:var(--info);">🤖</div>
-      <span class="section-title">金融科技与AI投顾</span>
-      <span class="section-badge" style="background:var(--info-light);color:var(--info);">前瞻洞察</span>
-    </div>
-
-    <div class="card-grid">
-      <!-- S5 Card: 汇添富张晖拆解AI重构资管 (10-19 P1) -->
-      <div class="card p1">
-        <div class="card-top">
-          <div class="card-title">🟡 汇添富总经理张晖拆解AI重构资管·“AI替代认知执行、人保留认知责任”·研究员Agent已接管40%案头工作</div>
-          <div class="card-meta">
-            <span class="priority-tag important">P1 重要关注</span>
-            <span class="date-tag">10-19</span>
-          </div>
-        </div>
-        <div class="card-body">
-          中国基金报10月19日刊发（页面标注“来源：中国基金报 2026-10-19 07:04”）：汇添富基金总经理张晖在<b>10月17日</b>全球财富管理论坛2026上海苏河湾大会上，把AI重构资管的路径与边界拆成三个问题。核心判断是——资产管理“受人之托、代人理财”的本质未变，被重构的是<b>完成这件事的方式与底层成本结构</b>；<b>AI替代的是“认知执行”，人类保留的是“认知责任”</b>。他明确不轻易使用“范式变革”一词：价值投资与组合管理的底层共识没有变，当前阶段AI带来的是全流程重塑。<br>
-          <b>三阶段演进：</b>①<b>智能助手阶段</b>——被动应答、单点辅助的“副驾驶”，已是行业标配、不再构成差异化优势；②<b>智能体协同阶段</b>——多智能体工作流接管各业务场景、关键节点保留人类判断，是当前各家机构角力的主战场；③<b>AI原生组织阶段</b>——模型从海量数据中自行发现结构、人只设定目标与约束，才可能真正发生范式转移。<br>
-          <b>投研“三刻度尺”：</b>用<b>可验证性、后果严重性、责任归属</b>三个刻度把投研工序解构为三层——<b>信息吸收层</b>（研报检索、会议纪要结构化、公告跟踪）AI已近乎全面替代；<b>建模与因子层</b>（财务建模、因子挖掘、历史回测）须执行“AI生成＋对抗性校验＋人工审核上线”，防范回测式伪发现、过度拟合与策略拥挤；<b>判断形成层</b>AI擅长总结“历史数据说了什么”，但不擅长判断“当前市场价格已反映了什么”，最终由基金经理主导并承担受托责任。多智能体网络接入买方私有知识库后，呈现在基金经理面前的不是黑盒式买卖指令，而是<b>可检验、可追溯、可审计的完整论证</b>。<br>
-          <b>三道刚性边界：</b>①<b>技术边界</b>——高阶幻觉至今未根除，须靠私域数据筑底，并建立全公司统一的<b>“知识本体（Ontology）”</b>，把产业链分析语言、财务指标、因子口径与彼此的层级因果关系标准化，用降低模型自由度换取金融场景可靠性；②<b>市场边界</b>——全市场共享相似底层模型与公开数据会抬升交易信号同质性，须把<b>信号同质性、交易拥挤度、潜在流动性压力</b>一并纳入日常风险监测；③<b>责任边界</b>——受托责任永远不可外包，“没有人类责任主体的全自动基金”不会成为主流。<br>
-          <b>汇添富实践：</b>公司去年即成立AI创新委员会与跨部门AI应用小组，今年把年号定为<b>“拥抱AI应用年”</b>；围绕核心业务链条建设<b>研究、投资助理、规则化投资、投顾、营销、运营六大Agent集群</b>，高度概括为“<b>系统＋AI＋人工</b>”——系统定规则、AI出主意、人来判断。其中“研究员Agent”接入私有知识库、内化买方研究框架并经人工校对迭代，已接管研究员约<b>40%</b>的基础案头工作；围绕“规则化投资”打造的<b>多Agent督导体系</b>为每个投资组合配备7×24小时在线的“AI监督员”，可跨Agent协同解释持仓变化是否符合既定策略、风险属性是否发生隐性迁移。投顾端构建由<b>市场解读、产品研究、客户管理、策略研究、投教陪伴</b>组成的<b>5大投顾Agent体系</b>，底层打通多项<b>MCP标准化数据服务</b>与多维评估指标体系，把“客户需求特征、产品清晰定位、投资经理画像、底层投资策略”四个维度咬合，目标“千人千顾、千人千投”。<br>
-          <b>护城河向三处集中：</b>张晖以自身实验说明——把同一批公开资料同时喂给国内外多个主流模型，生成的深度报告<b>核心观点高度一致、篇章结构与部分表述几乎雷同</b>。因此未来护城河集中在<b>私有知识沉淀</b>（一线产业调研与买方专有知识图谱）、<b>反共识判断与组合表达</b>、<b>受托信任与长期陪伴</b>三处。<br>
-          <b>对腾安启示：</b>①“系统定规则、AI出主意、人来判断”可直接照搬到腾安的诊基与陪伴链路，凡涉及选基、调仓与风险揭示的AI产出必须保留人工终审与留痕；②投顾端“5大Agent＋MCP标准化数据服务”的架构说明差异不在模型而在<b>私有数据与统一口径</b>，腾安应先把客户特征、产品画像与策略标签做成机器可读的标准字段；③“算法共振”须进入风控视野——若货架推荐与组合建议同源同模型，极端行情下会放大同向交易，须对推荐结果的同质性与拥挤度设定阈值。
-        </div>
-        <div class="card-footer">
-          <a href="https://www.chnfund.com/article/ARe6518476-f790-6576-74d6-3a2463759fe1" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">中国基金报·10-19</span></a>
-          <span class="impact-tag high">AI投顾：高</span>
-        </div>
-      </div>
-
-
-      <!-- S5 Card: 中泰证券以AI嵌入财富管理全流程 (10-17 P1) -->
-      <div class="card p1">
-        <div class="card-top">
-          <div class="card-title">🟡 中泰证券把AI嵌入财富管理全流程·自研“中泰小研”人均使用超30次每月</div>
-          <div class="card-meta">
-            <span class="priority-tag important">P1 重要关注</span>
-            <span class="date-tag">10-17</span>
-          </div>
-        </div>
-        <div class="card-body">
-          财联社专访（中华网山东频道10月17日刊发）：中泰证券党委书记、董事长王洪表示，公司锚定<b>客群经营、买方投顾、数智平台、品牌生态</b>四大支柱，以金融科技激活新质生产力，构建“数智底座—智能中台—数字化运营”三层架构。<br>
-          <b>AI落地：</b>公司携手阿里云打造“千问千泰”投顾品牌；自2022年起全力自研智能投研平台，已形成覆盖股票、ETF、公募、私募及基金投顾的<b>五大研究体系</b>与总量行研、股票研究、产品分析、资产配置<b>四大核心模块</b>，打造统一智能助手<b>“中泰小研”</b>，用户覆盖公司绝大部分员工，<b>人均使用超30次/月</b>，支撑相关系统<b>30余万次/周</b>。数字化运营运用机器学习与人工智能整合客户特征、服务内容、触达渠道与执行节奏，打通从需求线索挖掘到服务策略迭代的全周期闭环，累计落地<b>700余个服务场景</b>。<br>
-          <b>客群与投顾：</b>财富管理客户<b>1100多万户</b>、管理客户资产<b>1.77万亿元</b>；依托<b>2300余名</b>持牌证券投资顾问建设“牛人领航”品牌，组建<b>400余个</b>投顾团队，累计服务客户<b>26万余户</b>、签约资产超<b>800亿元</b>；“中泰财富30”下含量化30、ETF30、公募30三大子品牌，力争<b>2027年末</b>量化和ETF策略师团队规模不少于<b>1500人</b>；公募基金投顾与万家基金、中欧基金、盈米等<b>6家</b>投顾机构合作“双投顾服务模式”，已上线策略<b>17个</b>。<br>
-          <b>对腾安启示：</b>券商正把AI从单点工具升级为贯穿投研、投顾与运营的基础设施，并以“综合账户＋持牌投顾＋策略师团队”承接买方投顾。腾安侧的AI能力须明确定位为“辅助判断与陪伴”而非收益承诺——凡涉及选基、组合调整的建议，须标注模型口径、数据源与更新频率，并保留人工复核与风险揭示链路；对“双投顾”“策略师团队”等模式，须在产品页披露服务提供方与费用归属，避免投资者误认为由单一机构承担全部受托责任。
-        </div>
-        <div class="card-footer">
-          <a href="https://sd.china.com/m/cjzx/20000936/20261017/26019738.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">中华网·财联社·10-17</span></a>
-          <span class="impact-tag medium">影响：中</span>
-        </div>
-      </div>
-
-      <!-- S5 Card: 工银瑞信以AI重塑投研基因 (10-12 P1) -->
-      <div class="card p1">
-        <div class="card-top">
-          <div class="card-title">🟡 工银瑞信以AI重塑投研基因·自研系统管理逾1000个组合·智能交易中枢日均成交超2000亿元</div>
-          <div class="card-meta">
-            <span class="priority-tag important">P1 重要关注</span>
-            <span class="date-tag">10-12</span>
-          </div>
-        </div>
-        <div class="card-body">
-          中国基金报10月12日报道（文：艾迪）：工银瑞信基金将AI大模型、智能体、RPA等前沿技术深度嵌入投研核心环节，率先在养老金智能化运营等复杂场景中实现突破性落地，是从“工具赋能”迈向“价值创造”的转型样本。《推动公募基金高质量发展行动方案》已明确提出加快“平台式、一体化、多策略”投研体系建设。<br>
-          <b>投入侧：</b>人力维度搭建由专业技术人才（IT）、数据分析师人才（DT）和数字运营人才（OT）构成的<b>三支柱数字化人才体系</b>，推动科技力量前置业务一线，自有科技人员队伍规模已跻身行业前列；算力维度自<b>2023年</b>起推进大模型私有化部署，已上线<b>通用生成、编程智能体、多模态及OCR</b>等多元化服务，并采取“采购＋租赁”双轨策略储备算力，正积极评估扩容以应对万亿参数模型与智能体长上下文场景的算力激增。平台已覆盖固收、权益、FOF、指数、量化等多资产类别，贯通研究、投资、交易、风控环节。<br>
-          <b>落地侧：</b>研究端核心功能包括研报管理、股票池、投研联席会、模拟组合、AI音视频解析，探索构建<b>“智能体协同＋人工关键节点控制”</b>的买方思维深度研究工作流；投资端构建投前、投中、投后一体化管理闭环，支持社保、养老、公募、年金、专户等<b>逾1000个组合</b>的管理，内置<b>逾700个</b>组合层面指标与<b>300余个</b>券层面指标，支持业绩归因与同类排名；交易端截至<b>2025年底</b>依托智能交易中枢日均交易规模突破<b>2000亿元</b>、日均交易笔数超<b>5000笔</b>、银行间占比近<b>60%</b>；合规风控端把持股集中度、流动性约束等要求前置到投资试算环节实现<b>“先合规、后投资”</b>，并打造IBOR实时交易数据中心作为规则实时执行的数据底座。<br>
-          <b>养老金样板：</b>一站式养老金智能管理平台自动校验<b>两套监管体系规则</b>以规避监管红线，针对<b>万亿级</b>年金资产开展多情景久期与收益测算以辅助资产负债匹配决策，联动RPA数字劳动力自动识别与处置各类运营异常，项目建设成果荣获<b>中国人民银行金融科技发展奖二等奖</b>。公司同时在工行集团“AI-ICBC”战略引领下实施《领航AI+行动计划》，聚焦应用全域化、入口集约化、知识资产化、技术体系化、人才专业化五大核心能力，并通过“创客马拉松 AI Makerthon”等竞赛孵化一线AI原型项目。<br>
-          <b>体量参照：</b>截至2026年上半年末，工银瑞信管理资产总规模超<b>2.5万亿元</b>，位居银行系基金公司第1、全行业第4；据IPE“2025年全球资管500强”榜单位列第96位。<br>
-          <b>对腾安启示：</b>该样本的价值在于把AI嵌进了<b>可计量的业务节点</b>——逾1000个组合、700余个组合指标、日均5000笔交易，而不是停留在“上线了几个智能体”。腾安若推进AI诊基与陪伴，应同样先确定可量化口径（覆盖组合数、人工介入率、留痕完整率、日均处理量），并把“智能体协同＋人工关键节点控制”明确写进流程，避免AI产出缺少人工终审环节；养老金场景的“多情景久期测算＋RPA异常处置”也提示，AI最先跑通价值的往往是规则密集、人工易错的中后台环节。
-        </div>
-        <div class="card-footer">
-          <a href="https://www.chnfund.com/article/AR67d98e29-ed27-8560-576b-3a243f7d8909" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">中国基金报·10-12</span></a>
-          <span class="impact-tag high">AI投顾：高</span>
-        </div>
-      </div>
-    </div>
-  </div>
-<!-- ============ Section 6: 市场行情速览 ============ -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-icon" style="background:var(--success-light);color:var(--success);">📊</div>
-      <span class="section-title">市场行情速览</span>
-      <span class="section-badge" style="background:var(--success-light);color:var(--success);">辅助决策</span>
-    </div>
-
-                                <div class="card p3">
-        <div class="card-top">
-          <div class="card-title">📈 A股、港股、美股统一10-21收盘·沪指3713.03 -0.60%｜纳指涨1.05%领涨</div>
-          <div class="card-meta">
-            <span class="priority-tag fyi">P3 知悉即可</span>
-            <span class="date-tag">10-21</span>
-          </div>
-        </div>
-        <div class="card-body">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-            <div>
-              <b>A股（10-21收盘）</b><br>
-              上证指数 <b>3713.03</b> <span style="color:#52c41a;">-0.60%</span>（-22.34点）<br>
-              深证成指 <b>11704.35</b> <span style="color:#52c41a;">-0.82%</span>（-96.94点）<br>
-              创业板指 <b>2694.71</b> <span style="color:#52c41a;">-1.62%</span>（-44.49点）<br>
-              科创综指 <b>1602.62</b> <span style="color:#52c41a;">-0.08%</span><br>
-              沪深北三市成交 <b>14421亿元</b><br>
-              其中沪深两市约 <b>14294亿元</b>（沪市约6428亿元＋深市约7866亿元）
-            </div>
-            <div>
-              <b>港股（10-21收盘）与美股（美东10-21收盘）</b><br>
-              恒生指数 <b>23651.87</b> <span style="color:#52c41a;">-0.90%</span>（-215.87点）<br>
-              国企指数 <b>7943.41</b> <span style="color:#52c41a;">-1.08%</span>（-86.85点）<br>
-              恒生科技 <b>3994.77</b> <span style="color:#52c41a;">-1.26%</span>（-51.14点）<br>
-              道琼斯 <b>52856.09</b> <span style="color:#dc2626;">+0.69%</span>（+360.21点）<br>
-              纳斯达克 <b>26702.86</b> <span style="color:#dc2626;">+1.05%</span>（+278.04点）<br>
-              标普500 <b>7757.17</b> <span style="color:#dc2626;">+0.58%</span>（+44.60点）<br>
-              港股主板成交 <b>1765.97亿港元</b>
-            </div>
-            <div style="grid-column:1/-1;padding-top:10px;border-top:1px dashed #e5e7eb;">
-              <b>取数口径：</b>A股取<b>10月21日收盘</b>（10月21日为交易日且已收盘）；上证指数、深证成指、创业板指、科创综指收盘点位与沪深北三市全天成交<b>14421亿元</b>取自上海证券报·中国证券网（记者李雨琪、张玮华，10月22日07:51发布）；沪市约<b>6428亿元</b>、深市约<b>7866亿元</b>为沪深两市分市场成交额（东方财富行情中心行情数据，与长江商报同日报道互相印证），合计约14294亿元，与沪深北三市口径统计范围不同，本期仅并列列出、不与上述数字混用。港股取<b>10月21日收盘</b>（新华社香港10月21日电）。美股取<b>美东10月21日收盘</b>（新华社纽约10月21日电，对应北京时间10月22日凌晨）。国际原油与贵金属本期未取得可在同一源内交叉验证的收盘点位，按铁律不补数值。<br>
-              <b>A股（10-21）：</b>上海证券报10月22日报道，A股市场整体冲高回落，题材端依旧保持快速轮动特征，科技板块出现局部回暖迹象，但权重股表现仍相对较弱。端侧AI概念延续活跃，AI眼镜、AI手机方向涨幅居前，移远通信、日海智能收获2连板，利亚德、敏芯股份以<b>20%</b>幅度涨停；消息面上，DeepSeek于10月20日宣布全面开源内部推理框架DeepInfer，兼容英伟达与华为昇腾平台。光通信产业链延续回暖，CPO、光纤、光芯片等方向表现活跃，CPO概念中天洋新材走出3天2板，致尚科技涨幅超过<b>10%</b>，通宇通讯涨停，剑桥科技、天孚通信涨幅居前。机构观点方面，中金公司研报认为当前位置积极信号正在增多，此前调整已较充分反映近期多重超预期输入性风险挑战的不利影响，对A股市场中期走势不必悲观；华鑫证券研报称，经过连续调整后A股微观筹码出清的负反馈已渐入尾声。<br>
-              <b>港股（10-21）：</b>新华社香港10月21日电，香港恒生指数跌215.87点、跌幅<b>0.9%</b>收报<b>23651.87</b>点，全日主板成交<b>1765.97亿港元</b>；国企指数跌86.85点、跌幅1.08%收<b>7943.41</b>点；恒生科技指数跌51.14点、跌幅1.26%收<b>3994.77</b>点。蓝筹股方面腾讯控股跌<b>4.04%</b>收报393.8港元、中国移动跌3.66%收报77.55港元、汇丰控股涨0.76%收报145.8港元、香港交易所涨0.11%收报372.8港元。<br>
-              <b>美股（美东10-21）：</b>新华社纽约10月21日电，纽约股市三大股指21日上涨。道琼斯工业平均指数比前一交易日上涨360.21点、涨幅0.69%收于<b>52856.09</b>点；标准普尔500种股票指数上涨44.60点、涨幅0.58%收于<b>7757.17</b>点；纳斯达克综合指数上涨278.04点、涨幅1.05%收于<b>26702.86</b>点。板块方面，标普500十一大板块七涨四跌，科技板块和工业板块分别以<b>1.61%</b>和<b>0.91%</b>涨幅领涨，通信服务板块和房地产板块分别以1.33%和0.79%跌幅领跌。<br>
-              <b>对腾安提示：</b>本日A股与港股同步回落、美股三大指数集体上行，境内外方向再度背离，货架与持仓页须按各自市场分别刷新净值日期与估值口径，不得用单一指数涨跌概括全市场；A股呈现“指数回落、题材轮动”的结构，科技板块仅局部回暖而权重股偏弱，展示产品业绩时须区分指数与主题两条主线；港股基金申赎确认时点已于近日调整为T+1，涉及港股主题产品的到账与确认提示须同步更新。
-            </div>
-          </div>
-        </div>
-        <div class="card-footer">
-          <span class="source-tag">数据基准：A股、港股为2026-10-21收盘，美股为美东2026-10-21收盘</span>
-          <span class="source-tag">数据来源：上海证券报·中国证券网、东方财富（A股）；新华社（港股、美股）</span>
-        </div>
-      </div>  </div>
-<!-- ============ Section 7: 关键时间线 ============ -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-icon" style="background:var(--primary-light);color:var(--primary);">📅</div>
-      <span class="section-title">关键时间线（近两周）</span>
-      <span class="section-badge" style="background:var(--primary-light);color:var(--primary);">事件脉络</span>
-    </div>
-
-    <div style="background:white;border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 24px;">
-            <div class="timeline-item">
-        <div class="timeline-dot red"></div>
-        <div class="timeline-date">2026-10-22</div>
-        <div class="timeline-title">首批18只主动ETF明日开售</div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot red"></div>
-        <div class="timeline-date">2026-10-22</div>
-        <div class="timeline-title">公募投研迎基准锚定大考</div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot blue"></div>
-        <div class="timeline-date">2026-10-22</div>
-        <div class="timeline-title">郑巍山卸任全部在管产品</div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot blue"></div>
-        <div class="timeline-date">2026-10-22</div>
-        <div class="timeline-title">10月以来基金分红超60亿元</div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot blue"></div>
-        <div class="timeline-date">2026-10-21</div>
-        <div class="timeline-title">沪指收3713.03点跌0.60%</div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot blue"></div>
-        <div class="timeline-date">2026-10-21</div>
-        <div class="timeline-title">创业板指跌1.62%失守2700点</div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot blue"></div>
-        <div class="timeline-date">2026-10-21</div>
-        <div class="timeline-title">恒指跌0.90%腾讯跌4.04%</div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot blue"></div>
-        <div class="timeline-date">2026-10-21</div>
-        <div class="timeline-title">美股三大指数齐涨纳指领涨</div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot red"></div>
-        <div class="timeline-date">2026-10-20</div>
-        <div class="timeline-title">央行拟设非银流动性支持工具</div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot blue"></div>
-        <div class="timeline-date">2026-10-20</div>
-        <div class="timeline-title">ETF资金净流入206.50亿元</div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot red"></div>
-        <div class="timeline-date">2026-10-19</div>
-        <div class="timeline-title">首批18只主动ETF获批</div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot blue"></div>
-        <div class="timeline-date">2026-10-15</div>
-        <div class="timeline-title">122只发起式基金清盘创新高</div>
-      </div>
-    </div>
-
-
-
-  </div>
-
-</div>
-
-
-</body>
-</html>
+<!DOCTYPE html>
+
+<!-- daily-update: 2026-10-23 -->
+
+<html lang="zh-CN">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="首批18只主动ETF今日正式发行|ETF资金10月22日净流入592.83亿元|证监会部署持续深化公募基金改革|主动ETF拟任基金经理集体发声|沪指10-22收3658.03 纳指跌2.60%">
+
+<meta name="content-fingerprint" content="首批18只|ETF资金|证监会部|主动ETF">
+
+
+
+<title>基金行业资讯看板 | 腾安基金</title>
+
+<style>
+
+  :root {
+
+    --primary: #1a56db;
+
+    --primary-light: #e8eefb;
+
+    --danger: #dc2626;
+
+    --danger-light: #fef2f2;
+
+    --warning: #d97706;
+
+    --warning-light: #fffbeb;
+
+    --success: #059669;
+
+    --success-light: #ecfdf5;
+
+    --info: #6366f1;
+
+    --info-light: #eef2ff;
+
+    --gray-50: #f9fafb;
+
+    --gray-100: #f3f4f6;
+
+    --gray-200: #e5e7eb;
+
+    --gray-300: #d1d5db;
+
+    --gray-400: #9ca3af;
+
+    --gray-500: #6b7280;
+
+    --gray-600: #4b5563;
+
+    --gray-700: #374151;
+
+    --gray-800: #1f2937;
+
+    --gray-900: #111827;
+
+    --radius: 12px;
+
+    --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -2px rgba(0,0,0,0.06);
+
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.06);
+
+  }
+
+
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+
+
+  body {
+
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+
+    background: linear-gradient(135deg, #f0f4ff 0%, #f5f3ff 50%, #fdf2f8 100%);
+
+    color: var(--gray-800);
+
+    line-height: 1.6;
+
+    min-height: 100vh;
+
+  }
+
+
+
+  /* Header */
+
+  .header {
+
+    background: linear-gradient(135deg, #1e3a8a 0%, #1a56db 40%, #6366f1 100%);
+
+    color: white;
+
+    padding: 32px 40px 48px;
+
+    position: relative;
+
+    overflow: hidden;
+
+  }
+
+  .header::before {
+
+    content: '';
+
+    position: absolute;
+
+    top: -50%;
+
+    right: -10%;
+
+    width: 400px;
+
+    height: 400px;
+
+    background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+
+    border-radius: 50%;
+
+  }
+
+  .header::after {
+
+    content: '';
+
+    position: absolute;
+
+    bottom: -60%;
+
+    left: 20%;
+
+    width: 300px;
+
+    height: 300px;
+
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+
+    border-radius: 50%;
+
+  }
+
+  .header-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    position: relative;
+
+    z-index: 1;
+
+  }
+
+  .header h1 {
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.5px;
+
+    margin-bottom: 6px;
+
+  }
+
+  .header .subtitle {
+
+    font-size: 14px;
+
+    opacity: 0.8;
+
+    font-weight: 400;
+
+  }
+
+  .header .date-badge {
+
+    background: rgba(255,255,255,0.15);
+
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    padding: 8px 16px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+
+  }
+
+
+
+  /* Stats Bar */
+
+  .stats-bar {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 16px;
+
+    padding: 0 40px;
+
+    margin-top: -24px;
+
+    position: relative;
+
+    z-index: 2;
+
+  }
+
+  .stat-card {
+
+    background: white;
+
+    border-radius: var(--radius);
+
+    padding: 24px 28px;
+
+    box-shadow: var(--shadow-md);
+
+    transition: transform 0.2s;
+
+    position: relative;
+
+    overflow: hidden;
+
+  }
+
+  .stat-card::before {
+
+    content: '';
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    bottom: 0;
+
+    width: 4px;
+
+    border-radius: 4px 0 0 4px;
+
+  }
+
+  .stat-card:nth-child(1)::before { background: var(--primary); }
+
+  .stat-card:nth-child(2)::before { background: var(--danger); }
+
+  .stat-card:nth-child(3)::before { background: var(--success); }
+
+  .stat-card:nth-child(4)::before { background: var(--warning); }
+
+  .stat-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+
+  .stat-number {
+
+    font-size: 30px;
+
+    font-weight: 800;
+
+    color: var(--gray-900);
+
+    line-height: 1.2;
+
+    margin-bottom: 4px;
+
+  }
+
+  .stat-card:nth-child(2) .stat-number { color: var(--danger); }
+
+  .stat-card:nth-child(3) .stat-number { color: var(--success); }
+
+  .stat-card:nth-child(4) .stat-number { color: var(--warning); }
+
+  .stat-label {
+
+    font-size: 13px;
+
+    color: var(--gray-600);
+
+    margin-bottom: 6px;
+
+    line-height: 1.4;
+
+  }
+
+  .stat-change {
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    color: var(--gray-500);
+
+  }
+
+  .stat-change.up { color: var(--danger); }
+
+  .stat-change.down { color: var(--success); }
+
+  .stat-change.neutral { color: var(--gray-400); }
+
+
+
+  /* Main Content */
+
+  .main { padding: 24px 40px 40px; }
+
+
+
+  /* Section */
+
+  .section {
+
+    margin-bottom: 28px;
+
+  }
+
+  .section-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 16px;
+
+  }
+
+  .section-icon {
+
+    width: 36px;
+
+    height: 36px;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 18px;
+
+    flex-shrink: 0;
+
+  }
+
+  .section-title-group {
+
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 8px;
+
+    min-width: 0;
+
+    flex: 1;
+
+  }
+
+  .section-title {
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    color: var(--gray-900);
+
+    white-space: nowrap;
+
+  }
+
+  .section-context {
+
+    font-size: 12px;
+
+    color: var(--gray-500);
+
+    white-space: nowrap;
+
+  }
+
+  .section-badge {
+
+    font-size: 11px;
+
+    padding: 2px 8px;
+
+    border-radius: 10px;
+
+    font-weight: 600;
+
+    margin-left: 4px;
+
+    flex-shrink: 0;
+
+    white-space: nowrap;
+
+  }
+
+
+
+  /* Cards */
+
+  .card-grid {
+
+    display: grid;
+
+    gap: 12px;
+
+  }
+
+  .card {
+
+    background: white;
+
+    border-radius: var(--radius);
+
+    padding: 20px 24px;
+
+    box-shadow: var(--shadow);
+
+    border-left: 4px solid transparent;
+
+    transition: all 0.2s;
+
+    position: relative;
+
+  }
+
+  .card:hover {
+
+    box-shadow: var(--shadow-md);
+
+    transform: translateX(2px);
+
+  }
+
+
+
+  /* Priority Levels */
+
+  .card.p0 { border-left-color: var(--danger); }
+
+  .card.p1 { border-left-color: var(--warning); }
+
+  .card.p2 { border-left-color: var(--primary); }
+
+  .card.p3 { border-left-color: var(--success); }
+
+
+
+  .card-top {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    margin-bottom: 8px;
+
+  }
+
+  .card-title {
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: var(--gray-900);
+
+    line-height: 1.5;
+
+    flex: 1;
+
+  }
+
+  .card-meta {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    flex-shrink: 0;
+
+  }
+
+  .priority-tag {
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    padding: 2px 8px;
+
+    border-radius: 4px;
+
+    letter-spacing: 0.5px;
+
+  }
+
+  .priority-tag.urgent { background: var(--danger-light); color: var(--danger); }
+
+  .priority-tag.important { background: var(--warning-light); color: var(--warning); }
+
+  .priority-tag.normal { background: var(--primary-light); color: var(--primary); }
+
+  .priority-tag.fyi { background: var(--success-light); color: var(--success); }
+
+
+
+  .date-tag {
+
+    font-size: 11px;
+
+    color: var(--gray-400);
+
+    white-space: nowrap;
+
+  }
+
+
+
+  .card-body {
+
+    font-size: 13px;
+
+    color: var(--gray-600);
+
+    line-height: 1.7;
+
+    margin-bottom: 10px;
+
+  }
+
+  .card-footer {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+  }
+
+  .source-tag {
+
+    font-size: 11px;
+
+    padding: 2px 10px;
+
+    border-radius: 12px;
+
+    background: var(--gray-100);
+
+    color: var(--gray-600);
+
+    font-weight: 500;
+
+  }
+
+  a .source-tag,
+
+  a.source-link .source-tag {
+
+    background: #e8f4fd;
+
+    color: #1890ff;
+
+    border: 1px solid rgba(24,144,255,0.25);
+
+    cursor: pointer;
+
+    transition: all 0.2s;
+
+  }
+
+  a .source-tag::after,
+
+  a.source-link .source-tag::after {
+
+    content: ' ↗';
+
+    font-size: 10px;
+
+    opacity: 0.7;
+
+  }
+
+  a:hover .source-tag,
+
+  a.source-link:hover .source-tag {
+
+    background: #1890ff;
+
+    color: white;
+
+    border-color: #1890ff;
+
+  }
+
+  a:hover .source-tag::after,
+
+  a.source-link:hover .source-tag::after {
+
+    opacity: 1;
+
+  }
+
+  .impact-tag {
+
+    font-size: 11px;
+
+    padding: 2px 10px;
+
+    border-radius: 12px;
+
+    font-weight: 600;
+
+  }
+
+  .impact-tag.high { background: #fef2f2; color: #b91c1c; }
+
+  .impact-tag.medium { background: #fffbeb; color: #92400e; }
+
+  .impact-tag.low { background: #ecfdf5; color: #065f46; }
+
+
+
+  .card-link {
+
+    font-size: 12px;
+
+    color: var(--primary);
+
+    text-decoration: none;
+
+    font-weight: 500;
+
+    margin-left: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 3px;
+
+    transition: opacity 0.2s;
+
+  }
+
+  .card-link:hover { opacity: 0.7; }
+
+
+
+  /* Action Items */
+
+  .action-box {
+
+    background: linear-gradient(135deg, #eff6ff, #eef2ff);
+
+    border: 1px solid #c7d2fe;
+
+    border-radius: var(--radius);
+
+    padding: 16px 20px;
+
+    margin-top: 6px;
+
+  }
+
+  .action-label {
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    color: var(--info);
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+
+    margin-bottom: 6px;
+
+  }
+
+  .action-text {
+
+    font-size: 13px;
+
+    color: var(--gray-700);
+
+    line-height: 1.6;
+
+  }
+
+
+
+  /* Two column layout */
+
+  .two-col {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 16px;
+
+  }
+
+
+
+  /* Timeline */
+
+  .timeline-item {
+
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 12px;
+
+    padding: 7px 0;
+
+    border-bottom: 1px solid var(--gray-100);
+
+  }
+
+  .timeline-item:last-child { border-bottom: none; }
+
+  .timeline-dot {
+
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+    align-self: center;
+
+    flex-shrink: 0;
+
+  }
+
+  .timeline-dot.red { background: var(--danger); }
+
+  .timeline-dot.yellow { background: var(--warning); }
+
+  .timeline-dot.blue { background: var(--primary); }
+
+  .timeline-dot.green { background: var(--success); }
+
+  .timeline-date {
+
+    font-size: 12px;
+
+    color: var(--gray-400);
+
+    flex-shrink: 0;
+
+    width: 84px;
+
+    font-variant-numeric: tabular-nums;
+
+  }
+
+  .timeline-title {
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: var(--gray-800);
+
+    flex: 1;
+
+    line-height: 1.45;
+
+  }
+
+
+
+  /* Competitor Table */
+
+  .comp-table {
+
+    width: 100%;
+
+    border-collapse: separate;
+
+    border-spacing: 0;
+
+    background: white;
+
+    border-radius: var(--radius);
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow);
+
+  }
+
+  .comp-table th {
+
+    background: var(--gray-50);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color: var(--gray-600);
+
+    padding: 12px 16px;
+
+    text-align: left;
+
+    border-bottom: 1px solid var(--gray-200);
+
+  }
+
+  .comp-table td {
+
+    font-size: 13px;
+
+    padding: 14px 16px;
+
+    border-bottom: 1px solid var(--gray-100);
+
+    color: var(--gray-700);
+
+    vertical-align: top;
+
+  }
+
+  .comp-table tr:last-child td { border-bottom: none; }
+
+  .comp-table tr:hover td { background: var(--gray-50); }
+
+  .comp-name {
+
+    font-weight: 600;
+
+    color: var(--gray-900);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+  }
+
+  .comp-emoji { font-size: 16px; }
+
+  .comp-links {
+
+    margin-top: 8px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+  }
+
+  .comp-link {
+
+    font-size: 11px;
+
+    color: var(--primary);
+
+    text-decoration: none;
+
+    font-weight: 500;
+
+    padding: 3px 10px;
+
+    border-radius: 12px;
+
+    background: var(--primary-light);
+
+    border: 1px solid rgba(26,86,219,0.15);
+
+    transition: all 0.2s;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 4px;
+
+  }
+
+  .comp-link:hover {
+
+    background: var(--primary);
+
+    color: white;
+
+    border-color: var(--primary);
+
+  }
+
+  .comp-link .link-icon { font-size: 10px; }
+
+  .alert-dot {
+
+    width: 7px;
+
+    height: 7px;
+
+    background: var(--danger);
+
+    border-radius: 50%;
+
+    display: inline-block;
+
+    animation: pulse 2s infinite;
+
+  }
+
+  @keyframes pulse {
+
+    0%, 100% { opacity: 1; }
+
+    50% { opacity: 0.4; }
+
+  }
+
+
+
+  /* Footer */
+
+  .footer {
+
+    text-align: center;
+
+    padding: 24px 40px;
+
+    font-size: 12px;
+
+    color: var(--gray-400);
+
+    border-top: 1px solid var(--gray-200);
+
+    background: white;
+
+  }
+
+
+
+  /* Priority legend */
+
+  .legend {
+
+    display: flex;
+
+    gap: 16px;
+
+    padding: 16px 24px;
+
+    background: white;
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    margin-bottom: 24px;
+
+    align-items: center;
+
+  }
+
+  .legend-title {
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color: var(--gray-500);
+
+    margin-right: 4px;
+
+  }
+
+  .legend-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    font-size: 12px;
+
+    color: var(--gray-600);
+
+  }
+
+  .legend-dot {
+
+    width: 12px;
+
+    height: 4px;
+
+    border-radius: 2px;
+
+  }
+
+  .legend-dot.red { background: var(--danger); }
+
+  .legend-dot.orange { background: var(--warning); }
+
+  .legend-dot.blue { background: var(--primary); }
+
+  .legend-dot.green { background: var(--success); }
+
+
+
+  /* Responsive */
+
+  @media (max-width: 900px) {
+
+    .stats-bar { grid-template-columns: repeat(2, 1fr); }
+
+    .two-col { grid-template-columns: 1fr; }
+
+    .header, .main, .stats-bar { padding-left: 20px; padding-right: 20px; }
+
+  }
+
+  @media (max-width: 640px) {
+
+    .section-header { align-items: flex-start; gap: 8px; }
+
+    .section-title-group { flex-wrap: wrap; gap: 2px 8px; }
+
+    .section-title { font-size: 17px; }
+
+    .section-context { width: 100%; font-size: 11px; }
+
+  }
+
+</style>
+
+</head>
+
+<body>
+
+
+
+  <!-- Header -->
+
+<div class="header">
+
+  <div class="header-top">
+
+    <div>
+
+      <h1>📊 基金行业资讯看板</h1>
+
+      <div class="subtitle">腾安基金 · 行业情报中心 · 近两周核心资讯聚合</div>
+
+    </div>
+
+    <div class="date-badge">📅 数据区间：2026.10.09 — 2026.10.23（每日更新）</div>
+
+  </div>
+
+</div>
+
+
+
+<!-- Stats Bar -->
+
+    <div class="stats-bar">
+    <div class="stat-card">
+      <div class="stat-number">18只</div>
+      <div class="stat-label">首批主动ETF 10月23日正式发行·5家公募自购合计约13亿元</div>
+      <div class="stat-change up">▲ 管理费均1.0%·托管费0.10%—0.15%</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">3658.03</div>
+      <div class="stat-label">沪指10-22收盘·跌1.48%·沪深北三市成交1.54万亿元</div>
+      <div class="stat-change down">▼ 创业板指跌4.37%·恒生指数跌3.03%</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">592.83亿</div>
+      <div class="stat-label">10-22 ETF净流入·创7月21日以来单日新高</div>
+      <div class="stat-change up">▲ 股票型ETF净流入464.81亿元</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">364位</div>
+      <div class="stat-label">年内离任基金经理·同期新上任基金经理达606名</div>
+      <div class="stat-change neutral">● 郑巍山卸任银河基金全部在管产品</div>
+    </div>
+
+
+  </div>
+
+<div class="main">
+
+
+
+  <!-- Priority Legend -->
+
+  <div class="legend">
+
+    <span class="legend-title">优先级：</span>
+
+    <span class="legend-item"><span class="legend-dot red"></span>紧急必看</span>
+
+    <span class="legend-item"><span class="legend-dot orange"></span>重要关注</span>
+
+    <span class="legend-item"><span class="legend-dot blue"></span>建议了解</span>
+
+    <span class="legend-item"><span class="legend-dot green"></span>知悉即可</span>
+
+  </div>
+
+
+
+                                <!-- ============ Section 0: 今日焦点 ============ -->
+
+  <div class="section">
+
+    <div class="section-header">
+
+      <div class="section-icon" style="background:#fef2f2;color:var(--danger);">🔥</div>
+
+      <div class="section-title-group">
+
+        <span class="section-title">今日焦点</span>
+
+        <span class="section-context">10月23日 · 4条今日要闻</span>
+
+      </div>
+
+      <span class="section-badge" style="background:var(--danger-light);color:var(--danger);">今日更新</span>
+
+    </div>
+
+
+
+    <div class="card-grid">
+
+      <!-- S0 Card 1 (10-23 P0) -->
+      <div class="card p0">
+        <div class="card-top">
+          <div class="card-title">🔴 首批18只主动ETF今日正式发行·易方达华夏富国汇添富各2亿自购·摩根约5亿元</div>
+          <div class="card-meta">
+            <span class="priority-tag urgent">P0 紧急必看</span>
+            <span class="date-tag">10-23</span>
+          </div>
+        </div>
+        <div class="card-body">
+          中国基金报10月23日报道：<b>10月23日</b>，首批<b>18只</b>主动ETF迎来正式发行，易方达品质均衡主动管理ETF（认购代码<b>581053</b>）等首批产品于同日开售。<br>
+          <b>自购加码：</b>易方达基金公告将于10月23日募集期首日以固有资金<b>2亿元</b>认购旗下易方达品质均衡主动管理ETF。中国证券报10月23日报道，富国基金、华夏基金同样于10月22日公告各运用固有资金<b>2亿元</b>认购价值优选主动ETF富国、质量主动ETF华夏，汇添富基金亦公告以固有资金<b>2亿元</b>认购均衡智选主动ETF汇添富；摩根资产管理（中国）10月20日公告，公司股东将通过关联方摩根资产管理（亚太）有限公司以自有资金<b>7500万美元</b>（约合<b>5亿元</b>人民币）投资摩根大盘成长主动股票ETF，相关投资将在基金上市后开展。按公告初步统计，已有<b>5家</b>公募宣布自购旗下主动ETF，涉及金额合计约<b>13亿元</b>。<br>
+          <b>产品机制：</b>18只产品均在名称中明确风格策略，其中采用均衡策略的有<b>9只</b>、占比一半。按沪深交易所业务指引，主动ETF持有证券数量不得低于<b>30只</b>，前十大持仓证券权重合计不得超过基金资产净值的<b>60%</b>，组合所持股票最近一年日均成交金额应位于所在交易所全部上市股票的前<b>80%</b>。18只产品管理费率均为<b>1.0%/年</b>，托管费率落在<b>0.10%—0.15%</b>之间，每个交易日披露基于真实投资组合的申购赎回清单（PCF）。<br>
+          <b>获批背景：</b>中国证券报报道，<b>10月19日晚</b>首批18只主动ETF正式获得中国证监会批复，均自10月23日开始发售。主动ETF不以跟踪特定指数为投资目标，由基金管理人依据投资策略自主选股，最核心的机制创新在于每日持仓透明。<br>
+          <b>对腾安启示：</b>18只主动ETF今日起陆续开售，货架须在开售前完成品类建档与风险揭示，并把“策略风格（均衡／价值／红利／质量／大盘成长）”“认购代码与募集期”“管理费1.0%＋托管费0.10%—0.15%”列为必填字段，不得以“主动ETF”单一标签替代策略区分；自购金额属公司固有资金的认购安排，须与产品业绩、风险等级严格分离展示；每日PCF披露属透明度机制，不得演绎为“持仓可复制”“收益可跟随”的暗示。
+        </div>
+        <div class="card-footer">
+          <a href="https://www.chnfund.com/article/ARf45e1152-3780-88ed-2b65-3a247843c478" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">中国基金报·10-23</span></a>
+          <a href="https://finance.eastmoney.com/a/202610223904478086.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">东方财富·中国证券报·10-23</span></a>
+          <span class="impact-tag high">影响：高</span>
+        </div>
+        <div class="action-box">
+          <div class="action-label">⚡ 腾安行动建议</div>
+          <div class="action-text">
+            ① 上架准备→今日开售的18只主动ETF须完成建档并与被动宽基ETF分栏陈列，字段包含策略风格、认购代码、募集期、管理费与托管费、拟任基金经理及其模式；<br>
+            ② 自购宣传→“5家自购合计约13亿元”须标注为按公告初步统计的拟认购金额，摩根部分须注明“基金上市后开展”，禁止写成已到账规模或收益保障；<br>
+            ③ 适当性→详情页须前置“主动管理＋场内交易”双重风险提示，并说明持股不少于30只、前十大合计不超60%的集中度约束，明确每日PCF披露不等于低风险。
+          </div>
+        </div>
+      </div>
+
+      <!-- S0 Card 2 (10-23 P1) -->
+      <div class="card p1">
+        <div class="card-top">
+          <div class="card-title">🟡 ETF资金10月22日净流入592.83亿元·创7月21日以来单日新高·股票型464.81亿</div>
+          <div class="card-meta">
+            <span class="priority-tag important">P1 重要关注</span>
+            <span class="date-tag">10-23</span>
+          </div>
+        </div>
+        <div class="card-body">
+          新浪财经10月23日刊发《ETF资金日记》：10月22日A股、港股市场齐齐杀跌、上证指数跌破3700点，当日ETF净流入达<b>592.83亿元</b>，创<b>7月21日</b>以来单日资金净流入新高。其中股票型ETF成为吸金主力，净流入<b>464.81亿元</b>；债券型ETF净流入<b>88.43亿元</b>；跨境型ETF净流入<b>34.60亿元</b>。<br>
+          <b>个券流向：</b>沪深300ETF华泰柏瑞净流入<b>104.51亿元</b>居首，沪深300ETF嘉实净流入<b>94.92亿元</b>、科创50ETF华夏净流入<b>66.53亿元</b>紧随其后；净流出方面，科创半导体ETF华夏净流出<b>12.28亿元</b>居首。<br>
+          <b>规模与持续性：</b>财联社10月23日报道（记者周晓雅），沪深300ETF华泰柏瑞最新规模回升至<b>1344.97亿元</b>，沪深300ETF嘉实规模回升至<b>418.95亿元</b>；股票ETF已<b>连续14个交易日</b>净流入，9月28日以来累计净流入额达<b>2612.96亿元</b>。<br>
+          <b>口径提示：</b>同期另有机构按iFinD口径统计当日ETF整体净流入<b>592.78亿元</b>、股票型净流入<b>464.81亿元</b>，与上述数值在统计范围上略有差异，本期统一采用单一来源口径并列展示，不做跨源合并或换算。<br>
+          <b>对腾安启示：</b>指数下跌与ETF大额净流入同时出现，属典型的“指数承压—资金借道ETF加仓”背离结构，对客材料须把“净流入”表述为资金流向统计而非指数企稳或收益信号；展示单品规模与净流入时须标注统计日期与口径来源，禁止把累计净流入等同于产品实际盈利；宽基ETF吸金居前而半导体主题ETF净流出居首，须按品类分别提示结构分化，不做全市场概括。
+        </div>
+        <div class="card-footer">
+          <a href="https://finance.sina.com.cn/jjxw/2026-10-23/doc-iniweiyu8102212.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">新浪财经·财闻·10-23</span></a>
+          <a href="https://news.qq.com/rain/a/20261023A03BT800" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">腾讯新闻·财联社·10-23</span></a>
+          <span class="impact-tag high">影响：高</span>
+        </div>
+      </div>
+
+      <!-- S0 Card 3 (10-23 P1) -->
+      <div class="card p1">
+        <div class="card-top">
+          <div class="card-title">🟡 证监会部署持续深化公募基金改革·健全长周期考核机制·壮大市场稳定力量</div>
+          <div class="card-meta">
+            <span class="priority-tag important">P1 重要关注</span>
+            <span class="date-tag">10-23</span>
+          </div>
+        </div>
+        <div class="card-body">
+          上海证券报10月23日报道（记者韩宋辉）：中国证监会主席吴清在2026金融街论坛年会上表示，推动进一步健全适配长期投资的<b>长周期考核机制</b>，扩大中长期资金来源、渠道和入市方式，持续深化<b>公募基金改革</b>，壮大市场稳定力量。<br>
+          <b>长钱体量：</b>据证监会6月17日披露的数据，新“国九条”出台两年多来，社保、保险、年金等中长期资本持有A股流通市值增长<b>85%</b>，净买入A股约<b>1.3万亿元</b>。<br>
+          <b>稳市机制：</b>吴清表示，坚持稳字当头，密切跟踪境内外市场动态，加强风险研判和政策工具储备，巩固完善稳市机制建设，着力加强新型业务风险防范，<b>高度警惕境外挂钩A股个股的杠杆产品</b>等新风险点，持续筑牢资本市场风险防波堤防浪堤。<br>
+          <b>机构解读：</b>中原证券首席经济学家邓淑斌表示，中长期资金是资本市场稳定运行的“压舱石”，能够对冲短期资金追涨杀跌行为；招商证券表示，产品注册并不直接等于资金净流入，但中长期资金占比提高有利于降低市场对短期交易资金的依赖、改善波动结构；西南证券首席经济学家叶凡将其概括为“先筑堤，再引水”。<br>
+          <b>对腾安启示：</b>“长周期考核＋长期资金入市”导向下，对客材料可把长期持有、定期定额与长期资金适配性作为合规表达重点，但不得把监管表态演绎为对市场点位或产品收益的背书；引用“社保、保险、年金持有A股流通市值增长85%”“净买入约1.3万亿元”须完整标注统计区间与新“国九条”口径，禁止截取为短期资金流向；对境外挂钩A股个股的杠杆产品风险提示须同步更新至风险揭示文案。
+        </div>
+        <div class="card-footer">
+          <a href="https://www.cfbond.com/14740/14740zgcfw/ejy/yw/4896229444.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">中国财富网·上海证券报·10-23</span></a>
+          <span class="impact-tag high">影响：高</span>
+        </div>
+      </div>
+
+      <!-- S0 Card 4 (10-23 P2) -->
+      <div class="card p2">
+        <div class="card-top">
+          <div class="card-title">🔵 主动ETF拟任基金经理集体发声·回调释放估值压力·分批均匀平稳建仓</div>
+          <div class="card-meta">
+            <span class="priority-tag normal">P2 建议了解</span>
+            <span class="date-tag">10-23</span>
+          </div>
+        </div>
+        <div class="card-body">
+          中国基金报10月23日报道（记者闫军、陆慧婧）：10月23日首批18只主动ETF正式发行，多位拟任基金经理围绕如何看待本轮回调、如何挖掘市场机会、如何平稳建仓三大问题发声——普遍认为回调释放了估值压力，建仓上“分批、均匀、平稳”成为高频词。<br>
+          <b>看回调：</b>摩根大盘成长主动股票ETF拟任基金经理李博指出，A股年内平均估值水平已接近过去十年均值，TMT与红利股的40日滚动收益差回落至<b>历史极低位置</b>，AI硬件标的远期市盈率回落至2023年以来低点；天弘林心龙认为本轮回调与增长预期和估值重估有关，修复节奏可能有所反复；平安刘榕俊认为估值变化是主导，盈利变化虽有改善但交易结构与情绪占主导。<br>
+          <b>选股框架：</b>李博采用GARP策略，量化为PEG小于<b>1</b>、未来三年复合增速超过<b>15%</b>、当年预测PE低于<b>20倍</b>三项指标，先在全市场初筛三四百只标的再收窄为核心股票池；富国王保合以<b>PB-ROE</b>框架构建基础投资池，认为成长风格向价值风格的切换正在进行；华安苏圻涵、王超采用“核心＋卫星”，核心仓位<b>六至七成</b>、卫星仓位<b>三至四成</b>。<br>
+          <b>建仓节奏：</b>汇添富吴振翔表示将采取分批建仓、在封闭期内相对均匀建仓；林心龙计划分阶段较均匀地平稳建仓，以<b>上市前股票仓位达到90%以上</b>为参考目标，并随募集进度、市场环境和上市安排动态优化节奏。<br>
+          <b>对腾安启示：</b>拟任基金经理的后市判断属个人观点而非业绩承诺，对客展示须标注发言人、所属机构与发言日期，禁止摘取“回调释放估值压力”一类表述作为买入建议；GARP、PB-ROE、“核心＋卫星”等策略名词须配通俗解释并标注为投资框架描述；建仓节奏属产品运作安排，不得与募集规模或预期收益并列展示。
+        </div>
+        <div class="card-footer">
+          <a href="https://www.chnfund.com/article/ARff1511f8-27e6-cad9-0b09-3a2476356210" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">中国基金报·10-23</span></a>
+          <span class="impact-tag medium">影响：中</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+<!-- ============ Section 1: 重磅信息 ============ -->
+
+  <div class="section">
+
+    <div class="section-header">
+
+      <div class="section-icon" style="background:#fef2f2;color:var(--danger);">🏆</div>
+
+      <div class="section-title">重磅信息</div>
+
+      <span class="section-badge" style="background:var(--danger-light);color:var(--danger);">近两周核心</span>
+
+    </div>
+
+
+
+    <div class="card-grid">
+
+
+
+      <!-- S1 Card: 顶流大V银行螺丝钉告别券商 (10-11 P1) -->
+
+      <div class="card p1">
+
+        <div class="card-top">
+
+          <div class="card-title">🟡 顶流大V“银行螺丝钉”告别券商转投雪球·“定投十年赚十倍”实际折算年化仅2.14%·大V机构化实验遇挫</div>
+
+          <div class="card-meta">
+
+            <span class="priority-tag important">P1 重要关注</span>
+
+            <span class="date-tag">10-11</span>
+
+          </div>
+
+        </div>
+
+        <div class="card-body">
+
+          21世纪经济报道10月11日报道（记者李域、编辑姜诗蔷）：以“定投十年赚十倍”口号出圈、被视作“大V拥抱监管”标杆的“银行螺丝钉”（本名王磊）已从某大型券商离职，转投雪球基金。其<b>2022年5月</b>带领“钉大”团队整体加盟上海某券商并出任首席投顾官，组合资产与策略同步平移至证券公司投顾业务；截至2022年底，加盟机构基金投顾管理规模超<b>149亿元</b>，为国内首批突破百亿规模的基金投顾机构之一。王磊目前在雪球拥有<b>97.4万</b>粉丝、微博<b>149.6万</b>粉丝，管理组合规模超<b>200亿元</b>。<br>
+
+          <b>业绩拷问：</b>“十年十倍”对应长期年化约<b>25%</b>；据公众号“微积分量化价投”对其指数组合过去十年业绩拼接计算，实际累计收益率约<b>22.1%</b>，折算年化收益率仅<b>2.14%</b>，几乎与同期银行理财年化收益持平。<b>2025年1月</b>曝光的关联私募“仟上螺丝钉主动优选天益私募证券投资基金2期”在成立后跑输市场指数、亏损幅度较大。<br>
+
+          <b>为何关键：</b>2021年11月证监会下发《关于规范基金投资建议活动的通知》，明确不具备基金投顾业务资格的机构不得提供基金组合策略建议，活跃在微博、雪球、公众号上的基金大V被集体“收编”——要么把组合交给持牌机构主理，要么自己考取资质、入职机构。四年后标杆样本解体，说明“大V流量＋持牌身份”的组合未能同时满足合规约束、客户预期与机构利益三重目标；叠加9月30日《金融产品网络营销管理办法》施行后大V合作全面叫停，个人IP驱动的获客模式已进入制度性退场。<br>
+
+          <b>对腾安的启示：</b>①内容供给必须内生——把组合策略的解释权收回自营账号与持牌投顾，不再依赖外部个人IP；②客户预期管理要前置，用“权益仓位中枢＋最大回撤＋建议持有期”替代高收益口号，避免重演“预期25%、实得2%”的信任崩塌；③可承接从机构流出的人才与客群，但须先完成合规身份、内容边界与留痕要求的制度化，并明确投顾主理人不得作出损害公司利益的单独表态。
+
+        </div>
+
+        <div class="card-footer">
+
+          <a href="https://finance.sina.com.cn/stock/roll/2026-10-11/doc-iniuwkhf8779040.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">新浪财经·21世纪经济报道·10-11</span></a>
+
+          <span class="impact-tag high">影响：高</span>
+
+        </div>
+
+      </div>
+
+<!-- S1 Card: 内地公募香港子公司成港交所ETF扩容主力 (10-13 P1) -->
+
+      <div class="card p1">
+
+        <div class="card-top">
+
+          <div class="card-title">🟡 内地公募香港子公司成港交所ETF扩容主力·前三季度新上市51只</div>
+
+          <div class="card-meta">
+
+            <span class="priority-tag important">P1 重要关注</span>
+
+            <span class="date-tag">10-13</span>
+
+          </div>
+
+        </div>
+
+        <div class="card-body">
+
+          每日经济新闻10月13日报道：今年以来香港ETF市场新品上市节奏持续加快，内地公募基金的香港子公司已成为港交所ETF扩容的绝对主力。据统计，今年前三季度港交所新上市ETF产品共计<b>51只</b>，其中<b>超六成</b>产品由内地公募香港子公司发行，南方东英、广发国际、华夏基金（香港）、易方达（香港）等机构密集发力，持续丰富香港ETF产品体系。<br>
+
+          <b>队伍继续壮大：</b>今年7月，监管部门正式批复同意设立兴业基金（香港）有限公司；截至目前，内地公募在香港设立的持牌子公司数量已接近<b>30家</b>，成为香港资管市场高度活跃的中坚力量。<br>
+
+          <b>业务含义：</b>内地公募香港子公司已从“走出去的通道”转为离岸指数工具的主要供给方，产品覆盖宽基、行业主题与跨市场策略，离岸业务正成长为行业“第二增长曲线”。<br>
+
+          <b>对腾安启示：</b>港股相关标的的筛选须从“是否港交所上市”细化到“发行人是否为内地公募香港子公司、是否具备ETF通资格、跟踪指数是否跨市场”三个维度，并向用户明示交易时段、汇率与结算差异，不得把港股ETF直接等同为A股宽基替代。
+
+        </div>
+
+        <div class="card-footer">
+
+          <a href="https://www.nbd.com.cn/articles/2026-10-13/4602916.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">每日经济新闻·10-13</span></a>
+
+          <a href="https://www.mrjjxw.com/articles/2026-10-12/4602064.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">每日经济新闻·10-12</span></a>
+
+          <span class="impact-tag medium">影响：中</span>
+
+        </div>
+
+      </div>
+
+
+
+<!-- S1 Card: 年内122只发起式基金清盘创历史新高 (10-16 P1) -->
+
+      <div class="card p1">
+
+        <div class="card-top">
+
+          <div class="card-title">🟡 年内122只发起式基金清盘创历史新高·运作办法拟取消“3年2亿”强制清盘线</div>
+
+          <div class="card-meta">
+
+            <span class="priority-tag important">P1 重要关注</span>
+
+            <span class="date-tag">10-16</span>
+
+          </div>
+
+        </div>
+
+        <div class="card-body">
+
+          每日经济新闻10月16日报道（每经记者肖芮冬、编辑叶峰）：<b>10月15日</b>，多只发起式基金发布可能触发基金合同终止情形的提示性公告。据统计，截至三季度末，今年以来已有<b>122只</b>发起式基金清盘，<b>创历史新高</b>。<br>
+
+          <b>规则变化：</b>近日《公开募集证券投资基金运作管理办法（征求意见稿）》发布，若新规落地，发起式迷你基金将不用再因规模不达标而清盘——征求意见稿优化发起式基金退出要求，删除现行关于发起式基金成立满3年规模不足<b>2亿元</b>需终止基金合同的规定，将发起式基金退出门槛与普通基金拉平；同时完善“迷你基金”监管要求，管理人选择持续运作的须承担基金运作固定费用成本，并要求建立基金产品规模过低的强制退出机制。<br>
+
+          <b>对腾安启示：</b>发起式基金“满三年即可能因规模不达标清盘”的硬约束若取消，货架上相关产品的存续预期将发生实质变化，须把“是否发起式、成立满三年时点、规模是否接近2亿元”从一次性风险提示改为持续跟踪项；对仍可能触发清盘的存量产品，须提前准备持有人告知与份额转换方案，不得用“新规即将取消清盘线”作安抚性表述。
+
+        </div>
+
+        <div class="card-footer">
+
+          <a href="https://cd.nbd.com.cn/articles/2026-10-16/4606610.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">每日经济新闻·10-16</span></a>
+
+          <span class="impact-tag medium">影响：中</span>
+
+        </div>
+
+      </div>
+
+
+
+<!-- S1 Card: 公募高质量发展新规实施一年 (10-16 P1) -->
+
+      <div class="card p1">
+
+        <div class="card-top">
+
+          <div class="card-title">🟡 公募高质量发展新规实施一年·考核由规模转向投资者回报·降费省出约500亿管理费</div>
+
+          <div class="card-meta">
+
+            <span class="priority-tag important">P1 重要关注</span>
+
+            <span class="date-tag">10-16</span>
+
+          </div>
+
+        </div>
+
+        <div class="card-body">
+
+          证券日报“十五五”产业图谱与资管配置新坐标圆桌论坛（同花顺财经10月16日刊发）：海富通基金副总经理周小波表示，《推动公募基金高质量发展行动方案》实施近一年，最根本的转变是行业核心考核指标由<b>规模</b>转向<b>投资者回报</b>，部分公司高管考核中该权重已达<b>50%</b>。<br>
+
+          <b>投资端：</b>业绩比较基准成为过去一年讨论最多的议题，正在改变基金经理行为——基金经理不再只是投资人员，同时也是“产品经理”，须在产品合同与产品要素约定范围内投资，把产品打磨成风格更清晰的工具，即业内所称“白盒化”。周小波表示海富通在基准实施前已对投资行业偏离与集中度执行比同行略严格的管控，全行业则仍在适应过程中。<br>
+
+          <b>产品与销售端：</b>去年一轮降费为投资者省出的管理费约<b>500亿元</b>；费率形态正从头部公司试点向中型公司推开浮动费率产品；销售端考核权重将加入投资者盈利，今年5—6月市场较好时主动限购、限大额的产品数量明显增多。<br>
+
+          <b>格局判断：</b>周小波认为头部化持续集中，中型公司的机会在于特色化；海富通的特色方向为养老金融与固收工具类（固收ETF、“固收+”），权益端偏成长。<br>
+
+          <b>对腾安启示：</b>“投资者回报”进入公募考核核心，货架的选品与展示口径须同步从“规模／排名”切换到“持有体验”，把基准偏离度、风格稳定性与三年／五年期业绩权重前置；浮动费率向中型公司扩容后，须把费率档位与挂钩基准做成可比字段，不得继续用单一规模指标排序推荐。
+
+        </div>
+
+        <div class="card-footer">
+
+          <a href="https://news.10jqka.com.cn/20261016/c680780186.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">同花顺财经·证券日报·10-16</span></a>
+
+          <span class="impact-tag medium">影响：中</span>
+
+        </div>
+
+      </div>
+
+
+
+<!-- S1 Card: 弘毅远方严选混合拟发行 (10-16 P2) -->
+
+      <div class="card p2">
+
+        <div class="card-top">
+
+          <div class="card-title">🔵 弘毅远方严选混合拟发行·拟任基金经理在管4只产品任职回报亏损·2只跌逾37%</div>
+
+          <div class="card-meta">
+
+            <span class="priority-tag normal">P2 建议了解</span>
+
+            <span class="date-tag">10-16</span>
+
+          </div>
+
+        </div>
+
+        <div class="card-body">
+
+          中国经济网10月16日报道：弘毅远方基金发布弘毅远方严选混合型发起式证券投资基金份额发售公告，该基金自<b>2026年10月19日</b>起至<b>2027年1月18日</b>通过销售机构公开发售，募集期限不超过3个月、募集期内不设规模上限；发起资金提供方认购金额不少于<b>1000万元</b>且承诺持有期不少于3年。<br>
+
+          <b>拟任基金经理：</b>章劲2022年2月加入弘毅远方基金，曾任上海银行资金营运中心自营业务科经理、华夏基金基金经理、华泰资产管理公司证券投资事业部固定收益投资部总经理与证券投资总监、华泰保兴基金副总经理兼首席投资官等职；目前共管理<b>8只</b>基金（各类份额分开计算），其中4只任职回报为负——弘毅远方医疗创新混合A <b>-7.46%</b>、C <b>-7.65%</b>，弘毅远方消费升级混合A <b>-37.26%</b>、C <b>-38.16%</b>。<br>
+
+          <b>对腾安启示：</b>弱势业绩基金经理继续挂帅新发产品，是“重首发、轻持营”惯性的典型样本；货架须把拟任基金经理在管产品的任职回报与最大回撤做成新发基金页的必展示项，并区分A／C份额口径，不得只展示公司品牌与赛道概念，也不得以“发起式”“自购1000万元”替代业绩披露。
+
+        </div>
+
+        <div class="card-footer">
+
+          <a href="https://finance.ce.cn/jjpd/jjpdgd/202610/t20261016_3260583.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">中国经济网·10-16</span></a>
+
+          <a href="https://finance.sina.com.cn/jjxw/2026-10-16/doc-inivmazr8378490.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">新浪财经·10-16</span></a>
+
+          <span class="impact-tag medium">影响：中</span>
+
+        </div>
+
+      </div>
+
+
+
+
+
+
+
+      <!-- S1 Card: 外资公募量化版图加速扩容 (10-19 P1) -->
+
+      <div class="card p1">
+
+        <div class="card-top">
+
+          <div class="card-title">🟡 外资公募量化版图加速扩容·贝莱德路博迈联博3家已发8只量化产品</div>
+
+          <div class="card-meta">
+
+            <span class="priority-tag important">P1 重要关注</span>
+
+            <span class="date-tag">10-19</span>
+
+          </div>
+
+        </div>
+
+        <div class="card-body">
+
+          新浪财经10月19日报道：10月，外资公募<b>路博迈基金</b>旗下红利量化选股基金正式成立，首发规模约<b>2.72亿元</b>。Wind数据显示，5家新设外资公募中，已有<b>贝莱德基金、路博迈基金、联博基金</b>3家发行量化投资相关产品，合计<b>8只</b>，涵盖<b>指数增强与主动选股</b>两类策略。从以跟踪指数为主的“稳中求进”，到红利、行业轮动等策略的主动出击，外资公募的量化版图正加速扩容。<br>
+
+          <b>策略延伸：</b>除股票量化外，外资公募还在探索多资产配置方向，将量化模型与基金经理判断相结合，以风险平价等方式平滑组合波动，满足投资者稳健收益需求。<br>
+
+          <b>对腾安启示：</b>外资量化产品线已从“跟踪指数为主”转向红利、行业轮动等主动策略，做竞品对比时须按策略类型（指数增强／主动量化／多资产配置）而非“外资／内资”标签分类，并标明成立规模、策略口径与费率结构；对“量化”标签不得默认等同于低波动或稳健收益。
+
+        </div>
+
+        <div class="card-footer">
+
+          <a href="https://finance.sina.com.cn/jjxw/2026-10-19/doc-inivsstc6328463.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">新浪财经·10-19</span></a>
+
+          <span class="impact-tag medium">影响：中</span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+<!-- ============ Section 2: 监管政策 ============ -->
+
+  <div class="section">
+
+    <div class="section-header">
+
+      <div class="section-icon" style="background:#fef2f2;color:var(--danger);">🏛️</div>
+
+      <span class="section-title">监管政策动态</span>
+
+      <span class="section-badge" style="background:var(--danger-light);color:var(--danger);">最高优先级</span>
+
+    </div>
+
+
+
+    <div class="card-grid">
+
+
+
+      <!-- S2 Card: 新规落地首周 大V引流全面冰封 (10-09 P1) -->
+
+      <div class="card p1">
+
+        <div class="card-top">
+
+          <div class="card-title">🟡 新规落地首周行业实况·大V引流全面冰封·10余家公募公开第三方平台名单·嘉实15家广发25家</div>
+
+          <div class="card-meta">
+
+            <span class="priority-tag important">P1 重要关注</span>
+
+            <span class="date-tag">10-09</span>
+
+          </div>
+
+        </div>
+
+        <div class="card-body">
+
+          中国证券报10月9日报道（本报记者张凌之）：《金融产品网络营销管理办法》<b>9月30日</b>由八部门联合发布并正式实施，被业内视为基金网络营销的“分水岭”。新规实施的第二个工作日，记者走访多家基金公司发现落实沿三条线同步展开——<b>内部</b>制定细则、开展合规培训、优化流程与营销素材管理系统；<b>对外</b>营销使用的第三方互联网平台名单首次集中公开；<b>大V群体</b>全面暂停合作。<br>
+
+          <b>名单披露实况：</b>新规实施首日嘉实基金、易方达基金、广发基金率先在网站披露，随后富国、招商、大成、摩根、鹏华、工银瑞信、天弘等跟进。其中<b>嘉实基金</b>披露15家合作第三方互联网平台（一类为第三方代销机构如支付宝App、天天基金App、微信App、理财通App、京东金融App、陆基金App、且慢App，另一类为运营官方账号的平台如小宇宙、小红书、视频号，并披露具体营销产品名称）；<b>广发基金</b>披露25家第三方互联网平台经营主体及营销使用的通信码号资源，涉及百度、抖音、网易、小红书、微博等运营主体以及华为、苹果、小米、vivo等公司；<b>易方达基金</b>披露微信、抖音、腾讯自选股、同花顺、小红书、哔哩哔哩、雪球、网易云音乐、小宇宙、万得；<b>富国基金</b>披露东方财富、京东金融、腾讯自选股、雪球。<br>
+
+          <b>合规体系升级：</b>北京一家大型基金公司搭建数字化营销素材管理系统平台，对直播回放、短视频、图文等内容实现自动留存归档，明确保存期限与检索路径；一家第三方销售机构亦升级营销内容可回溯系统，所有短视频、直播、图文与广告投放资料全部自动存档、长期留存。有南方基金公司合规负责人表示，以往平台及合作博主承接用户产品咨询、投资答疑、互动解读的引流合作模式已超越单纯技术服务边界，属违规展业，将全面叫停；<b>未来平台合作只能保留合规技术导流功能，所有金融服务、客户答疑、产品解读均由基金机构自主承接</b>。<br>
+
+          <b>对腾安的启示：</b>①第三方平台从“销售参与方”回归“技术服务方”，腾安须重签与合作平台的服务边界——产品咨询、投资答疑、互动解读一律由自营团队承接，平台只保留技术导流；②微信理财通作为腾安代销载体已出现在多家基金公司的公示名单中，腾安应主动准备对客的渠道公示口径与查询核实入口；③营销素材留痕与可回溯应做成系统能力而非人工台账，凡对客输出的直播、短视频须自动归档并随时可查验。
+
+        </div>
+
+        <div class="card-footer">
+
+          <a href="https://www.ce.cn/xwzx/gnsz/gdxw/202610/t20261009_3250222.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">中国经济网·中国证券报·10-09</span></a>
+
+          <span class="impact-tag high">影响：高</span>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- S2 Card: 中基协发布后续职业培训大纲2026年度修订 (10-16 P2 / A级官方源) -->
+
+      <div class="card p2">
+
+        <div class="card-top">
+
+          <div class="card-title">🔵 中基协发布《基金从业人员后续职业培训大纲（2026年度修订）》·中基协字〔2026〕341号</div>
+
+          <div class="card-meta">
+
+            <span class="priority-tag normal">P2 建议了解</span>
+
+            <span class="date-tag">10-16</span>
+
+          </div>
+
+        </div>
+
+        <div class="card-body">
+
+          中国证券投资基金业协会10月16日发布中基协字〔2026〕341号通知（落款2026年10月13日）：为加快建设一流投资机构，系统提升基金从业人员的职业道德、专业技能和胜任能力，协会根据法律法规更新和行业发展形势、结合行业培训需要，编制《基金从业人员后续职业培训大纲（2026年度修订）》并予发布，<b>自发布之日起施行</b>。<br>
+
+          <b>配套专题培训：</b>协会10月15日另发中基协字〔2026〕339号通知，定于<b>10月22日</b>举办私募股权投资基金业务直播培训，内容为人工智能、量子科技行业的发展现状、产业链、行业研究方法及投资展望；并与香港交易所定于<b>10月29日</b>在北京合办2026年港股通业务培训班，聚焦互联互通与港股通ETF发展、多资产配置与风险管理、人工智能应用等主题。<br>
+
+          <b>对腾安启示：</b>培训大纲修订与港股通、AI、量子科技等专题培训同步落地，反映监管对从业人员胜任能力的要求正与新质生产力、跨境配置、AI应用三条主线对齐；一线销售与投顾团队须把后续职业培训学时纳入合规台账，并在港股通ETF、AI主题产品的对客话术前完成对应专题学习，避免以旧口径解释新规则。
+
+        </div>
+
+        <div class="card-footer">
+
+          <a href="https://www.amac.org.cn/xwfb/tzgg/202610/t20261016_28171.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">中国证券投资基金业协会·10-16</span></a>
+
+          <a href="https://finance.sina.com.cn/wm/2026-10-16/doc-inivkncp7036266.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">新浪财经·中基协·10-16</span></a>
+
+          <span class="impact-tag medium">影响：中</span>
+
+        </div>
+
+      </div>
+
+
+
+
+
+      <!-- S2 Card: 百亿私募杭州图灵一日收三份警示函 (10-09 P1) -->
+
+      <div class="card p1">
+
+        <div class="card-top">
+
+          <div class="card-title">🟡 百亿私募杭州图灵一日收三份警示函·七项违规·总经理与风控负责人双双被点名</div>
+
+          <div class="card-meta">
+
+            <span class="priority-tag important">P1 重要关注</span>
+
+            <span class="date-tag">10-09</span>
+
+          </div>
+
+        </div>
+
+        <div class="card-body">
+
+          浙江证监局于<b>10月9日</b>先后下发三份行政监管措施决定书（10月13日起媒体陆续披露）：对私募基金管理人<b>杭州图灵资产管理有限公司</b>、法定代表人兼总经理<b>王晓妍</b>、合规风控负责人<b>李琼</b>分别采取出具警示函的监督管理措施，相关记录记入证券期货市场诚信档案，三方须于收到决定书<b>15个工作日内</b>提交书面整改报告。<br>
+
+          <b>七项违规（四项涉募集推介与信披）：</b>不配合监管机构依法开展的监督检查；宣传推介材料存在虚假记载；不公平对待同一基金的不同投资者、损害部分投资者利益；向投资者披露的信息不准确、不完整；未保持应有的独立性、与关联方人员混同办公；投资决策相关内部制度执行不到位；投资者适当性程序违规。<br>
+
+          <b>条款对应：</b>不配合监督检查与投资者适当性程序违规对应《私募投资基金监督管理条例》第三十二条第一项；宣传推介材料虚假记载、不公平对待投资者、混同办公、内控执行不到位四项对应第三条第三款；披露信息不准确不完整对应第四十一条第二款。<br>
+
+          <b>主体情况：</b>中基协登记信息显示，杭州图灵成立于2016年9月、2019年3月完成登记，机构类型为私募股权、创业投资基金管理人，管理规模在<b>100亿元</b>以上，全职员工19人；王晓妍为实际控制人，持股<b>82%</b>。截至2026年10月16日，年内新备案产品共<b>20只</b>（集中在1月至5月，5月之后未有新增），存续产品共计<b>56只</b>。<br>
+
+          <b>对腾安启示：</b>监管已把合规岗位的实际履职情况单独审视——风控负责人与总经理并列被点名，说明“合规负责人是否只是挂名、履职是否留痕”正成为检查项；对合作机构的展示须同步呈现其监管措施记录与整改状态，不得以“明星投资人”“明星战绩”叙事覆盖合规瑕疵，也不得因规模百亿而弱化风险提示。
+
+        </div>
+
+        <div class="card-footer">
+
+          <a href="https://www.mrjjxw.com/articles/2026-10-14/4604272.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">每日经济新闻·10-14</span></a>
+
+          <a href="https://finance.ce.cn/stock/gsgdbd/202610/t20261013_3256410.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">中国经济网·10-13</span></a>
+
+          <span class="impact-tag high">影响：高</span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+<!-- ============ Section 3: 竞争对手动态 ============ -->
+
+  <div class="section">
+
+    <div class="section-header">
+
+      <div class="section-icon" style="background:#fffbeb;color:var(--warning);">🏁</div>
+
+      <span class="section-title">竞争对手动态</span>
+
+      <span class="section-badge" style="background:var(--warning-light);color:var(--warning);">重点跟踪</span>
+
+    </div>
+
+
+
+    <div class="comp-table">
+
+      <table style="width:100%;border-collapse:collapse;">
+
+        <thead>
+
+          <tr>
+
+            <th style="width:15%">机构</th>
+
+            <th style="width:15%">时间</th>
+
+            <th style="width:45%">动态详情</th>
+
+            <th style="width:12%">威胁等级</th>
+
+            <th style="width:13%">对腾安启示</th>
+
+          </tr>
+
+        </thead>
+
+                <tbody>
+
+                    <tr>
+
+            <td><span class="comp-name"><span class="comp-emoji">🐜</span>蚂蚁基金</span></td>
+
+            <td>10-16</td>
+
+            <td>
+
+              <b>中国证券报电子版10月16日披露金元顺安基金公告（落款二〇二六年十月十六日）：自2026年10月19日起新增14家销售机构销售金元顺安丰瑞债券型证券投资基金，蚂蚁（杭州）基金销售有限公司列名单第13位</b>，业务范围覆盖开户、认购、申购、赎回、定期定额投资与基金转换，定期定额投资最低限额为<b>10元</b>，并同步参加销售机构费率优惠。同期上海证券报10月12日报道（记者陈玥），蚂蚁平台“固收+”页面把推荐产品分为<b>“低波固收+”“中波固收+”“高波固收+”</b>三档，并叠加<b>“债券+可转债”“债券+黄金股票+大盘”“债券+科技+大盘”</b>等标签，方便投资者按底层资产与增强逻辑筛选。<br>
+
+              <span style="color:var(--danger);font-weight:600;">⚡ 货架＋标签双线推进：蚂蚁一边用新增代销公告持续补齐债基货架，一边用“波动档位＋增强来源”两层标签把“固收+”重做成风险敞口选择</span>
+
+              <div class="comp-links">
+
+                <a class="comp-link" href="https://epaper.cs.com.cn/zgzqb/html/2026-10/16/nw.D110000zgzqb_20261016_6-B018.htm" target="_blank"><span class="link-icon">📄</span>中国证券报电子版·10-16</a>
+
+                <a class="comp-link" href="https://finance.china.com.cn/money/fund/20261012/6325823.shtml" target="_blank"><span class="link-icon">📊</span>中国网财经·上海证券报·10-12</a>
+
+              </div>
+
+            </td>
+
+            <td><span class="impact-tag high">🔴 入口重构</span></td>
+
+            <td style="font-size:12px;color:var(--gray-600);">蚂蚁与腾安同处“新增销售机构”公告名单已成常态，竞争不在“有没有”而在“怎么解释”——腾安须把波动档位与增强来源做成货架默认字段</td>
+
+          </tr>
+
+          <tr>
+
+            <td><span class="comp-name"><span class="comp-emoji">🏦</span>招商银行</span></td>
+
+            <td>10-13</td>
+
+            <td>
+
+              <b>证券日报电子版10月13日披露国海富兰克林基金公告（落款二〇二六年十月十三日）：自2026年10月14日起，招商银行代理销售富兰克林国海北证50成份指数型发起式证券投资基金A类（027723）、C类（027724）</b>，同步开通基金转换与定期定额投资业务，<b>定投起点金额1元</b>，A类份额参加费率优惠、优惠活动起始时间为<b>2026年10月14日</b>。<br>
+
+              <b>货架含义：</b>北证50成份指数属高波动宽基工具，此前主要经由券商与三方平台销售；招行此次以<b>“1元起投＋费率优惠＋基金转换”</b>三件套接入，等于把高波动指数工具正式纳入银行零售货架，货架的风险梯度由低波底仓向高波工具外扩。<br>
+
+              <span style="color:var(--danger);font-weight:600;">⚡ 风险梯度补全：招行用1元定投把高波动指数工具做进银行App，货架宽度与风险分层同步外扩</span>
+
+              <div class="comp-links">
+
+                <a class="comp-link" href="http://epaper.zqrb.cn/html/2026-10/13/content_1279192.htm" target="_blank"><span class="link-icon">📄</span>证券日报电子版·10-13</a>
+
+              </div>
+
+            </td>
+
+            <td><span class="impact-tag high">🔴 货架扩张</span></td>
+
+            <td style="font-size:12px;color:var(--gray-600);">银行渠道不再只做低波，“1元起投＋费率优惠”是高波动指数下沉零售的标配打法；腾安须在高波动产品页前置波动率与最大回撤区间，不能只靠起投门槛吸引</td>
+
+          </tr>
+
+                    <tr>
+
+            <td><span class="comp-name"><span class="comp-emoji">📈</span>天天基金/东方财富</span></td>
+
+            <td>10-16</td>
+
+            <td>
+
+              <b>上海证券报电子版10月14日披露山证资管公告（落款2026年10月14日）：自2026年10月14日起新增上海天天基金销售有限公司、上海好买基金销售有限公司为山证资管裕利定期开放债券型发起式证券投资基金的销售机构</b>，可办理开户、申购、赎回、基金转换与定期定额投资等业务。同期的中国证券报电子版10月16日金元顺安丰瑞债券新增销售机构公告中，天天基金列14家名单的<b>第14位</b>，与中信证券华南、中信证券（山东）、中信期货等同批进场。<br>
+
+              <span style="color:var(--warning);font-weight:600;">⚡ 双线补位：天天基金一边接管定期开放债基的日常申赎通道，一边进入新基金首发名单，货架与交易场景同步扩容</span>
+
+              <div class="comp-links">
+
+                <a class="comp-link" href="https://paper.cnstock.com/html/2026-10/14/content_2277017.htm" target="_blank"><span class="link-icon">📊</span>上海证券报·10-14</a>
+
+                <a class="comp-link" href="https://epaper.cs.com.cn/zgzqb/html/2026-10/16/nw.D110000zgzqb_20261016_6-B018.htm" target="_blank"><span class="link-icon">📄</span>中国证券报电子版·10-16</a>
+
+              </div>
+
+            </td>
+
+            <td><span class="impact-tag medium">🟡 货架扩容</span></td>
+
+            <td style="font-size:12px;color:var(--gray-600);">三方货架补齐速度已快于银行，腾安须用“内容解释力”而非“货架宽度”建立差异；与中信系券商同批进场也提示腾安评估券商通道的协同价值</td>
+
+          </tr>
+
+                    <tr>
+
+            <td><span class="comp-name"><span class="comp-emoji">🏛</span>上海基煜基金</span></td>
+
+            <td>10-16</td>
+
+            <td>
+
+              <b>中国证券报电子版10月16日披露金元顺安基金公告（落款二〇二六年十月十六日）：自2026年10月19日起新增14家销售机构，上海基煜基金销售有限公司列名单第9位</b>，位次高于上海长量（第10位）、上海万得（第11位）与浙江同花顺（第12位），低于中信期货（第4位）与泰信财富（第6位）；业务范围覆盖开户、认购、申购、赎回、定期定额投资与基金转换，定投最低限额<b>10元</b>。基煜延续其服务机构客户的B端路线——不与C端争流量，靠机构开户、交易与投研服务的标准化把B端资金批量沉淀。<br>
+
+              <span style="color:var(--warning);font-weight:600;">⚡ B端深耕：基煜在多家基金公司的新增销售机构名单中稳定占位，靠机构开户—交易—投研的标准化服务把B端资金批量沉淀</span>
+
+              <div class="comp-links">
+
+                <a class="comp-link" href="https://epaper.cs.com.cn/zgzqb/html/2026-10/16/nw.D110000zgzqb_20261016_6-B018.htm" target="_blank"><span class="link-icon">📄</span>中国证券报电子版·10-16</a>
+
+              </div>
+
+            </td>
+
+            <td><span class="impact-tag medium">🟡 To B深耕</span></td>
+
+            <td style="font-size:12px;color:var(--gray-600);">机构端代销是与C端完全不同的能力栈（交易、托管、投研接口），腾安需明确是否进入，避免两头都做浅</td>
+
+          </tr>
+
+                    <tr>
+
+            <td><span class="comp-name"><span class="comp-emoji">🤖</span>盈米基金</span></td>
+
+            <td>10-16</td>
+
+            <td>
+
+              <b>中国证券报电子版10月16日披露金元顺安基金公告（落款二〇二六年十月十六日）：自2026年10月19日起新增14家销售机构，珠海盈米基金销售有限公司列名单第3位</b>，在三方销售机构中位次最高。同期21世纪经济报道10月11日报道（记者李域、编辑姜诗蔷），盈米基金投顾事业部出台展业合规管理办法，把<b>线上渠道</b>（公众号、短视频、直播、社群、图文发布，以及企业微信、电话、腾讯会议等客户互动）与<b>线下渠道</b>（路演、沙龙、投资者见面会、客户答谢会、讲座、培训及面对面营销）三类展业行为一并纳入规范。<br>
+
+              <span style="color:var(--danger);font-weight:600;">⚡ 货架＋合规同步：盈米在扩充代销名单的同时把展业边界写成成文制度，用制度化内控承接“大V退场”后的服务真空</span>
+
+              <div class="comp-links">
+
+                <a class="comp-link" href="https://epaper.cs.com.cn/zgzqb/html/2026-10/16/nw.D110000zgzqb_20261016_6-B018.htm" target="_blank"><span class="link-icon">📄</span>中国证券报电子版·10-16</a>
+
+                <a class="comp-link" href="https://finance.sina.com.cn/stock/roll/2026-10-11/doc-iniuwkhf8779040.shtml" target="_blank"><span class="link-icon">📊</span>新浪财经·21世纪经济报道·10-11</a>
+
+              </div>
+
+            </td>
+
+            <td><span class="impact-tag high">🔴 合规内控</span></td>
+
+            <td style="font-size:12px;color:var(--gray-600);">新规下展业边界需要成文制度落地，腾安应参照把线上内容发布、客户互动与线下活动三类展业行为一并纳入合规办法，避免依赖口头口径</td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+  <!-- ============ Section 4: 行业趋势 ============ -->
+
+  <div class="section">
+
+    <div class="section-header">
+
+      <div class="section-icon" style="background:var(--primary-light);color:var(--primary);">📈</div>
+
+      <span class="section-title">行业趋势与市场数据</span>
+
+      <span class="section-badge" style="background:var(--primary-light);color:var(--primary);">趋势洞察</span>
+
+    </div>
+
+
+
+    <div class="two-col">
+
+      <!-- S4 Card: 高股息资产热度升温·红利基金密集限购 (10-13 P1) -->
+
+      <div class="card p1">
+
+        <div class="card-top">
+
+          <div class="card-title">🟡 高股息资产热度升温·节后18只红利基金密集限购·新品同步提速</div>
+
+          <div class="card-meta">
+
+            <span class="priority-tag important">P1 重要关注</span>
+
+            <span class="date-tag">10-13</span>
+
+          </div>
+
+        </div>
+
+        <div class="card-body">
+
+          中国经济网10月13日报道（Wind数据）：国庆假期以来红利基金掀起一轮"限购潮"，截至10月12日，节后已有<b>18只</b>红利主题基金发布暂停或限制大额申购相关公告，成为本轮限购主力品种。<br>
+
+          <b>限购清单：</b>银河基金将银河中证红利低波动100指数、银河上证国有企业红利ETF发起式联接基金单日申购限额设定为<b>100万元</b>，自10月13日起恢复办理大额申购；交银中证红利低波动100指数、景顺长城中证沪港深红利成长低波动指数同样设定100万元单日限额；天弘旗下两只红利基金单日单账户限购<b>500万元</b>；富国恒生港股通红利低波动ETF联接对单账户日累计超<b>1000万元</b>的申购予以暂停；招商中证红利ETF联接对非个人投资者实施单日<b>10万元</b>限额。<br>
+
+          <b>风格再平衡：</b>Wind数据显示，今年上半年上证红利指数下跌6%，同期上证指数、深证成指、创业板指分别上涨3.16%、19.82%、35.58%；下半年以来截至10月12日，上证红利指数涨超<b>14%</b>，三大宽基指数则出现不同程度回调。全市场81只名称含"红利"的ETF中，<b>70只</b>近三个月回报为正，<b>12只</b>近三个月净值增长超10%，华泰柏瑞、融通、富国旗下央企红利ETF均超13%。<br>
+
+          <b>供需双向扩容：</b>路博迈红利量化选股股票基金提前结束募集（原定募集截止日10月16日）；嘉实、汇添富分别提交中证全指红利质量ETF募集申请，工银瑞信、万家、易方达、南方、富国等多家提交中证红利增长ETF申请；10月12日博时恒生港股通红利低波动ETF、银华中证全指红利质量ETF、广发中证红利低波动ETF同步启动发行。<br>
+
+          <b>对腾安影响：</b>红利赛道"存量限购＋新品提速"双向扩容，货架须把限购状态、恢复日期与单日限额前置展示，避免用户在限额期内产生申购失败体验；同时提示红利资产行业集中于银行、资源、公用事业、交运，不得把短期风格切换包装成无风险收益。
+
+        </div>
+
+        <div class="card-footer">
+
+          <a href="https://www.ce.cn/xwzx/gnsz/gdxw/202610/t20261013_3255557.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">中国经济网·10-13</span></a>
+
+          <a href="https://paper.cnstock.com/html/2026-10/12/content_2276193.htm" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">上海证券报·10-12</span></a>
+
+          <span class="impact-tag medium">供给结构：中</span>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- S4 Card: 公募探寻“产、投、销、考”全链条稳市路径 (10-19 P1) -->
+
+      <div class="card p1">
+
+        <div class="card-top">
+
+          <div class="card-title">🟡 公募探寻“产、投、销、考”全链条稳市路径·年内新成立1385只已超去年</div>
+
+          <div class="card-meta">
+
+            <span class="priority-tag important">P1 重要关注</span>
+
+            <span class="date-tag">10-19</span>
+
+          </div>
+
+        </div>
+
+        <div class="card-body">
+
+          证券时报10月19日报道（记者裴利瑞）：A股震荡反复、短期资金追涨杀跌，多家受访机构认为公募要真正发挥市场“稳定器”作用，关键并非简单扩大权益投资规模，而是<b>减少顺周期行为、增强跨周期投资能力</b>，需在“产、投、销、考”四个环节协同发力。<br>
+
+          <b>产品端：</b>Wind数据显示，截至2026年三季度末，今年以来全市场新成立<b>1385只</b>基金，已超去年同期的<b>1110只</b>；市场上涨的二季度新成立<b>498只</b>，远超去年同期的<b>369只</b>，名称带有“科创”“芯片”“智选”等关键词的新产品募集成绩尤为亮眼，顺周期发行的规模路径依赖仍存。一位第三方基金评价人士举例，部分五六月份在科技板块高位成立的基金，到三季度便遭遇<b>百分之二三十</b>的回撤。监管侧已强制披露“盈利投资者占比”“持有期收益”并将“投资者盈亏与持有期限”纳入代销机构考核；《公开募集证券投资基金运作管理办法（征求意见稿）》拟将非固收类基金成立门槛由2亿份／2亿元降至<b>5000万份／5000万元</b>，中欧基金认为这有利于降低产品成立对短期市场热度的依赖。<br>
+
+          <b>投资端：</b>博时基金首席策略分析师陈显顺表示，公募须从“组合管理”转向“资产配置管理”，在行业配置、仓位管理和风险预算方面建立系统化框架；晨星（中国）基金研究中心总监孙珩建议完善基金经理长期考核机制、收紧基金合同投资边界、建立内部持仓风格定期稽核体系，销售渠道须充分披露产品风格定位与风格漂移风险。<br>
+
+          <b>销售端：</b>博时基金提出构建“认知引导、情绪陪伴、产品支撑、渠道协同”四位一体投教陪伴体系，大力发展持有期基金、FOF、多资产配置工具并推广纪律化定投；晨星中国董事长陈鹏认为下一步关键是推出真正的<b>投顾份额（干净份额）</b>，把信义义务落实到投顾业务实操细则，并用好个人养老金等制度管道探索默认配置模式。<br>
+
+          <b>考核端：</b>嘉实基金表示将围绕长周期考核全面建立以基金投资收益为核心的考核体系；陈显顺建议行业评价体系从“规模导向”转向“价值创造导向”。<br>
+
+          <b>对腾安启示：</b>“逆周期布局”已从监管要求下沉到产品、投资、销售、考核四个环节，货架排序与推荐逻辑须同步弱化新发规模与短期排名权重，改为展示盈利投资者占比、持有期收益与风格稳定性；对高位成立的次新基金须在详情页标注成立时点与建仓区间，不得以“赛道景气”掩盖“成立即高位”的回撤来源。
+
+        </div>
+
+        <div class="card-footer">
+
+          <a href="https://finance.sina.com.cn/jjxw/2026-10-19/doc-inivsstf7059851.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">新浪财经·证券时报·10-19</span></a>
+
+          <span class="impact-tag medium">影响：中</span>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- S4 Card: 公募固收+发展迎来三重共振 (10-12 P1) -->
+
+      <div class="card p1">
+
+        <div class="card-top">
+
+          <div class="card-title">🟡 公募“固收+”迎来三重共振·二季度末规模3.67万亿占全市场9.5%·白盒化成渠道主流</div>
+
+          <div class="card-meta">
+
+            <span class="priority-tag important">P1 重要关注</span>
+
+            <span class="date-tag">10-12</span>
+
+          </div>
+
+        </div>
+
+        <div class="card-body">
+
+          上海证券报10月12日报道（记者陈玥）：随着新发产品募集资金加速流入、个人养老金产品池扩容、白盒化策略成为渠道主流，公募“固收+”迎来新的发展契机。9月以来受市场波动影响，一些权益类产品延长募集期，一批“固收+”新发产品却公告提前结束募集，如<b>中欧宽泽债券、嘉实稳健瑞庆6个月持有、平安添鑫、招商安拓</b>等；东吴证券研报显示，首批26只“固收+”个人养老金基金的管理费均为原份额管理费的<b>50%</b>，托管费也大多下降约<b>50%</b>。<br>
+
+          <b>规模与结构：</b>华源证券统计数据显示，截至<b>2026年二季度末</b>，公募“固收+”整体规模站上<b>3.67万亿元</b>，占全市场基金规模的比重达<b>9.5%</b>。产品形态已从早期“70%债券＋30%股票”的固定比例升级为多资产工具箱——股票类别细分至红利、科技、周期、可转债，资产类别扩展到公募REITs、黄金、海外债券及股票、ETF与另类资产。南开大学金融学院教授田利辉表示，“固收+”的风险收益特征与养老资金追求长期稳健增值的核心诉求天然契合，让整个账户的风险梯度变得完善、平滑。<br>
+
+          <b>白盒化两条路线：</b>国泰海通证券研报认为，“白盒”就是把“+”摊开——加哪类资产、用什么方法、守什么纪律。<b>赛道“白盒”</b>锚定科技、红利、转债等明确方向；<b>方法“白盒”</b>则用指数增强、量化选股、波动控制等规则化方法。渠道端已行动：招商银行“策略固收+”栏目分<b>红利+、科创+、量化+、转债+</b>四种；蚂蚁平台分低波／中波／高波三档并叠加策略标签；天天基金同样划分三档板块。<br>
+
+          <b>管理人侧配合：</b>南方基金打造丰泽、泓享、荣信、乾元一组差异化二级债基——丰泽稳健添利侧重产业周期驱动的成长方向，泓享稳健添利3个月持有更重视回撤约束下的均衡增强，荣信稳健添利看好“红利＋科技”，乾元稳健添利债券则通过纪律化量化增强增厚收益；平安基金规划<b>稳健型、高弹性、工具型</b>三大类“白盒化”固收+基金。南方基金介绍“固收+”的稳健更依赖平台化支撑：全栈自研风控系统实现投前、投中、投后全流程覆盖，自主研发系统整合智能研究、投研协同、智能风控、精准交易四大板块。<br>
+
+          <b>对腾安启示：</b>“固收+”已从单一产品变成渠道竞争的标准化战场——腾安须在货架上同时提供<b>波动档位</b>（低波／中波／高波）与<b>增强来源</b>（红利／科技／转债／量化）两个筛选维度，并把权益仓位中枢与最大回撤前置到产品页；同时可借个人养老金Y份额费率减半的政策窗口，把“固收+”与养老账户做成组合式入口。
+
+        </div>
+
+        <div class="card-footer">
+
+          <a href="https://finance.china.com.cn/money/fund/20261012/6325823.shtml" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">中国网财经·上海证券报·10-12</span></a>
+
+          <span class="impact-tag medium">供给结构：中</span>
+
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+<!-- ============ Section 5: 金融科技与AI ============ -->
+
+  <div class="section">
+
+    <div class="section-header">
+
+      <div class="section-icon" style="background:#eef2ff;color:var(--info);">🤖</div>
+
+      <span class="section-title">金融科技与AI投顾</span>
+
+      <span class="section-badge" style="background:var(--info-light);color:var(--info);">前瞻洞察</span>
+
+    </div>
+
+
+
+    <div class="card-grid">
+
+      <!-- S5 Card: 汇添富张晖拆解AI重构资管 (10-19 P1) -->
+
+      <div class="card p1">
+
+        <div class="card-top">
+
+          <div class="card-title">🟡 汇添富总经理张晖拆解AI重构资管·“AI替代认知执行、人保留认知责任”·研究员Agent已接管40%案头工作</div>
+
+          <div class="card-meta">
+
+            <span class="priority-tag important">P1 重要关注</span>
+
+            <span class="date-tag">10-19</span>
+
+          </div>
+
+        </div>
+
+        <div class="card-body">
+
+          中国基金报10月19日刊发（页面标注“来源：中国基金报 2026-10-19 07:04”）：汇添富基金总经理张晖在<b>10月17日</b>全球财富管理论坛2026上海苏河湾大会上，把AI重构资管的路径与边界拆成三个问题。核心判断是——资产管理“受人之托、代人理财”的本质未变，被重构的是<b>完成这件事的方式与底层成本结构</b>；<b>AI替代的是“认知执行”，人类保留的是“认知责任”</b>。他明确不轻易使用“范式变革”一词：价值投资与组合管理的底层共识没有变，当前阶段AI带来的是全流程重塑。<br>
+
+          <b>三阶段演进：</b>①<b>智能助手阶段</b>——被动应答、单点辅助的“副驾驶”，已是行业标配、不再构成差异化优势；②<b>智能体协同阶段</b>——多智能体工作流接管各业务场景、关键节点保留人类判断，是当前各家机构角力的主战场；③<b>AI原生组织阶段</b>——模型从海量数据中自行发现结构、人只设定目标与约束，才可能真正发生范式转移。<br>
+
+          <b>投研“三刻度尺”：</b>用<b>可验证性、后果严重性、责任归属</b>三个刻度把投研工序解构为三层——<b>信息吸收层</b>（研报检索、会议纪要结构化、公告跟踪）AI已近乎全面替代；<b>建模与因子层</b>（财务建模、因子挖掘、历史回测）须执行“AI生成＋对抗性校验＋人工审核上线”，防范回测式伪发现、过度拟合与策略拥挤；<b>判断形成层</b>AI擅长总结“历史数据说了什么”，但不擅长判断“当前市场价格已反映了什么”，最终由基金经理主导并承担受托责任。多智能体网络接入买方私有知识库后，呈现在基金经理面前的不是黑盒式买卖指令，而是<b>可检验、可追溯、可审计的完整论证</b>。<br>
+
+          <b>三道刚性边界：</b>①<b>技术边界</b>——高阶幻觉至今未根除，须靠私域数据筑底，并建立全公司统一的<b>“知识本体（Ontology）”</b>，把产业链分析语言、财务指标、因子口径与彼此的层级因果关系标准化，用降低模型自由度换取金融场景可靠性；②<b>市场边界</b>——全市场共享相似底层模型与公开数据会抬升交易信号同质性，须把<b>信号同质性、交易拥挤度、潜在流动性压力</b>一并纳入日常风险监测；③<b>责任边界</b>——受托责任永远不可外包，“没有人类责任主体的全自动基金”不会成为主流。<br>
+
+          <b>汇添富实践：</b>公司去年即成立AI创新委员会与跨部门AI应用小组，今年把年号定为<b>“拥抱AI应用年”</b>；围绕核心业务链条建设<b>研究、投资助理、规则化投资、投顾、营销、运营六大Agent集群</b>，高度概括为“<b>系统＋AI＋人工</b>”——系统定规则、AI出主意、人来判断。其中“研究员Agent”接入私有知识库、内化买方研究框架并经人工校对迭代，已接管研究员约<b>40%</b>的基础案头工作；围绕“规则化投资”打造的<b>多Agent督导体系</b>为每个投资组合配备7×24小时在线的“AI监督员”，可跨Agent协同解释持仓变化是否符合既定策略、风险属性是否发生隐性迁移。投顾端构建由<b>市场解读、产品研究、客户管理、策略研究、投教陪伴</b>组成的<b>5大投顾Agent体系</b>，底层打通多项<b>MCP标准化数据服务</b>与多维评估指标体系，把“客户需求特征、产品清晰定位、投资经理画像、底层投资策略”四个维度咬合，目标“千人千顾、千人千投”。<br>
+
+          <b>护城河向三处集中：</b>张晖以自身实验说明——把同一批公开资料同时喂给国内外多个主流模型，生成的深度报告<b>核心观点高度一致、篇章结构与部分表述几乎雷同</b>。因此未来护城河集中在<b>私有知识沉淀</b>（一线产业调研与买方专有知识图谱）、<b>反共识判断与组合表达</b>、<b>受托信任与长期陪伴</b>三处。<br>
+
+          <b>对腾安启示：</b>①“系统定规则、AI出主意、人来判断”可直接照搬到腾安的诊基与陪伴链路，凡涉及选基、调仓与风险揭示的AI产出必须保留人工终审与留痕；②投顾端“5大Agent＋MCP标准化数据服务”的架构说明差异不在模型而在<b>私有数据与统一口径</b>，腾安应先把客户特征、产品画像与策略标签做成机器可读的标准字段；③“算法共振”须进入风控视野——若货架推荐与组合建议同源同模型，极端行情下会放大同向交易，须对推荐结果的同质性与拥挤度设定阈值。
+
+        </div>
+
+        <div class="card-footer">
+
+          <a href="https://www.chnfund.com/article/ARe6518476-f790-6576-74d6-3a2463759fe1" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">中国基金报·10-19</span></a>
+
+          <span class="impact-tag high">AI投顾：高</span>
+
+        </div>
+
+      </div>
+
+
+
+
+
+      <!-- S5 Card: 中泰证券以AI嵌入财富管理全流程 (10-17 P1) -->
+
+      <div class="card p1">
+
+        <div class="card-top">
+
+          <div class="card-title">🟡 中泰证券把AI嵌入财富管理全流程·自研“中泰小研”人均使用超30次每月</div>
+
+          <div class="card-meta">
+
+            <span class="priority-tag important">P1 重要关注</span>
+
+            <span class="date-tag">10-17</span>
+
+          </div>
+
+        </div>
+
+        <div class="card-body">
+
+          财联社专访（中华网山东频道10月17日刊发）：中泰证券党委书记、董事长王洪表示，公司锚定<b>客群经营、买方投顾、数智平台、品牌生态</b>四大支柱，以金融科技激活新质生产力，构建“数智底座—智能中台—数字化运营”三层架构。<br>
+
+          <b>AI落地：</b>公司携手阿里云打造“千问千泰”投顾品牌；自2022年起全力自研智能投研平台，已形成覆盖股票、ETF、公募、私募及基金投顾的<b>五大研究体系</b>与总量行研、股票研究、产品分析、资产配置<b>四大核心模块</b>，打造统一智能助手<b>“中泰小研”</b>，用户覆盖公司绝大部分员工，<b>人均使用超30次/月</b>，支撑相关系统<b>30余万次/周</b>。数字化运营运用机器学习与人工智能整合客户特征、服务内容、触达渠道与执行节奏，打通从需求线索挖掘到服务策略迭代的全周期闭环，累计落地<b>700余个服务场景</b>。<br>
+
+          <b>客群与投顾：</b>财富管理客户<b>1100多万户</b>、管理客户资产<b>1.77万亿元</b>；依托<b>2300余名</b>持牌证券投资顾问建设“牛人领航”品牌，组建<b>400余个</b>投顾团队，累计服务客户<b>26万余户</b>、签约资产超<b>800亿元</b>；“中泰财富30”下含量化30、ETF30、公募30三大子品牌，力争<b>2027年末</b>量化和ETF策略师团队规模不少于<b>1500人</b>；公募基金投顾与万家基金、中欧基金、盈米等<b>6家</b>投顾机构合作“双投顾服务模式”，已上线策略<b>17个</b>。<br>
+
+          <b>对腾安启示：</b>券商正把AI从单点工具升级为贯穿投研、投顾与运营的基础设施，并以“综合账户＋持牌投顾＋策略师团队”承接买方投顾。腾安侧的AI能力须明确定位为“辅助判断与陪伴”而非收益承诺——凡涉及选基、组合调整的建议，须标注模型口径、数据源与更新频率，并保留人工复核与风险揭示链路；对“双投顾”“策略师团队”等模式，须在产品页披露服务提供方与费用归属，避免投资者误认为由单一机构承担全部受托责任。
+
+        </div>
+
+        <div class="card-footer">
+
+          <a href="https://sd.china.com/m/cjzx/20000936/20261017/26019738.html" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">中华网·财联社·10-17</span></a>
+
+          <span class="impact-tag medium">影响：中</span>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- S5 Card: 工银瑞信以AI重塑投研基因 (10-12 P1) -->
+
+      <div class="card p1">
+
+        <div class="card-top">
+
+          <div class="card-title">🟡 工银瑞信以AI重塑投研基因·自研系统管理逾1000个组合·智能交易中枢日均成交超2000亿元</div>
+
+          <div class="card-meta">
+
+            <span class="priority-tag important">P1 重要关注</span>
+
+            <span class="date-tag">10-12</span>
+
+          </div>
+
+        </div>
+
+        <div class="card-body">
+
+          中国基金报10月12日报道（文：艾迪）：工银瑞信基金将AI大模型、智能体、RPA等前沿技术深度嵌入投研核心环节，率先在养老金智能化运营等复杂场景中实现突破性落地，是从“工具赋能”迈向“价值创造”的转型样本。《推动公募基金高质量发展行动方案》已明确提出加快“平台式、一体化、多策略”投研体系建设。<br>
+
+          <b>投入侧：</b>人力维度搭建由专业技术人才（IT）、数据分析师人才（DT）和数字运营人才（OT）构成的<b>三支柱数字化人才体系</b>，推动科技力量前置业务一线，自有科技人员队伍规模已跻身行业前列；算力维度自<b>2023年</b>起推进大模型私有化部署，已上线<b>通用生成、编程智能体、多模态及OCR</b>等多元化服务，并采取“采购＋租赁”双轨策略储备算力，正积极评估扩容以应对万亿参数模型与智能体长上下文场景的算力激增。平台已覆盖固收、权益、FOF、指数、量化等多资产类别，贯通研究、投资、交易、风控环节。<br>
+
+          <b>落地侧：</b>研究端核心功能包括研报管理、股票池、投研联席会、模拟组合、AI音视频解析，探索构建<b>“智能体协同＋人工关键节点控制”</b>的买方思维深度研究工作流；投资端构建投前、投中、投后一体化管理闭环，支持社保、养老、公募、年金、专户等<b>逾1000个组合</b>的管理，内置<b>逾700个</b>组合层面指标与<b>300余个</b>券层面指标，支持业绩归因与同类排名；交易端截至<b>2025年底</b>依托智能交易中枢日均交易规模突破<b>2000亿元</b>、日均交易笔数超<b>5000笔</b>、银行间占比近<b>60%</b>；合规风控端把持股集中度、流动性约束等要求前置到投资试算环节实现<b>“先合规、后投资”</b>，并打造IBOR实时交易数据中心作为规则实时执行的数据底座。<br>
+
+          <b>养老金样板：</b>一站式养老金智能管理平台自动校验<b>两套监管体系规则</b>以规避监管红线，针对<b>万亿级</b>年金资产开展多情景久期与收益测算以辅助资产负债匹配决策，联动RPA数字劳动力自动识别与处置各类运营异常，项目建设成果荣获<b>中国人民银行金融科技发展奖二等奖</b>。公司同时在工行集团“AI-ICBC”战略引领下实施《领航AI+行动计划》，聚焦应用全域化、入口集约化、知识资产化、技术体系化、人才专业化五大核心能力，并通过“创客马拉松 AI Makerthon”等竞赛孵化一线AI原型项目。<br>
+
+          <b>体量参照：</b>截至2026年上半年末，工银瑞信管理资产总规模超<b>2.5万亿元</b>，位居银行系基金公司第1、全行业第4；据IPE“2025年全球资管500强”榜单位列第96位。<br>
+
+          <b>对腾安启示：</b>该样本的价值在于把AI嵌进了<b>可计量的业务节点</b>——逾1000个组合、700余个组合指标、日均5000笔交易，而不是停留在“上线了几个智能体”。腾安若推进AI诊基与陪伴，应同样先确定可量化口径（覆盖组合数、人工介入率、留痕完整率、日均处理量），并把“智能体协同＋人工关键节点控制”明确写进流程，避免AI产出缺少人工终审环节；养老金场景的“多情景久期测算＋RPA异常处置”也提示，AI最先跑通价值的往往是规则密集、人工易错的中后台环节。
+
+        </div>
+
+        <div class="card-footer">
+
+          <a href="https://www.chnfund.com/article/AR67d98e29-ed27-8560-576b-3a243f7d8909" target="_blank" style="color:#1890ff;text-decoration:none;"><span class="source-tag">中国基金报·10-12</span></a>
+
+          <span class="impact-tag high">AI投顾：高</span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+<!-- ============ Section 6: 市场行情速览 ============ -->
+
+  <div class="section">
+
+    <div class="section-header">
+
+      <div class="section-icon" style="background:var(--success-light);color:var(--success);">📊</div>
+
+      <span class="section-title">市场行情速览</span>
+
+      <span class="section-badge" style="background:var(--success-light);color:var(--success);">辅助决策</span>
+
+    </div>
+
+
+
+                                <div class="card p3">
+        <div class="card-top">
+          <div class="card-title">📈 A股、港股、美股统一10-22收盘·沪指3658.03 -1.48%｜纳指跌2.60%</div>
+          <div class="card-meta">
+            <span class="priority-tag fyi">P3 知悉即可</span>
+            <span class="date-tag">10-22</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div>
+              <b>A股（10-22收盘）</b><br>
+              上证指数 <b>3658.03</b> <span style="color:#52c41a;">-1.48%</span>（-55.00点）<br>
+              深证成指 <b>11357.32</b> <span style="color:#52c41a;">-2.96%</span>（-347.03点）<br>
+              创业板指 <b>2576.90</b> <span style="color:#52c41a;">-4.37%</span>（-117.81点）<br>
+              沪深北三市成交 <b>1.54万亿元</b><br>
+              其中沪深两市约 <b>15287亿元</b>（沪市约7061亿元＋深市约8226亿元）<br>
+              个股 上涨<b>535只</b>·下跌<b>4999只</b>（涨停33只·跌停55只）
+            </div>
+            <div>
+              <b>港股（10-22收盘）与美股（美东10-22收盘）</b><br>
+              恒生指数 <b>22934.68</b> <span style="color:#52c41a;">-3.03%</span>（-717.19点）<br>
+              国企指数 <b>7689.19</b> <span style="color:#52c41a;">-3.20%</span>（-254.22点）<br>
+              恒生科技 <b>3793.93</b> <span style="color:#52c41a;">-5.03%</span>（-200.84点）<br>
+              道琼斯 <b>52867.98</b> <span style="color:#dc2626;">+0.02%</span>（+11.89点）<br>
+              纳斯达克 <b>26008.86</b> <span style="color:#52c41a;">-2.60%</span>（-694.00点）<br>
+              标普500 <b>7663.43</b> <span style="color:#52c41a;">-1.21%</span>（-93.74点）<br>
+              港股主板成交 <b>2560.51亿港元</b><br>
+              纽约12月交货原油 <b>99.47美元/桶</b> <span style="color:#dc2626;">+2.39%</span><br>
+              伦敦12月交货布伦特 <b>113.17美元/桶</b> <span style="color:#dc2626;">+4.0%</span>
+            </div>
+            <div style="grid-column:1/-1;padding-top:10px;border-top:1px dashed #e5e7eb;">
+              <b>取数口径：</b>A股取<b>10月22日收盘</b>（10月22日为交易日且已收盘）；上证指数、深证成指、创业板指收盘点位与涨跌幅经行情数据终端与公开报道双源交叉印证；沪深北三市全天成交<b>1.54万亿元</b>、较前一交易日放量约千亿元，取自东方财富Choice数据（长沙晚报10月23日报道引述）；沪市约<b>7061亿元</b>、深市约<b>8226亿元</b>为沪深两市分市场成交额（东方财富Choice行情数据），合计约15287亿元，与沪深北三市口径统计范围不同，本期仅并列列出、不与上述数字混用；个股涨跌家数与涨跌停家数同为东方财富Choice口径。港股取<b>10月22日收盘</b>（新华社香港10月22日电，与行情数据终端互相印证）。美股取<b>美东10月22日收盘</b>（新华社纽约10月22日电／新华财经，记者刘亚南，对应北京时间10月23日凌晨）。国际原油取<b>10月22日收盘</b>（新华财经：纽约商品交易所12月交货轻质原油期货价格、12月交货伦敦布伦特原油期货价格）。贵金属本期未取得可在同一源内交叉验证的收盘点位，按铁律不补数值。<br>
+              <b>A股（10-22）：</b>三大指数放量下挫，沪指跌1.48%失守3700点整数关口，创业板指跌4.37%续创一年多新低。行业板块呈现普跌态势，仅医疗美容、机器人、工程机械板块逆市上涨，影视院线、广告营销、传媒、元件、教育、互联网电商、游戏板块跌幅居前；个股上涨535只、涨停33只，下跌4999只、跌停55只。银行板块局部回暖，工商银行、建设银行盘中双双创出历史新高。长沙晚报10月23日报道将当日大跌归因于三方面：地缘冲突升级推升避险情绪；AI交易可持续性质疑发酵，光模块、算力硬件等前期热门方向集中杀跌；宁德时代、亿纬锂能、湖南裕能等创业板权重股三季报单季利润增速不达预期，波及整个新能源链条。<br>
+              <b>港股（10-22）：</b>新华社香港10月22日电，香港恒生指数跌717.19点、跌幅<b>3.03%</b>收报<b>22934.68</b>点，全日主板成交<b>2560.51亿港元</b>；国企指数跌254.22点、跌幅3.2%收<b>7689.19</b>点；恒生科技指数跌200.84点、跌幅5.03%收<b>3793.93</b>点。蓝筹股方面腾讯控股跌<b>2.89%</b>收报382.4港元、香港交易所跌1.5%收报367.2港元、中国移动跌0.26%收报77.35港元、汇丰控股跌1.23%收报144港元。<br>
+              <b>美股（美东10-22）：</b>新华社纽约10月22日电，纽约股市三大股指22日涨跌不一。道琼斯工业平均指数比前一交易日上涨11.89点、涨幅0.02%收于<b>52867.98</b>点；标准普尔500种股票指数下跌93.74点、跌幅1.21%收于<b>7663.43</b>点；纳斯达克综合指数下跌694.00点、跌幅2.60%收于<b>26008.86</b>点。板块方面，标普500指数十一大板块六涨五跌，必需消费品板块和公用事业板块分别以<b>3.11%</b>和<b>1.98%</b>涨幅领涨，通信服务板块和科技板块分别以3.01%和3.00%跌幅领跌。<br>
+              <b>对腾安提示：</b>本日A股、港股与美股科技板块同步承压，境内外风险偏好一致回落，货架与持仓页须按各自市场分别刷新净值日期与估值口径，不得用单一指数涨跌概括全市场；A股放量下跌的同时ETF单日净流入创近三个月新高，“指数下跌—资金借道ETF加仓”的背离结构须在对客材料中说明为资金流向统计、不等于指数企稳信号；恒生科技单日跌逾5%，港股主题产品的净值波动提示与申赎确认时点须同步前置；国际油价单日大涨，涉及原油、商品类主题基金的估值提示须同步更新。
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">数据基准：A股、港股为2026-10-22收盘，美股为美东2026-10-22收盘</span>
+          <span class="source-tag">数据来源：东方财富Choice（A股）；新华社（港股、美股）；新华财经（国际原油）</span>
+        </div>
+      </div>  </div>
+
+<!-- ============ Section 7: 关键时间线 ============ -->
+
+  <div class="section">
+
+    <div class="section-header">
+
+      <div class="section-icon" style="background:var(--primary-light);color:var(--primary);">📅</div>
+
+      <span class="section-title">关键时间线（近两周）</span>
+
+      <span class="section-badge" style="background:var(--primary-light);color:var(--primary);">事件脉络</span>
+
+    </div>
+
+
+
+    <div style="background:white;border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 24px;">
+
+      <div class="timeline-item">
+        <div class="timeline-dot red"></div>
+        <div class="timeline-date">2026-10-23</div>
+        <div class="timeline-title">首批18只主动ETF今日开售</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot red"></div>
+        <div class="timeline-date">2026-10-23</div>
+        <div class="timeline-title">5家公募自购合计约13亿元</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot blue"></div>
+        <div class="timeline-date">2026-10-23</div>
+        <div class="timeline-title">ETF单日净流入创近三月新高</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot blue"></div>
+        <div class="timeline-date">2026-10-23</div>
+        <div class="timeline-title">证监会部署深化公募基金改革</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot red"></div>
+        <div class="timeline-date">2026-10-22</div>
+        <div class="timeline-title">沪指跌1.48%失守3700点</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot blue"></div>
+        <div class="timeline-date">2026-10-22</div>
+        <div class="timeline-title">创业板指跌4.37%创一年新低</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot blue"></div>
+        <div class="timeline-date">2026-10-22</div>
+        <div class="timeline-title">恒生科技跌5.03%破3800点</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot blue"></div>
+        <div class="timeline-date">2026-10-22</div>
+        <div class="timeline-title">纳指跌2.60%科技股遭抛售</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot blue"></div>
+        <div class="timeline-date">2026-10-22</div>
+        <div class="timeline-title">布伦特原油涨4%收113美元</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot blue"></div>
+        <div class="timeline-date">2026-10-21</div>
+        <div class="timeline-title">沪指收3713.03点跌0.60%</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot red"></div>
+        <div class="timeline-date">2026-10-20</div>
+        <div class="timeline-title">央行拟设非银流动性支持工具</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot blue"></div>
+        <div class="timeline-date">2026-10-16</div>
+        <div class="timeline-title">首批新能源金属50ETF获批</div>
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+  </div>
+
+
+
+</div>
+
+
+
+
+
+</body>
+
+</html>
+
