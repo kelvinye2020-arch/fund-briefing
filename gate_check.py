@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-gate_check.py — 基金看板 daily-update 提交前三道闸
+gate_check.py — 基金看板 daily-update 提交前质检闸（2026-11-25 增加闸9）
 =====================================================
 每次 daily-update / weekly-refresh 生成内容后、git commit 前必须运行：
 
@@ -9,10 +9,9 @@ gate_check.py — 基金看板 daily-update 提交前三道闸
 
 退出码 0 = 通过，可以提交；退出码 1 = 拒绝提交，输出里会列出所有违规项。
 
-三道硬闸（违反即拒绝）：
-  闸1 header 数据区间联动：上端点必须是今天或昨天；下端点必须 = 上端点 - 14 天（T-14）
-  闸2 date-tag T-14 真实性：所有 <span class="date-tag">MM-DD</span> 不得早于 T-14 边界
-  闸3 源链接黑名单：JFE 拦截域名 + UGC 域名 + 自媒体汇总页
+硬闸（违反即拒绝）：
+  闸0 marker / 闸1 header 区间 T-14 / 闸2 date-tag T-14 / 闸3 源链接黑名单
+  闸6 指纹 / 闸7 元信息 / 闸8 摘要 / 闸9 禁止 iFind 额度声明与页面内长算式自检
 
 一道软闸（只告警不拒绝）：
   闸4 source-tag 与 URL 域名一致性（防"tag 写证券时报、URL 是 21财经"式错标）
@@ -316,6 +315,21 @@ def main():
                     f'——description 疑似停留在旧的一天，请同步为当日 S0 事件'
                 )
 
+    # ============ 闸9：禁止停用的 iFind 口径声明 / 页面内长算式自检 ============
+    # 2026-11-25 用户定调：同花顺 iFind MCP 额度已永久耗尽，S6 改用公开信源 +
+    # 腾讯系行情接口，页面不得再出现「额度耗尽/未使用 MCP」声明；加减自检证据
+    # 保留在 .codebuddy/automations/git/memory.md，不再占用页面版面。
+    stale_patterns = [
+        'iFind 口径说明', 'MCP 账户请求用量已耗尽', '未使用 MCP 数据',
+        '用量已耗尽', '行情加减自检',
+    ]
+    for pat in stale_patterns:
+        if pat in src:
+            errors.append(
+                f'[闸9] 页面残留停用表述「{pat}」——iFind 额度已永久耗尽、自检证据已移入 '
+                f'automations/git/memory.md，请从 index.html 删除该段'
+            )
+
     # ============ 输出 ============
     print(f'===== gate_check @ {TODAY} =====')
     for w in warns:
@@ -326,7 +340,7 @@ def main():
         print(f'\n拒绝提交：{len(errors)} 个硬违规。修复后重跑。')
         sys.exit(1)
     print(f'\n✅ 硬闸全部通过（闸0 marker / 闸1 区间 / 闸2 T-14 / 闸3 黑名单 / '
-          f'闸6 指纹 / 闸7 元信息 / 闸8 摘要，{len(warns)} 条告警需人工确认）')
+          f'闸6 指纹 / 闸7 元信息 / 闸8 摘要 / 闸9 停用表述，{len(warns)} 条告警需人工确认）')
     sys.exit(0)
 
 if __name__ == '__main__':
